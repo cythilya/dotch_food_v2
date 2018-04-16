@@ -12,7 +12,10 @@ module.exports = {
       exclude: /node_modules/,
       loader: 'babel',
       query: {
-        presets: ['react', 'es2015', 'stage-1']
+        presets: ['react', 'es2015', 'stage-1'],
+        plugins: [
+          'transform-decorators-legacy'
+        ]
       }
     }]
   },

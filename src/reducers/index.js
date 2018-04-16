@@ -1,7 +1,10 @@
 import { combineReducers } from 'redux';
+import StoresReducer from './reducer_stores';
+import SlidesReducer from './reducer_slideshows';
 
 const rootReducer = combineReducers({
-  state: (state = {}) => state
+  stores: StoresReducer,
+  slideshows: SlidesReducer,
 });
 
 export default rootReducer;
