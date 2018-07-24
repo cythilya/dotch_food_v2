@@ -23,6 +23,8 @@ class Slideshow extends Component {
     this.clickDotHandler = this.clickDotHandler.bind(this);
     this.onMouseEnterHandler = this.onMouseEnterHandler.bind(this);
     this.onMouseLeaveHandler = this.onMouseLeaveHandler.bind(this);
+    this.clickForwardHandler = this.clickForwardHandler.bind(this);
+    this.clickBackwardHandler = this.clickBackwardHandler.bind(this);
     this._tick = this._tick.bind(this);
     requestAnimationFrame(this._tick);
   }
@@ -97,6 +99,20 @@ class Slideshow extends Component {
     });
   }
 
+  clickForwardHandler() {
+    this.setState({
+      index: this.state.index + 1,
+      isClick: true,
+    });
+  }
+
+  clickBackwardHandler() {
+    this.setState({
+      index: this.state.index - 1,
+      isClick: true,
+    });
+  }
+
   _tick(timestamp) {
     let progress = timestamp - this.state.start;
 
@@ -132,9 +148,16 @@ class Slideshow extends Component {
     const count = this.props.slideshows.length;
     const controlWidth = count*20;
     const leftMargin = (window.innerWidth - controlWidth)/2;
-    const styles = {
+    const arrowPos = (window.innerWidth - 720)/2;
+    const dotsStyles = {
       width: `${controlWidth}px`,
       left: `${leftMargin}px`,
+    };
+    const arrowLeftStyle = {
+      left: `${arrowPos}px`,
+    };
+    const arrowRightStyle = {
+      right: `${arrowPos}px`,
     };
 
     return(
@@ -146,8 +169,20 @@ class Slideshow extends Component {
           >
             { this.renderSlideshow() }
           </div>
-          <div className="slideshow__control" style={styles}>
+          <div className="slideshow__control" style={dotsStyles}>
             { this.renderControlDots() }
+          </div>
+          <div
+            className="slideshow__arrow-forward"
+            style={arrowRightStyle}
+            onClick={this.clickForwardHandler}
+          >
+          </div>
+          <div
+            className="slideshow__arrow-backward"
+            style={arrowLeftStyle}
+            onClick={this.clickBackwardHandler}
+          >
           </div>
         </div>
         { this.renderLoading(_.isObject(slidesData) && !_.isArray(slidesData) && _.isEmpty(slidesData)) }
