@@ -1,12 +1,11 @@
 import _ from 'lodash';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { Loader } from 'semantic-ui-react';
 import { fetchSlidesData } from '../actions';
 
-const INTERVAL = 1000;
-const WAIT_TIME = 4000;
 const SLIDEHSOW_WIDTH = 720;
 
 class Slideshow extends Component {
@@ -25,28 +24,105 @@ class Slideshow extends Component {
     this.onMouseLeaveHandler = this.onMouseLeaveHandler.bind(this);
     this.clickForwardHandler = this.clickForwardHandler.bind(this);
     this.clickBackwardHandler = this.clickBackwardHandler.bind(this);
+    this.renderLoading = this.renderLoading.bind(this);
     this._tick = this._tick.bind(this);
     requestAnimationFrame(this._tick);
   }
 
   componentDidMount() {
-    this.fetchSlidesData();
+    const { fetchSlidesData } = this.props;
+    fetchSlidesData();
   }
 
-  fetchSlidesData() {
-    this.props.fetchSlidesData();
+  onMouseEnterHandler() {
+    this.setState({ stop: true });
+  }
+
+  onMouseLeaveHandler() {
+    this.setState({ stop: false });
+  }
+
+  clickDotHandler(index) {
+    this.setState({
+      index,
+      isClick: true,
+    });
+  }
+
+  clickForwardHandler() {
+    const { index } = this.state;
+
+    this.setState({
+      index: index + 1,
+      isClick: true,
+    });
+  }
+
+  clickBackwardHandler() {
+    const { index } = this.state;
+
+    this.setState({
+      index: index - 1,
+      isClick: true,
+    });
+  }
+
+  _tick(timestamp) {
+    const {
+      slideshows,
+      interval,
+      pause,
+    } = this.props;
+    const {
+      index,
+      start,
+      stop,
+      isClick,
+    } = this.state;
+    const progress = timestamp - start;
+    let nextIndex = index;
+
+    if (start === null) {
+      this.setState({ start: timestamp });
+    }
+
+    if (progress < interval || stop) {
+      this.timer = requestAnimationFrame(this._tick);
+    } else {
+      if (isClick) {
+        this.setState({
+          isClick: false,
+        });
+      } else if (index < slideshows.length - 1) {
+        nextIndex = index + 1;
+      } else {
+        nextIndex = 0;
+      }
+
+      const targetWidth = SLIDEHSOW_WIDTH * nextIndex;
+      this.refs.ref.style.transform = `translateX(-${targetWidth}px)`;
+      this.setState({
+        index: nextIndex,
+        start: timestamp + pause,
+      });
+      this.timer = requestAnimationFrame(this._tick);
+    }
   }
 
   renderLoading(isLoading) {
+    const styles = isLoading ? 'show' : 'hide';
+
     return (
-      <div className= { isLoading ? 'show' : 'hide'}>
-        <Loader active inline='centered' />
+      <div className={`slideshow__loading ${styles}`}>
+        <Loader active inline="centered" />
       </div>
     );
   }
 
   renderSlideshow() {
-    return _.map(this.props.slideshows, item => {
+    const { slideshows } = this.props;
+
+    return _.map(slideshows, (item) => {
       return (
         <div
           className="slideshow__item"
@@ -70,85 +146,29 @@ class Slideshow extends Component {
   }
 
   renderControlDots() {
-    return _.map(this.props.slideshows, (item, index) => {
-      let activeClass = this.state.index === index ? 'slideshow__dot--active' : '';
+    const { slideshows } = this.props;
+    const { index } = this.state;
+
+    return _.map(slideshows, (item, key) => {
+      const activeClass = index === key ? 'slideshow__dot--active' : '';
 
       return (
         <div
           className={`slideshow__dot ${activeClass}`}
           key={item.id}
-          onClick={() => this.clickDotHandler(index)}
-        >
-        </div>
+          onClick={() => this.clickDotHandler(key)}
+          onKeyPress={() => this.clickDotHandler(key)}
+        />
       );
     });
   }
 
-  onMouseEnterHandler() {
-    this.setState({ stop: true });
-  }
-
-  onMouseLeaveHandler() {
-    this.setState({ stop: false });
-  }
-
-  clickDotHandler(index) {
-    this.setState({
-      index,
-      isClick: true,
-    });
-  }
-
-  clickForwardHandler() {
-    this.setState({
-      index: this.state.index + 1,
-      isClick: true,
-    });
-  }
-
-  clickBackwardHandler() {
-    this.setState({
-      index: this.state.index - 1,
-      isClick: true,
-    });
-  }
-
-  _tick(timestamp) {
-    let progress = timestamp - this.state.start;
-
-    if (this.state.start === null) {
-      this.setState({ start: timestamp });
-    }
-
-    if (progress < INTERVAL || this.state.stop) {
-      this.timer = requestAnimationFrame(this._tick);
-    } else {
-      let targetWidth = 0;
-
-      if (this.state.isClick) {
-        this.setState({
-          index: this.state.index,
-          isClick: false
-        });
-      } else if (this.state.index < this.props.slideshows.length - 1) {
-        this.setState({ index: this.state.index + 1 });
-      } else {
-        this.setState({ index: 0 });
-      }
-
-      targetWidth = SLIDEHSOW_WIDTH * this.state.index;
-      this.refs.slideshowRef.style.transform = `translateX(-${targetWidth}px)`;
-      this.setState({ start: timestamp + WAIT_TIME });
-      this.timer = requestAnimationFrame(this._tick);
-    }
-  }
-
   render() {
-    const { slidesData } = this.props;
-    const count = this.props.slideshows.length;
-    const controlWidth = count*20;
-    const leftMargin = (window.innerWidth - controlWidth)/2;
-    const arrowPos = (window.innerWidth - 720)/2;
+    const { slideshows } = this.props;
+    const count = slideshows.length;
+    const controlWidth = count * 20;
+    const leftMargin = (window.innerWidth - controlWidth) / 2;
+    const arrowPos = (window.innerWidth - 720) / 2;
     const dotsStyles = {
       width: `${controlWidth}px`,
       left: `${leftMargin}px`,
@@ -160,11 +180,11 @@ class Slideshow extends Component {
       right: `${arrowPos}px`,
     };
 
-    return(
+    return (
       <div>
-        <div className="slideshow" >
+        <div className="slideshow">
           <div
-            ref="slideshowRef"
+            ref="ref"
             className="slideshow__container"
           >
             { this.renderSlideshow() }
@@ -176,24 +196,36 @@ class Slideshow extends Component {
             className="slideshow__arrow-forward"
             style={arrowRightStyle}
             onClick={this.clickForwardHandler}
-          >
-          </div>
+            onKeyPress={this.clickForwardHandler}
+          />
           <div
             className="slideshow__arrow-backward"
             style={arrowLeftStyle}
             onClick={this.clickBackwardHandler}
-          >
-          </div>
+            onKeyPress={this.clickBackwardHandler}
+          />
+          { this.renderLoading(_.isObject(slideshows) && !_.isArray(slideshows) && _.isEmpty(slideshows)) }
         </div>
-        { this.renderLoading(_.isObject(slidesData) && !_.isArray(slidesData) && _.isEmpty(slidesData)) }
       </div>
     );
   }
 }
 
+Slideshow.propTypes = {
+  fetchSlidesData: PropTypes.func.isRequired,
+  slideshows: PropTypes.arrayOf(PropTypes.object).isRequired,
+  interval: PropTypes.number,
+  pause: PropTypes.number,
+};
+
+Slideshow.defaultProps = {
+  interval: 1000,
+  pause: 4000,
+};
+
 function mapStateToProps({ slideshows }) {
   return {
-    slideshows
+    slideshows,
   };
 }
 

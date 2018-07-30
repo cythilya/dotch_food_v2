@@ -12,20 +12,20 @@ firebase.initializeApp({
 export function fetchStoreList() {
   return {
     type: FETCH_STORE_LIST,
-    payload: firebase.firestore().collection('stores').get()
+    payload: firebase.firestore().collection('stores').get(),
   };
 }
 
 export function fetchStoreListByTag(tag) {
   return {
     type: FETCH_STORE_LIST_BY_TAG,
-    payload: firebase.firestore().collection('stores').where(`tags.${tag}`, '==', true).get()
+    payload: firebase.firestore().collection('stores').where(`tags.${tag}`, '==', true).get(),
   };
 }
 
 export function fetchSlidesData() {
   return {
     type: FETCH_SLIDES_DATA,
-    payload: firebase.firestore().collection('slideshows').get()
+    payload: firebase.firestore().collection('slideshows').get(),
   };
 }

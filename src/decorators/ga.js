@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 const GATracking = (Component, state, title, label, callback) => class extends Component {
   constructor(props) {
@@ -7,7 +7,7 @@ const GATracking = (Component, state, title, label, callback) => class extends C
     this.handleEventTracking = this.handleEventTracking.bind(this);
   }
 
-  handleEventTracking(e) {
+  handleEventTracking() {
     console.log(`追蹤熱門連結：${event.target.href}`);
     callback();
 
@@ -20,8 +20,12 @@ const GATracking = (Component, state, title, label, callback) => class extends C
   }
 
   render() {
-    return <Component {...this.props} {...this.state} onClick={this.handleEventTracking}>{title}</Component>
+    return (
+      <Component {...this.props} {...this.state} onClick={this.handleEventTracking}>
+        {title}
+      </Component>
+    );
   }
 };
 
-export default GATracking
+export default GATracking;
