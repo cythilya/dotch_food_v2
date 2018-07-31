@@ -15,8 +15,9 @@ class Slideshow extends Component {
     this.state = {
       index: 0,
       start: null,
-      stop: false,
-      isClick: false,
+      isPause: false,
+      isReset: false,
+      resetIndex: null,
     };
 
     this.clickDotHandler = this.clickDotHandler.bind(this);
@@ -25,8 +26,8 @@ class Slideshow extends Component {
     this.clickForwardHandler = this.clickForwardHandler.bind(this);
     this.clickBackwardHandler = this.clickBackwardHandler.bind(this);
     this.renderLoading = this.renderLoading.bind(this);
-    this._tick = this._tick.bind(this);
-    requestAnimationFrame(this._tick);
+    this.tick = this.tick.bind(this);
+    this.timer = requestAnimationFrame(this.tick);
   }
 
   componentDidMount() {
@@ -34,40 +35,52 @@ class Slideshow extends Component {
     fetchSlidesData();
   }
 
+  componentWillUnmount() {
+    cancelAnimationFrame(this.timer);
+  }
+
   onMouseEnterHandler() {
-    this.setState({ stop: true });
+    this.setState({ isPause: true });
   }
 
   onMouseLeaveHandler() {
-    this.setState({ stop: false });
+    this.setState({ isPause: false });
   }
 
   clickDotHandler(index) {
-    this.setState({
-      index,
-      isClick: true,
-    });
+    this._resetTickIndex(index);
   }
 
   clickForwardHandler() {
+    const { slideshows } = this.props;
     const { index } = this.state;
+    const maxIndex = slideshows.length - 1;
+    let nextIndex = index + 1;
 
-    this.setState({
-      index: index + 1,
-      isClick: true,
-    });
+    nextIndex = nextIndex > maxIndex ? maxIndex : nextIndex;
+    this._resetTickIndex(nextIndex);
   }
 
   clickBackwardHandler() {
     const { index } = this.state;
+    let nextIndex = index - 1;
 
-    this.setState({
-      index: index - 1,
-      isClick: true,
-    });
+    nextIndex = nextIndex < 0 ? 0 : nextIndex;
+    this._resetTickIndex(nextIndex);
   }
 
-  _tick(timestamp) {
+  _resetTickIndex(index) {
+    cancelAnimationFrame(this.timer);
+
+    this.setState({
+      resetIndex: index,
+      isReset: true,
+    });
+
+    this.timer = requestAnimationFrame(this.tick);
+  }
+
+  tick(timestamp) {
     const {
       slideshows,
       interval,
@@ -76,8 +89,9 @@ class Slideshow extends Component {
     const {
       index,
       start,
-      stop,
-      isClick,
+      isPause,
+      isReset,
+      resetIndex,
     } = this.state;
     const progress = timestamp - start;
     let nextIndex = index;
@@ -86,26 +100,24 @@ class Slideshow extends Component {
       this.setState({ start: timestamp });
     }
 
-    if (progress < interval || stop) {
-      this.timer = requestAnimationFrame(this._tick);
+    if ((progress < interval || isPause) && !isReset) {
+      this.timer = requestAnimationFrame(this.tick);
     } else {
-      if (isClick) {
-        this.setState({
-          isClick: false,
-        });
-      } else if (index < slideshows.length - 1) {
-        nextIndex = index + 1;
-      } else {
-        nextIndex = 0;
+      if (index < slideshows.length - 1) {
+        nextIndex = isReset && (resetIndex !== null) ? resetIndex : (index + 1);
+      } else { // index === length - 1
+        nextIndex = isReset && (resetIndex !== null) ? resetIndex : 0;
       }
 
       const targetWidth = SLIDEHSOW_WIDTH * nextIndex;
-      this.refs.ref.style.transform = `translateX(-${targetWidth}px)`;
+      this._ref.style.transform = `translateX(-${targetWidth}px)`;
       this.setState({
         index: nextIndex,
         start: timestamp + pause,
+        isReset: false,
+        resetIndex: null,
       });
-      this.timer = requestAnimationFrame(this._tick);
+      this.timer = requestAnimationFrame(this.tick);
     }
   }
 
@@ -135,7 +147,7 @@ class Slideshow extends Component {
             to={item.link}
             target="_blank"
           >
-            <image
+            <img
               alt={item.title}
               src={item.image}
             />
@@ -184,7 +196,7 @@ class Slideshow extends Component {
       <div>
         <div className="slideshow">
           <div
-            ref="ref"
+            ref={(ref) => { this._ref = ref; }}
             className="slideshow__container"
           >
             { this.renderSlideshow() }
@@ -213,7 +225,7 @@ class Slideshow extends Component {
 
 Slideshow.propTypes = {
   fetchSlidesData: PropTypes.func.isRequired,
-  slideshows: PropTypes.arrayOf(PropTypes.object).isRequired,
+  slideshows: PropTypes.object.isRequired,
   interval: PropTypes.number,
   pause: PropTypes.number,
 };

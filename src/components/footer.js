@@ -86,6 +86,6 @@ class Footer extends Component {
   }
 }
 
-console.log(Footer.isTestable); // true
+// console.log(Footer.isTestable); // true
 
 export default Footer;

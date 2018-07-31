@@ -1,4 +1,8 @@
-import { FETCH_STORE_LIST, FETCH_STORE_LIST_BY_TAG, FETCH_SLIDES_DATA } from '../constants';
+import {
+  FETCH_STORE_LIST,
+  FETCH_STORE_LIST_BY_TAG,
+  FETCH_SLIDES_DATA,
+} from '../constants';
 
 const firebase = require('firebase');
 require('firebase/firestore');

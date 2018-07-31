@@ -229,7 +229,8 @@ class StoreList extends Component {
   }
 
   render() {
-    const { stores } = this.props;
+    const { stores, match } = this.props;
+    const { keyword } = match.params;
     const defaultHotTags = ['日式料理', '早午餐', '沙拉', '燒烤', '漢堡', '輕食', '牛排', '生魚片', '關東煮', '平價'];
     const news = [
       '種是的考什晚聯、臺外場下王小媽區排！長的沒喜取總遠是過山紙調不低當建工名用功覺速找、來年業的雄生。',
@@ -242,7 +243,7 @@ class StoreList extends Component {
         <Container>
           <Header />
         </Container>
-        <Slideshow interval={1000} pause={4000} />
+        { !keyword && <Slideshow interval={1000} pause={4000} /> }
         <Container>
           <Newsticker news={news} />
           <Grid>
