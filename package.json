@@ -38,13 +38,13 @@
     "firebase": "^4.12.0",
     "lodash": "^3.10.1",
     "prop-types": "^15.6.2",
-    "react": "^0.14.3",
-    "react-dom": "^0.14.3",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
     "react-newsticker": "^1.0.3",
-    "react-redux": "4.3.0",
+    "react-redux": "5.0.4",
     "react-router": "^2.0.1",
     "react-router-dom": "^4.2.2",
-    "redux": "^3.0.4",
+    "redux": "^3.3.1",
     "redux-promise": "^0.5.3",
     "semantic-ui-react": "^0.79.1"
   }
