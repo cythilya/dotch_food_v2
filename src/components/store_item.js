@@ -107,7 +107,7 @@ const StoreItem = ({ store }) => {
           }
         </Item.Extra>
         <Divider hidden />
-        <CommentList />
+        {/* <CommentList /> */}
       </Item.Content>
     </Item>
   );

@@ -15,7 +15,7 @@ export default class SearchBar extends Component {
     this.resetComponent()
   }
 
-  resetComponent = () => this.setState({ isLoading: false, results: [], value: '' })
+  const resetComponent = () => this.setState({ isLoading: false, results: [], value: '' })
 
   handleResultSelect = (e, { result }) => this.setState({ value: result.title })
 

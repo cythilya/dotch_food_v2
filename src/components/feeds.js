@@ -8,7 +8,7 @@ const Feeds = ({ data }) => {
 
   return (
     <div>
-      有什麼新鮮事？
+      有什麼新鮮事？<br />
       <Feed>
         {
           _.map(data, (item, index) => {

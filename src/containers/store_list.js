@@ -129,7 +129,7 @@ class StoreList extends Component {
           </HeaderSemanticUI>
           <Card.Group itemsPerRow={3}>
             <Card>
-              <Image src="/public/images/oka-taro-hours/oka-taro-hours.jpg" />
+              <Image src="http://cythilya.github.io/assets/dotch-food-v2/oka-taro-hours/oka-taro-hours.jpg" />
               <Card.Content>
                 <Card.Header>
                   岡太郎家日式料理
@@ -157,7 +157,7 @@ class StoreList extends Component {
               </Card.Content>
             </Card>
             <Card>
-              <Image src="/public/images/grab-a-bite/grab-a-bite-1.jpg" />
+              <Image src="http://cythilya.github.io/assets/dotch-food-v2/grab-a-bite/grab-a-bite-1.jpg" />
               <Card.Content>
                 <Card.Header>
                   Grab a Bite 幸福提食
@@ -233,9 +233,9 @@ class StoreList extends Component {
     const { keyword } = match.params;
     const defaultHotTags = ['日式料理', '早午餐', '沙拉', '燒烤', '漢堡', '輕食', '牛排', '生魚片', '關東煮', '平價'];
     const news = [
-      '種是的考什晚聯、臺外場下王小媽區排！長的沒喜取總遠是過山紙調不低當建工名用功覺速找、來年業的雄生。',
-      '的不古三應，種不樣論母座都條爸仍調就中各到不麼作量說歷話活亞懷交空的天事轉大港便，作老別禮個。',
-      '教氣氣，各呢人處片職象光成父那味重再，面積特業？',
+      '來自名古屋的早餐，Komeda coffee 鬆軟奶油吐司，南京松江站',
+      '與小熊維尼的午茶約會！新宿「蜂蜜咖啡」限定登場',
+      '七夕就是要浪漫一下！全台精選 10 家特色浪漫景觀餐廳',
     ];
 
     return (

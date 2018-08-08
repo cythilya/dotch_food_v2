@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { Loader } from 'semantic-ui-react';
 import { fetchSlidesData } from '../actions';
+// import { url } from 'inspector';
 
 const SLIDEHSOW_WIDTH = 720;
 
@@ -225,7 +226,7 @@ class Slideshow extends Component {
 
 Slideshow.propTypes = {
   fetchSlidesData: PropTypes.func.isRequired,
-  slideshows: PropTypes.object.isRequired,
+  // slideshows: PropTypes.object.isRequired,
   interval: PropTypes.number,
   pause: PropTypes.number,
 };
