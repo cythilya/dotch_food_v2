@@ -1,22 +1,22 @@
-const path = require("path")
-const webpack = require("webpack")
-const MiniCSSExtractPlugin = require("mini-css-extract-plugin")
-const HTMLWebpackPlugin = require("html-webpack-plugin")
-const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin")
-const UglifyJSPlugin = require("uglifyjs-webpack-plugin")
-const CompressionPlugin = require("compression-webpack-plugin")
-const BrotliPlugin = require("brotli-webpack-plugin")
+const path = require('path')
+const webpack = require('webpack')
+const MiniCSSExtractPlugin = require('mini-css-extract-plugin')
+const HTMLWebpackPlugin = require('html-webpack-plugin')
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
+const CompressionPlugin = require('compression-webpack-plugin')
+const BrotliPlugin = require('brotli-webpack-plugin')
 
 module.exports = env => {
   return {
     entry: {
-      main: ["./src/main.js"]
+      main: ['./src/main.js']
     },
-    mode: "production",
+    mode: 'production',
     output: {
-      filename: "[name]-bundle.js",
-      path: path.resolve(__dirname, "../dist"),
-      publicPath: "/"
+      filename: '[name]-bundle.js',
+      path: path.resolve(__dirname, '../dist'),
+      publicPath: '/'
     },
     module: {
       rules: [
@@ -25,7 +25,7 @@ module.exports = env => {
           exclude: /node_modules/,
           use: [
             {
-              loader: "babel-loader"
+              loader: 'babel-loader'
             }
           ]
         },
@@ -34,7 +34,7 @@ module.exports = env => {
           use: [
             { loader: MiniCSSExtractPlugin.loader },
             {
-              loader: "css-loader",
+              loader: 'css-loader',
               options: {
                 minimize: true
               }
@@ -45,9 +45,9 @@ module.exports = env => {
           test: /\.(jpe?g|png|gif|svg)$/,
           use: [
             {
-              loader: "file-loader",
+              loader: 'file-loader',
               options: {
-                name: "images/[name].[ext]"
+                name: 'images/[name].[ext]'
               }
             }
           ]
@@ -58,23 +58,23 @@ module.exports = env => {
       new MiniCSSExtractPlugin(),
       new OptimizeCssAssetsPlugin({
         assetNameRegExp: /\.css$/g,
-        cssProcessor: require("cssnano"),
+        cssProcessor: require('cssnano'),
         cssProcessorOptions: { discardComments: { removeAll: true } },
         canPrint: true
       }),
       new webpack.DefinePlugin({
-        "process.env": {
+        'process.env': {
           NODE_ENV: JSON.stringify(env.NODE_ENV)
         }
       }),
       new HTMLWebpackPlugin({
-        template: "./src/index.ejs",
+        template: './src/index.ejs',
         inject: true,
-        title: "Link's Journal"
+        title: '吃什麼'
       }),
       new UglifyJSPlugin(),
       new CompressionPlugin({
-        algorithm: "gzip"
+        algorithm: 'gzip'
       }),
       new BrotliPlugin()
     ]

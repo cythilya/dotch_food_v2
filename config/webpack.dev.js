@@ -1,31 +1,31 @@
-const path = require("path")
-const webpack = require("webpack")
-const HTMLWebpackPlugin = require("html-webpack-plugin")
+const path = require('path');
+const webpack = require('webpack');
+const HTMLWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: {
     main: [
-      "react-hot-loader/patch",
-      "babel-runtime/regenerator",
-      "babel-register",
-      "webpack-hot-middleware/client?reload=true",
-      "./src/main.js"
-    ]
+      'react-hot-loader/patch',
+      'babel-runtime/regenerator',
+      'babel-register',
+      'webpack-hot-middleware/client?reload=true',
+      './src/main.js',
+    ],
   },
-  mode: "production",
+  mode: 'development',
   output: {
-    filename: "[name]-bundle.js",
-    path: path.resolve(__dirname, "../dist"),
-    publicPath: "/"
+    filename: '[name]-bundle.js',
+    path: path.resolve(__dirname, '../dist'),
+    publicPath: '/',
   },
   devServer: {
-    contentBase: "dist",
+    contentBase: 'dist',
     overlay: true,
     stats: {
-      colors: true
-    }
+      colors: true,
+    },
   },
-  devtool: "source-map",
+  devtool: 'source-map',
   module: {
     rules: [
       {
@@ -33,43 +33,45 @@ module.exports = {
         exclude: /node_modules/,
         use: [
           {
-            loader: "babel-loader"
+            loader: 'babel-loader',
           },
-        ]
+        ],
       },
       {
         test: /\.css$/,
         use: [
           {
-            loader: "style-loader"
+            loader: 'style-loader',
           },
-          { loader: "css-loader" }
-        ]
+          {
+            loader: 'css-loader',
+          },
+        ],
       },
       {
         test: /\.(jpe?g|png|gif|svg)$/,
         use: [
           {
-            loader: "file-loader",
+            loader: 'file-loader',
             options: {
-              name: "/public/images/*/[name].[ext]"
-            }
-          }
-        ]
-      }
-    ]
+              name: 'images/[name].[ext]',
+            },
+          },
+        ],
+      },
+    ],
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.DefinePlugin({
-      "process.env": {
-        NODE_ENV: JSON.stringify("development")
-      }
+      'process.env': {
+        NODE_ENV: JSON.stringify('development'),
+      },
     }),
     new HTMLWebpackPlugin({
-      template: "./src/index.ejs",
+      template: './src/index.ejs',
       inject: true,
-      title: "Link's Journal"
-    })
-  ]
-}
+      title: '吃什麼',
+    }),
+  ],
+};
