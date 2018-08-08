@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Header as HeaderSemanticUI, Grid, Icon } from 'semantic-ui-react';
-import SearchBar from '../containers/search_bar';
+// import SearchBar from '../containers/search_bar';
 
 const Header = () => {
   return (
@@ -20,7 +20,7 @@ const Header = () => {
         />
       </Grid.Column>
       <Grid.Column width={3} verticalAlign="middle">
-        <SearchBar />
+        {/* <SearchBar /> */}
       </Grid.Column>
     </Grid>
   );

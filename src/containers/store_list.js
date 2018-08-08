@@ -20,7 +20,7 @@ import Newsticker from 'react-newsticker';
 import Header from '../components/header';
 import StoreItem from '../components/store_item';
 import TagList from '../components/tag_list';
-import Footer from '../components/footer';
+// import Footer from '../components/footer';
 import { fetchStoreList, fetchStoreListByTag } from '../actions';
 import HOC from './hoc';
 import Feeds from '../components/feeds';
@@ -264,7 +264,7 @@ class StoreList extends Component {
             </Grid.Column>
           </Grid>
           <Divider />
-          <Footer />
+          {/* <Footer /> */}
         </Container>
       </div>
     );
