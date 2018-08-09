@@ -1,22 +1,22 @@
-const path = require('path')
-const webpack = require('webpack')
-const MiniCSSExtractPlugin = require('mini-css-extract-plugin')
-const HTMLWebpackPlugin = require('html-webpack-plugin')
-const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
-const CompressionPlugin = require('compression-webpack-plugin')
-const BrotliPlugin = require('brotli-webpack-plugin')
+const path = require('path');
+const webpack = require('webpack');
+const MiniCSSExtractPlugin = require('mini-css-extract-plugin');
+const HTMLWebpackPlugin = require('html-webpack-plugin');
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
+const BrotliPlugin = require('brotli-webpack-plugin');
 
-module.exports = env => {
+module.exports = (env) => {
   return {
     entry: {
-      main: ['./src/main.js']
+      main: ['./src/main.js'],
     },
     mode: 'production',
     output: {
       filename: '[name]-bundle.js',
       path: path.resolve(__dirname, '../dist'),
-      publicPath: '/'
+      publicPath: '/',
     },
     module: {
       rules: [
@@ -25,9 +25,9 @@ module.exports = env => {
           exclude: /node_modules/,
           use: [
             {
-              loader: 'babel-loader'
-            }
-          ]
+              loader: 'babel-loader',
+            },
+          ],
         },
         {
           test: /\.css$/,
@@ -36,10 +36,13 @@ module.exports = env => {
             {
               loader: 'css-loader',
               options: {
-                minimize: true
-              }
-            }
-          ]
+                minimize: true,
+              },
+            },
+            {
+              loader: 'postcss-loader',
+            },
+          ],
         },
         {
           test: /\.(jpe?g|png|gif|svg)$/,
@@ -47,12 +50,12 @@ module.exports = env => {
             {
               loader: 'file-loader',
               options: {
-                name: 'images/[name].[ext]'
-              }
-            }
-          ]
-        }
-      ]
+                name: 'images/[name].[ext]',
+              },
+            },
+          ],
+        },
+      ],
     },
     plugins: [
       new MiniCSSExtractPlugin(),
@@ -60,23 +63,23 @@ module.exports = env => {
         assetNameRegExp: /\.css$/g,
         cssProcessor: require('cssnano'),
         cssProcessorOptions: { discardComments: { removeAll: true } },
-        canPrint: true
+        canPrint: true,
       }),
       new webpack.DefinePlugin({
         'process.env': {
-          NODE_ENV: JSON.stringify(env.NODE_ENV)
-        }
+          NODE_ENV: JSON.stringify(env.NODE_ENV),
+        },
       }),
       new HTMLWebpackPlugin({
         template: './src/index.ejs',
         inject: true,
-        title: '吃什麼'
+        title: '吃什麼，どっち',
       }),
       new UglifyJSPlugin(),
       new CompressionPlugin({
-        algorithm: 'gzip'
+        algorithm: 'gzip',
       }),
-      new BrotliPlugin()
-    ]
-  }
-}
+      new BrotliPlugin(),
+    ],
+  };
+};

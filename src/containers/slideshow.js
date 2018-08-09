@@ -86,6 +86,7 @@ class Slideshow extends Component {
       slideshows,
       interval,
       pause,
+      auto,
     } = this.props;
     const {
       index,
@@ -101,7 +102,7 @@ class Slideshow extends Component {
       this.setState({ start: timestamp });
     }
 
-    if ((progress < interval || isPause) && !isReset) {
+    if ((progress < interval || isPause || !auto) && !isReset) {
       this.timer = requestAnimationFrame(this.tick);
     } else {
       if (index < slideshows.length - 1) {

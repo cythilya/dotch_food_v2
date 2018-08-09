@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
+const StyleLintPlugin = require('stylelint-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -46,6 +47,9 @@ module.exports = {
           {
             loader: 'css-loader',
           },
+          {
+            loader: 'postcss-loader',
+          },
         ],
       },
       {
@@ -71,7 +75,8 @@ module.exports = {
     new HTMLWebpackPlugin({
       template: './src/index.ejs',
       inject: true,
-      title: '吃什麼',
+      title: '吃什麼，どっち',
     }),
+    new StyleLintPlugin(),
   ],
 };

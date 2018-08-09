@@ -1,6 +1,7 @@
 import _ from 'lodash';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import {
   Container,
@@ -69,6 +70,13 @@ const fetchFeeds = (pageNum = 0) => {
 const FeedList = HOC(Feeds, feedsData, fetchFeeds);
 
 class StoreList extends Component {
+  constructor(props) {
+    super(props);
+
+    this.renderLoading = this.renderLoading.bind(this);
+    this.renderNotFound = this.renderNotFound.bind(this);
+  }
+
   componentDidMount() {
     this.fetchStoresData(this.props.match.params.keyword);
   }
@@ -231,6 +239,7 @@ class StoreList extends Component {
   render() {
     const { stores, match } = this.props;
     const { keyword } = match.params;
+    const isAutoPlay = process.env.NODE_ENV === 'production';
     const defaultHotTags = ['日式料理', '早午餐', '沙拉', '燒烤', '漢堡', '輕食', '牛排', '生魚片', '關東煮', '平價'];
     const news = [
       '來自名古屋的早餐，Komeda coffee 鬆軟奶油吐司，南京松江站',
@@ -243,7 +252,7 @@ class StoreList extends Component {
         <Container>
           <Header />
         </Container>
-        { !keyword && <Slideshow interval={1000} pause={4000} /> }
+        { !keyword && <Slideshow interval={1000} pause={4000} auto={isAutoPlay} /> }
         <Container>
           <Newsticker news={news} />
           <Grid>
@@ -270,6 +279,15 @@ class StoreList extends Component {
     );
   }
 }
+
+StoreList.propTypes = {
+  keyword: PropTypes.string,
+
+};
+
+StoreList.defaultProps = {
+  keyword: null,
+};
 
 function mapStateToProps({ stores }, ownProps) {
   return {

@@ -1,0 +1,13 @@
+{
+  "rules": {
+    "at-rule-no-unknown": [ true, {
+      "ignoreAtRules": [
+        "extends",
+        "ignores"
+      ]
+    }],
+    "indentation": 2,
+    "number-leading-zero": null,
+    "unit-whitelist": ["px", "%", "em", "rem", "s", "ms"]
+  }
+}
