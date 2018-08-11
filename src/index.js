@@ -6,6 +6,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import promise from 'redux-promise';
 import reducers from './reducers';
 import StoreList from './containers/store_list';
+import '../style/index.css'; // global styles
 
 const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
 

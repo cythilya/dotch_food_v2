@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const TagList = ({ tags }) => {
   return (
     <div>
-      看更多...
+      熱門推薦
       <ul>
         {
           _.map(tags, (item, index) => {

@@ -8,8 +8,8 @@ const GATracking = (Component, state, title, label, callback) => class extends C
   }
 
   handleEventTracking() {
-    console.log(`追蹤熱門連結：${event.target.href}`);
     callback();
+    // console.log(`追蹤熱門連結：${event.target.href}`);
 
     // ga('send', 'event', {
     //   eventCategory: this.props.label,

@@ -5,10 +5,10 @@ import { Feed } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 
 const Feeds = ({ data }) => {
-
   return (
     <div>
-      有什麼新鮮事？<br />
+      有什麼新鮮事？
+      <br />
       <Feed>
         {
           _.map(data, (item, index) => {

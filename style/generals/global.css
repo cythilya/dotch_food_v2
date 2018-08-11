@@ -1,0 +1,15 @@
+:global .show {
+  display: block;
+}
+
+:global .hide {
+  display: none;
+}
+
+:global .align-row {
+  display: flex;
+}
+
+:global .align-center {
+  text-align: center;
+}

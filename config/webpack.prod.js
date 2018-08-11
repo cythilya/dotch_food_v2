@@ -32,11 +32,17 @@ module.exports = (env) => {
         {
           test: /\.css$/,
           use: [
-            { loader: MiniCSSExtractPlugin.loader },
+            // { loader: MiniCSSExtractPlugin.loader },
+            {
+              loader: 'style-loader',
+            },
             {
               loader: 'css-loader',
               options: {
                 minimize: true,
+                modules: true,
+                importLoaders: 1,
+                localIdentName: '[path]___[name]__[local]___[hash:base64:5]',
               },
             },
             {
@@ -61,7 +67,7 @@ module.exports = (env) => {
       new MiniCSSExtractPlugin(),
       new OptimizeCssAssetsPlugin({
         assetNameRegExp: /\.css$/g,
-        cssProcessor: require('cssnano'),
+        // cssProcessor: require('cssnano'),
         cssProcessorOptions: { discardComments: { removeAll: true } },
         canPrint: true,
       }),

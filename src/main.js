@@ -1,4 +1,3 @@
 require('./index');
-require('../style/style.css');
-
+// require('../style/index.css');
 // console.log(`Environment is ${process.env.NODE_ENV}`);

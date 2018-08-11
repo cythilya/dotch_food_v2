@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { Loader } from 'semantic-ui-react';
 import { fetchSlidesData } from '../actions';
-// import { url } from 'inspector';
+import '../../style/components/slideshow.css';
 
 const SLIDEHSOW_WIDTH = 720;
 
@@ -27,6 +27,8 @@ class Slideshow extends Component {
     this.clickForwardHandler = this.clickForwardHandler.bind(this);
     this.clickBackwardHandler = this.clickBackwardHandler.bind(this);
     this.renderLoading = this.renderLoading.bind(this);
+    this.renderSlideshow = this.renderSlideshow.bind(this);
+    this.renderControlDots = this.renderControlDots.bind(this);
     this.tick = this.tick.bind(this);
     this.timer = requestAnimationFrame(this.tick);
   }
@@ -123,11 +125,9 @@ class Slideshow extends Component {
     }
   }
 
-  renderLoading(isLoading) {
-    const styles = isLoading ? 'show' : 'hide';
-
+  renderLoading() {
     return (
-      <div className={`slideshow__loading ${styles}`}>
+      <div styleName="slideshow__loading">
         <Loader active inline="centered" />
       </div>
     );
@@ -139,7 +139,7 @@ class Slideshow extends Component {
     return _.map(slideshows, (item) => {
       return (
         <div
-          className="slideshow__item"
+          styleName="slideshow__item"
           title={item.title}
           key={item.id}
           onMouseEnter={this.onMouseEnterHandler}
@@ -168,7 +168,7 @@ class Slideshow extends Component {
 
       return (
         <div
-          className={`slideshow__dot ${activeClass}`}
+          styleName={`slideshow__dot ${activeClass}`}
           key={item.id}
           onClick={() => this.clickDotHandler(key)}
           onKeyPress={() => this.clickDotHandler(key)}
@@ -183,6 +183,7 @@ class Slideshow extends Component {
     const controlWidth = count * 20;
     const leftMargin = (window.innerWidth - controlWidth) / 2;
     const arrowPos = (window.innerWidth - 720) / 2;
+    const isLoading = _.isObject(slideshows) && !_.isArray(slideshows) && _.isEmpty(slideshows);
     const dotsStyles = {
       width: `${controlWidth}px`,
       left: `${leftMargin}px`,
@@ -196,29 +197,29 @@ class Slideshow extends Component {
 
     return (
       <div>
-        <div className="slideshow">
+        <div styleName="slideshow">
           <div
             ref={(ref) => { this._ref = ref; }}
-            className="slideshow__container"
+            styleName="slideshow__container"
           >
             { this.renderSlideshow() }
           </div>
-          <div className="slideshow__control" style={dotsStyles}>
+          <div styleName="slideshow__control" style={dotsStyles}>
             { this.renderControlDots() }
           </div>
           <div
-            className="slideshow__arrow-forward"
+            styleName="slideshow__arrow-forward"
             style={arrowRightStyle}
             onClick={this.clickForwardHandler}
             onKeyPress={this.clickForwardHandler}
           />
           <div
-            className="slideshow__arrow-backward"
+            styleName="slideshow__arrow-backward"
             style={arrowLeftStyle}
             onClick={this.clickBackwardHandler}
             onKeyPress={this.clickBackwardHandler}
           />
-          { this.renderLoading(_.isObject(slideshows) && !_.isArray(slideshows) && _.isEmpty(slideshows)) }
+          { isLoading && this.renderLoading() }
         </div>
       </div>
     );
@@ -227,14 +228,17 @@ class Slideshow extends Component {
 
 Slideshow.propTypes = {
   fetchSlidesData: PropTypes.func.isRequired,
-  // slideshows: PropTypes.object.isRequired,
+  slideshows: PropTypes.object,
   interval: PropTypes.number,
   pause: PropTypes.number,
+  auto: PropTypes.bool,
 };
 
 Slideshow.defaultProps = {
+  slideshows: {},
   interval: 1000,
   pause: 4000,
+  auto: true,
 };
 
 function mapStateToProps({ slideshows }) {

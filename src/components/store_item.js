@@ -7,43 +7,23 @@ import {
   Label,
   Divider,
 } from 'semantic-ui-react';
-import HOC from '../containers/hoc';
-import Comments from './comments';
+// import StoryEnhance from '../decorators/story_enhance';
+// import Comments from './comments';
+// import data from '../data/data';
+
+// const { feeds: { data: feedsData } } = data;
 
 const StoreItem = ({ store }) => {
-  const commentsData = {
-    storeId: store.id,
-    data: [
-      {
-        id: '123456789',
-        name: '吳艾月',
-        image: 'https://dummyimage.com/35x35/aaaaaa/fff',
-        time: '今天下午 5:42',
-        text: '超好吃！',
-      },
-      {
-        id: '234567890',
-        name: '方惠春',
-        image: 'https://dummyimage.com/35x35/7600bb/fff',
-        time: '昨天下午 12:30',
-        text: '很推薦！',
-      },
-      {
-        id: '345678901',
-        name: '林璇旭',
-        image: 'https://dummyimage.com/35x35/000/fff',
-        time: '五天以前',
-        text: '最佳選擇！',
-      },
-    ],
-  };
+  // const commentsData = {
+  //   storeId: store.id,
+  //   data: feedsData,
+  // };
 
-  const fetchComments = () => {
-    // fetch more comments...
-    return _.cloneDeep(commentsData.data);
-  };
+  // const fetchComments = () => {
+  //   return _.cloneDeep(commentsData.data);  // fetch more comments...
+  // };
 
-  const CommentList = HOC(Comments, commentsData, fetchComments);
+  // const CommentList = StoryEnhance(Comments, commentsData, fetchComments, false);
 
   return (
     <Item key={store.id}>

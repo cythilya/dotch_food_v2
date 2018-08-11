@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
 import { Grid, Segment  } from 'semantic-ui-react';
 import GATracking from '../decorators/ga';
+const alignRowStyles = {
+  display: 'flex',
+};
 
 const hintHandler = () => {
   console.log('callback done');
@@ -40,7 +43,7 @@ class Footer extends Component {
           <Grid.Column width={8}>
             <Segment>
               熱門標籤
-              <div className='align-row'>
+              <div style={alignRowStyles}>
                 <ul>
                   <li>日式料理</li>
                   <li>早午餐</li>
