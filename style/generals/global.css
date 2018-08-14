@@ -13,3 +13,10 @@
 :global .align-center {
   text-align: center;
 }
+
+:global .unordered-list-circle {
+  width: 100%;
+  margin-left: 10px;
+  list-style-type: disc;
+  list-style-position: inside;
+}

@@ -1,0 +1,44 @@
+@import '../variables/_variable.css';
+
+:local .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  background: $main;
+  padding: 5px 20px;
+}
+
+:local .header__nav {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+:local .header__logo {
+  display: block;
+  width: 40px;
+  height: 40px;
+  margin: 0 15px 0 0;
+}
+
+:local .header__title {
+  display: block;
+  font-size: 17px;
+  color: #fff;
+}
+
+:local .header__searchbox {
+  line-height: 13px;
+  :global .text {
+    top: 2px !important;
+    color: $font-contnet-color;
+    font-weight: normal !important;
+  }
+  :global .icon {
+    top: 10px !important;
+    color: $font-contnet-color;
+  }
+}
+
+

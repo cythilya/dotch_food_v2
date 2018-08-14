@@ -7,7 +7,7 @@ const TagList = ({ tags }) => {
   return (
     <div>
       熱門推薦
-      <ul>
+      <ul className="unordered-list-circle">
         {
           _.map(tags, (item, index) => {
             return (

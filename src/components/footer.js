@@ -10,7 +10,7 @@ const Footer = () => {
           <Segment>
             分類
             <div className="align-row">
-              <ul>
+              <ul className="unordered-list-circle">
                 <li>
                   <Link to="/tags/美式">
                     美式
@@ -37,7 +37,7 @@ const Footer = () => {
                   </Link>
                 </li>
               </ul>
-              <ul>
+              <ul className="unordered-list-circle">
                 <li>
                   <Link to="/tags/下午茶、點心、冰品">
                     下午茶、點心、冰品
@@ -71,7 +71,7 @@ const Footer = () => {
           <Segment>
             熱門主題
             <div className="align-row">
-              <ul>
+              <ul className="unordered-list-circle">
                 <li>
                   <Link to="/tags/一個人">
                     一個人要吃什麼好？
@@ -104,7 +104,7 @@ const Footer = () => {
         <Grid.Column width={4}>
           <Segment>
             關於「吃什麼，どっち」
-            <ul>
+            <ul className="unordered-list-circle">
               <li>
                 <Link to="https://cythilya.github.io/2015/02/02/dotchi/">
                   什麼是「吃什麼，どっち」？

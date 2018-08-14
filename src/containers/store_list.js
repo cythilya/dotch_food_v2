@@ -84,15 +84,18 @@ class StoreList extends Component {
     const isAutoPlay = process.env.NODE_ENV === 'production';
     const isNotFound = _.isArray(stores) && _.isEmpty(stores);
     const isLoading = _.isObject(stores) && !_.isArray(stores) && _.isEmpty(stores);
+    const gapStyle = {
+      margin: '15px 0',
+    };
 
     return (
       <div>
-        <Container>
-          <Header />
-        </Container>
+        <Header />
         { !keyword && <Slideshow interval={1000} pause={4000} auto={isAutoPlay} /> }
-        <Container>
+        <Container style={gapStyle}>
           <Newsticker news={news} />
+        </Container>
+        <Container>
           <Grid>
             <Grid.Column width={12}>
               <Item.Group divided>

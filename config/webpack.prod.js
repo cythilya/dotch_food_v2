@@ -40,7 +40,7 @@ module.exports = (env) => {
               loader: 'css-loader',
               options: {
                 minimize: true,
-                modules: true,
+                // modules: true,
                 importLoaders: 1,
                 localIdentName: '[path]___[name]__[local]___[hash:base64:5]',
               },
