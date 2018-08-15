@@ -1,0 +1,65 @@
+@import '../variables/_variable.css';
+
+:local .card {
+  position: relative;
+  width: calc((100% - 40px) / 4);
+  margin-bottom: 15px;
+  /* background: #fff9ed; */
+  border-radius: 5px;
+  box-shadow: 0 0px 2px rgba(0,0,0,0.2);
+}
+
+:local .card__container {
+  padding: 10px;
+}
+
+:local .card__title {
+  font-size: $heading-font-size;
+}
+
+:local .card__image {
+  display: block;
+  width: 100%;
+}
+
+:local .card__tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  max-height: 70px;
+  overflow: hidden;
+}
+
+:local .card__tag-item {
+  display: inline-block;
+  height: 25px;
+  margin: 5px 5px 5px 0;
+  padding: 3px;
+  word-break: keep-all;
+  background: #e8e8e8;
+  border-radius: 5px;
+
+  :global .card__tag-link {
+    color: #999;
+  }
+}
+
+:local .card__button-group {
+  display: flex;
+  justify-content: flex-start;
+  height: 32px;
+  margin: 10px 0 0 0;
+}
+
+:local .card__favorite {}
+
+@media $breakpoint-wide-tablets {
+  :local .card {
+    width: calc((100% - 20px) / 2);
+  }
+}
+
+@media $breakpoint-big-mobile {
+  :local .card {
+    width: calc(100% - 10px);
+  }
+}

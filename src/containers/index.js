@@ -2,12 +2,12 @@ import _ from 'lodash';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import { Loader } from 'semantic-ui-react';
 import Header from '../components/header';
 import Slideshow from './slideshow';
 import Newsticker from 'react-newsticker';
-import Notfound from '../components/not_found';
-import StoreItem from '../components/store_item';
+import Card from '../components/card';
 import TagList from '../components/tag_list';
 import Footer from '../components/footer';
 import data from '../data/data';
@@ -18,12 +18,12 @@ const {
   news,
 } = data;
 
-class StoreList extends Component {
+class Index extends Component {
   constructor(props) {
     super(props);
 
+    this.renderCards = this.renderCards.bind(this);
     this.renderLoading = this.renderLoading.bind(this);
-    this.renderNotFound = this.renderNotFound.bind(this);
   }
 
   componentDidMount() {
@@ -44,18 +44,14 @@ class StoreList extends Component {
     keyword ? fetchStoreListByTag(keyword) : fetchStoreList();
   }
 
-  renderStores() {
+  renderCards() {
     const { stores } = this.props;
 
     return _.map(stores, (store) => {
       return (
-        <StoreItem key={store.id} store={store} />
+        <Card key={store.id} store={store} />
       );
     });
-  }
-
-  renderNotFound(defaultHotTags) {
-    return (<Notfound tags={defaultHotTags.slice(0, 3)} />);
   }
 
   renderLoading() {
@@ -63,31 +59,50 @@ class StoreList extends Component {
   }
 
   render() {
-    const { stores, match } = this.props;
-    const { keyword } = match.params;
+    const { stores } = this.props;
     const isAutoPlay = process.env.NODE_ENV === 'production';
-    const isNotFound = _.isArray(stores) && _.isEmpty(stores);
-    const isLoading = _.isObject(stores) && !_.isArray(stores) && _.isEmpty(stores);
 
     return (
       <div>
         <Header />
-        { !keyword && <Slideshow interval={1000} pause={4000} auto={isAutoPlay} /> }
-        {
-          !isNotFound
-          && (
-          <div className="newsticker">
-            <Newsticker news={news} />
-          </div>
-          )
-        }
-        <div className="app-container">
+        <Slideshow interval={1000} pause={4000} auto={isAutoPlay} />
+        <div className="newsticker">
+          <Newsticker news={news} />
+        </div>
+        <div className="app-container app-container--reverse">
           <div className="app-main-content">
             <div className="panel">
-              { !isNotFound && <h1 className="panel__main-heading">{ keyword }</h1> }
-              { this.renderStores() }
-              { isNotFound && this.renderNotFound(defaultHotTags) }
-              { isLoading && this.renderLoading() }
+              <h1 className="panel__main-heading">
+                離我最近
+              </h1>
+              <Link to="/nearby" className="panel__view-more">
+                看更多
+              </Link>
+              <div className="card-list">
+                { this.renderCards() }
+              </div>
+            </div>
+            <div className="panel">
+              <h1 className="panel__main-heading">
+                猜你想吃
+              </h1>
+              <Link to="/recommend" className="panel__view-more">
+                看更多
+              </Link>
+              <div className="card-list">
+                { this.renderCards() }
+              </div>
+            </div>
+            <div className="panel">
+              <h1 className="panel__main-heading">
+                熱門推薦
+              </h1>
+              <Link to="/tags/熱門" className="panel__view-more">
+                看更多
+              </Link>
+              <div className="card-list">
+                { this.renderCards() }
+              </div>
             </div>
           </div>
           <div className="app-menu">
@@ -105,13 +120,13 @@ class StoreList extends Component {
   }
 }
 
-StoreList.propTypes = {
+Index.propTypes = {
   keyword: PropTypes.string,
   match: PropTypes.object.isRequired,
   stores: PropTypes.object,
 };
 
-StoreList.defaultProps = {
+Index.defaultProps = {
   keyword: null,
   stores: null,
 };
@@ -123,4 +138,4 @@ function mapStateToProps({ stores }, ownProps) {
   };
 }
 
-export default connect(mapStateToProps, { fetchStoreList, fetchStoreListByTag })(StoreList);
+export default connect(mapStateToProps, { fetchStoreList, fetchStoreListByTag })(Index);

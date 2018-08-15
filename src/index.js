@@ -5,6 +5,7 @@ import { createStore, applyMiddleware } from 'redux';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import promise from 'redux-promise';
 import reducers from './reducers';
+import Index from './containers/index';
 import StoreList from './containers/store_list';
 import '../style/index.css'; // global styles
 
@@ -18,7 +19,7 @@ ReactDOM.render(
         <Route path="/tags/:keyword" component={StoreList} />
         <Route path="/search/:keyword" component={StoreList} />
         <Route path="/stores" component={StoreList} />
-        <Route path="/" component={StoreList} />
+        <Route path="/" component={Index} />
       </Switch>
     </BrowserRouter>
   </Provider>,

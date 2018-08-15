@@ -1,0 +1,6 @@
+$breakpoint-small-mobile: screen and (max-width: 320px);
+$breakpoint-medium-mobile: screen and (max-width: 375px);
+$breakpoint-big-mobile: screen and (max-width: 568px);
+$breakpoint-tablet: screen and (max-width: 768px);
+$breakpoint-wide-tablets: screen and (max-width: 840px);
+$breakpoint-medium-desktop: screen and (max-width: 1080px);

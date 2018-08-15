@@ -1,3 +1,8 @@
+:global body {
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,'Helvetica Neue','Noto Sans','Noto Sans CJK TC',sans-serif;
+  line-height: 1.6;
+}
+
 :global .show {
   display: block;
 }
@@ -8,10 +13,19 @@
 
 :global .align-row {
   display: flex;
+  justify-content: space-evenly;
 }
 
 :global .align-center {
   text-align: center;
+}
+
+:global .mt-2x {
+  margin-top: 20px;
+}
+
+:global .mb-2x {
+  margin-bottom: 20px;
 }
 
 :global .unordered-list-circle {
@@ -19,4 +33,97 @@
   margin-left: 10px;
   list-style-type: disc;
   list-style-position: inside;
+}
+
+:global .panel {
+  position: relative;
+  margin: 15px 0;
+  padding: 15px;
+  border-bottom: 1px dashed $border-color;
+  border-radius: 5px;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+:global .panel__main-heading {
+  font-size: $heading-main-font-size;
+}
+
+:global .panel__view-more {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+:global .card-list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 10px 0;
+}
+
+:global .button {
+  display: block;
+  margin: 0 5px;
+  padding: 5px;
+  border-radius: 10px;
+  color: #fff;
+  transition: all .1s;
+  background-color: $main;
+  border-bottom: 3px solid #a74a2b;
+  text-align: center;
+  text-decoration: none;
+
+  &:hover, &:active {
+    color: #fff;
+    transform: translate(0px,5px);
+  }
+}
+
+:global .newsticker {
+  width: $containter-large-desktop-width;
+  margin: 15px auto;
+  padding: 0 15px;
+
+  li {
+    width: 98%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+}
+
+@media $breakpoint-medium-desktop {
+  :global .newsticker {
+    width: $containter-medium-desktop-width;
+  }
+}
+
+@media $breakpoint-wide-tablets {
+  :global .newsticker {
+    width: $containter-wide-tablets-width;
+  }
+}
+
+@media $breakpoint-tablet {
+  :global .newsticker {
+    width: $containter-tablet-width;
+  }
+
+  :global .app-menu {
+    :global .panel__main-heading {
+      font-size: $heading-font-size;
+    }
+  }
+}
+
+@media $breakpoint-big-mobile {
+  :global .card-list {
+    justify-content: center;
+  }
+  :global .unordered-list-circle {
+    font-size: 15px;
+  }
 }
