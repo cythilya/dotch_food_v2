@@ -81,11 +81,11 @@ const StoreItem = ({ store }) => {
           >
             電話訂位
           </a>
-          { store.sns.booking
+          { store.sns.onlineBooking
             && (
             <a
               title="線上訂位"
-              href={`${store.sns.booking}`}
+              href={`${store.sns.onlineBooking}`}
               className="button"
               target="_blank"
               rel="noopener noreferrer"

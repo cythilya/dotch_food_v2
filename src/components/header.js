@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Dropdown } from 'semantic-ui-react';
 import '../../style/components/header.css';
-import logo from '../../public/images/logo.svg';
 import data from '../data/data';
 
 const { hotTagsObj } = data;
@@ -15,10 +14,10 @@ const Header = () => {
           to="/"
           title="吃什麼，どっち"
         >
-          <img
+          <span
             styleName="header__logo"
-            src={logo}
-            alt="吃什麼，どっち"
+            className="logo"
+            title="吃什麼，どっち"
           />
         </Link>
         <Link

@@ -60,8 +60,7 @@
 :local .store-item__button-group {
   display: flex;
   justify-content: flex-start;
-  height: 32px;
-  margin: 10px 0 0 0;
+  margin: 10px 0 0 -5px;
 }
 
 @media $breakpoint-big-mobile {
