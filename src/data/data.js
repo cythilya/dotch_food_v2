@@ -179,7 +179,7 @@ const data = {
       },
       image: [
         {
-          url: 'https://bit.ly/2K9dZyC',
+          url: 'https://cythilya.github.io/assets/dotch-food-v2/yayoyi/yayoyi-1.png?123',
         },
       ],
       tags: [
