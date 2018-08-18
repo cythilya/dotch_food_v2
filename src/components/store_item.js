@@ -73,19 +73,24 @@ const StoreItem = ({ store }) => {
           }
         </div>
         <div styleName="store-item__button-group">
-          <a
-            href={`tel:${store.phone}`}
-            className="button"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            電話訂位
-          </a>
-          { store.sns.onlineBooking
+          { store.booking.phone
+            && (
+            <a
+              title="電話訂位"
+              href={`tel:${store.booking.phone}`}
+              className="button"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              電話訂位
+            </a>
+            )
+          }
+          { store.booking.online
             && (
             <a
               title="線上訂位"
-              href={`${store.sns.onlineBooking}`}
+              href={`${store.booking.online}`}
               className="button"
               target="_blank"
               rel="noopener noreferrer"

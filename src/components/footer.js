@@ -15,35 +15,35 @@ const Footer = () => {
         <div className="align-row">
           <ul className="unordered-list-circle">
             <li>
-              <Link to="/tags/美式">
+              <Link to="/tags/美式料理">
                 美式
               </Link>
             </li>
             <li>
-              <Link to="/tags/日式">
+              <Link to="/tags/日式料理">
                 日式
               </Link>
             </li>
             <li>
-              <Link to="/tags/韓式">
+              <Link to="/tags/韓式料理">
                 韓式
               </Link>
             </li>
             <li>
-              <Link to="/tags/港式">
+              <Link to="/tags/港式料理">
                 港式
               </Link>
             </li>
             <li>
-              <Link to="/tags/泰式">
+              <Link to="/tags/泰式料理">
                 泰式
               </Link>
             </li>
           </ul>
           <ul className="unordered-list-circle">
             <li>
-              <Link to="/tags/點心、冰品">
-                點心、冰品
+              <Link to="/tags/甜點">
+                甜點
               </Link>
             </li>
             <li>
@@ -57,7 +57,7 @@ const Footer = () => {
               </Link>
             </li>
             <li>
-              <Link to="/tags/咖啡、茶飲">
+              <Link to="/tags/飲品">
                 咖啡、茶飲
               </Link>
             </li>
@@ -100,6 +100,11 @@ const Footer = () => {
             </li>
             <li>
               <Link to="/tags/不限時">
+                不限時！和朋友歡聚暢聊不設限
+              </Link>
+            </li>
+            <li>
+              <Link to="/tags/工作">
                 最適合工作的咖啡廳清單
               </Link>
             </li>

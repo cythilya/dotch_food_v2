@@ -11,7 +11,11 @@ import Card from '../components/card';
 import TagList from '../components/tag_list';
 import Footer from '../components/footer';
 import data from '../data/data';
-import { fetchStoreList, fetchStoreListByTag } from '../actions';
+import {
+  fetchNearbyStoreList,
+  fetchRecommendStoreList,
+  fetchHotStoreList,
+} from '../actions';
 
 const {
   hotTags: defaultHotTags,
@@ -27,26 +31,22 @@ class Index extends Component {
   }
 
   componentDidMount() {
-    const { match: { params: { keyword } } } = this.props;
-    this.fetchStoresData(keyword);
+    this.fetchStoresData();
   }
 
-  componentDidUpdate(prevProps) {
-    const { keyword, match } = this.props;
+  fetchStoresData() {
+    const {
+      fetchNearbyStoreList,
+      fetchRecommendStoreList,
+      fetchHotStoreList,
+    } = this.props;
 
-    if (keyword !== prevProps.keyword) {
-      this.fetchStoresData(match.params.keyword);
-    }
+    fetchNearbyStoreList();
+    fetchRecommendStoreList();
+    fetchHotStoreList();
   }
 
-  fetchStoresData(keyword) {
-    const { fetchStoreListByTag, fetchStoreList } = this.props;
-    keyword ? fetchStoreListByTag(keyword) : fetchStoreList();
-  }
-
-  renderCards() {
-    const { stores } = this.props;
-
+  renderCards(stores) {
     return _.map(stores, (store) => {
       return (
         <Card key={store.id} store={store} />
@@ -59,7 +59,7 @@ class Index extends Component {
   }
 
   render() {
-    const { stores } = this.props;
+    const { nearbyStoresData, recommendStoresData, hotStoresData } = this.props;
     const isAutoPlay = process.env.NODE_ENV === 'production';
 
     return (
@@ -79,7 +79,7 @@ class Index extends Component {
                 看更多
               </Link>
               <div className="card-list">
-                { this.renderCards() }
+                { this.renderCards(nearbyStoresData) }
               </div>
             </div>
             <div className="panel">
@@ -90,7 +90,7 @@ class Index extends Component {
                 看更多
               </Link>
               <div className="card-list">
-                { this.renderCards() }
+                { this.renderCards(recommendStoresData) }
               </div>
             </div>
             <div className="panel">
@@ -101,7 +101,7 @@ class Index extends Component {
                 看更多
               </Link>
               <div className="card-list">
-                { this.renderCards() }
+                { this.renderCards(hotStoresData) }
               </div>
             </div>
           </div>
@@ -123,19 +123,30 @@ class Index extends Component {
 Index.propTypes = {
   keyword: PropTypes.string,
   match: PropTypes.object.isRequired,
-  stores: PropTypes.object,
+  nearbyStoresData: PropTypes.array,
+  recommendStoresData: PropTypes.array,
+  hotStoresData: PropTypes.array,
 };
 
 Index.defaultProps = {
   keyword: null,
-  stores: null,
+  nearbyStoresData: null,
+  recommendStoresData: null,
+  hotStoresData: null,
 };
 
-function mapStateToProps({ stores }, ownProps) {
+function mapStateToProps({ filteredStores }, ownProps) {
+  const { nearbyStoresData, recommendStoresData, hotStoresData } = filteredStores;
+
   return {
-    keyword: ownProps.match.params.keyword,
-    stores,
+    nearbyStoresData,
+    recommendStoresData,
+    hotStoresData,
   };
 }
 
-export default connect(mapStateToProps, { fetchStoreList, fetchStoreListByTag })(Index);
+export default connect(mapStateToProps, {
+  fetchNearbyStoreList,
+  fetchRecommendStoreList,
+  fetchHotStoreList,
+})(Index);

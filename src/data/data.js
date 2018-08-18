@@ -151,6 +151,10 @@ const data = {
       sns: {
         'website': 'https://www.google.com.tw/maps/search/%E5%8F%B0%E5%8C%97%E5%B8%82%E5%92%8C%E5%B9%B3%E6%9D%B1%E8%B7%AF%E4%BA%8C%E6%AE%B5175%E5%B7%B712%E8%99%9F'
       },
+      booking: {
+        phone: null,
+        online: null,
+      },
     },
     {
       id: 'dd6f8034-3116-406a-9765-08160f523f52',
@@ -169,6 +173,10 @@ const data = {
       phone: '02-27371073',
       sns: {
         'website': 'https://zh-tw.facebook.com/2014Grab.a.Bite/'
+      },
+      booking: {
+        phone: '02-27371073',
+        online: 'm.me/2014Grab.a.Bite',
       },
     },
     {
@@ -189,12 +197,22 @@ const data = {
       sns: {
         'website': 'http://www.yayoi.com.tw/?go=home'
       },
+      booking: {
+        phone: '02-25118696',
+        online: null,
+      },
     },
     {
       id: 'fd3fb81c-2507-45d4-95ec-b01df0f8784a',
       name: 'WE 里手工 pizza 日本料理 串燒',
+      description: 'WE 里手工 pizza 日本料理 串燒',
       location: {
         address: '台北市中山區中原街114號',
+        zip: '10491',
+        coordinates: {
+          Latitude: '25.0614293',
+          Longitude: '121.52883',
+        },
       },
       image: [
         {
@@ -209,6 +227,22 @@ const data = {
       sns: {
         'website': 'https://www.facebook.com/welibrother/',
         'facebook': 'https://www.facebook.com/welibrother/',
+        'onlineBooking': 'https://www.facebook.com/welibrother/',
+      },
+      hot: true,
+      nearby: false,
+      recommend: false,
+      openingHour: {
+        start: '12 PM',
+        end: '9 PM',
+      },
+      price: {
+        lowest: 300,
+        highest: 1000,
+      },
+      booking: {
+        phone: '02-25114127',
+        online: 'https://m.me/welibrother',
       },
     },
   ],
