@@ -47,8 +47,13 @@
   }
 }
 
-:global .panel__main-heading {
+.panel__main-heading {
+  display: flex;
+  align-items: center;
   font-size: $heading-main-font-size;
+  .panel__heading-deco {
+    margin: 0 0 0 5px;
+  }
 }
 
 :global .panel__view-more {
@@ -62,24 +67,6 @@
   justify-content: space-between;
   flex-wrap: wrap;
   padding: 10px 0;
-}
-
-:global .button {
-  display: block;
-  margin: 5px;
-  padding: 5px;
-  border-radius: 10px;
-  color: #fff;
-  transition: all .1s;
-  background-color: $main;
-  border-bottom: 3px solid #a74a2b;
-  text-align: center;
-  text-decoration: none;
-
-  &:hover, &:active {
-    color: #fff;
-    transform: translate(0px,5px);
-  }
 }
 
 :global .newsticker {
@@ -123,6 +110,7 @@
   :global .card-list {
     justify-content: center;
   }
+
   :global .unordered-list-circle {
     font-size: 15px;
   }

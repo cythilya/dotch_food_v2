@@ -3,8 +3,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import '../../style/components/store_item.css';
+import Icon from './icon';
+import StoreControlButtons from './store_control_buttons';
+import { icon as iconData } from '../data/locale_tw';
 
 const StoreItem = ({ store }) => {
+  const iconColor = '#aaa';
+
   return (
     <div
       key={store.id}
@@ -27,29 +32,73 @@ const StoreItem = ({ store }) => {
         <div styleName="store-item__description ">
           {store.description}
         </div>
-        <ul styleName="store-item__detail" className="unordered-list-circle">
-          <li>
-            地址：
-            {store.location.address}
+        <ul styleName="store-item__detail">
+          <li styleName="store-item__detail__item">
+            <Icon
+              name="pin-map"
+              title={iconData.address}
+              size="14"
+              fill={iconColor}
+              inContent
+            />
+            <a
+              title={iconData.navigation}
+              href={`https://www.google.com.tw/maps/search/${store.location.address}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {store.location.address}
+            </a>
           </li>
-          <li>
-            電話：
-            {store.phone}
+          <li styleName="store-item__detail__item">
+            <Icon
+              name="phone"
+              title={iconData.phone}
+              size="14"
+              fill={iconColor}
+              inContent
+            />
+            <a
+              title={iconData.phone}
+              href={`${store.phone}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {store.phone}
+            </a>
           </li>
-          <li>
-            營業時間：
+          <li styleName="store-item__detail__item">
+            <Icon
+              name="clock-circular-outline"
+              title={iconData.openingHour}
+              size="14"
+              fill={iconColor}
+              inContent
+            />
             {store.openingHour.start}
             ~
             {store.openingHour.end}
           </li>
-          <li>
-            價位：
+          <li styleName="store-item__detail__item">
+            <Icon
+              name="dollar"
+              title={iconData.price}
+              size="14"
+              fill={iconColor}
+              inContent
+            />
             {store.price.lowest}
             ~
             {store.price.highest}
           </li>
-          <li>
-            網站介紹：
+          <li styleName="store-item__detail__item">
+            <Icon
+              name="global"
+              title={iconData.website}
+              size="14"
+              fill={iconColor}
+              inContent
+            />
             <Link
               to={store.sns.website}
               title={store.name}
@@ -72,42 +121,7 @@ const StoreItem = ({ store }) => {
             })
           }
         </div>
-        <div styleName="store-item__button-group">
-          { store.booking.phone
-            && (
-            <a
-              title="電話訂位"
-              href={`tel:${store.booking.phone}`}
-              className="button"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              電話訂位
-            </a>
-            )
-          }
-          { store.booking.online
-            && (
-            <a
-              title="線上訂位"
-              href={`${store.booking.online}`}
-              className="button"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              線上訂位
-            </a>
-            )
-          }
-          <a
-            href={`https://www.google.com.tw/maps/search/${store.location.address}`}
-            className="button"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            導航
-          </a>
-        </div>
+        <StoreControlButtons store={store} />
       </div>
     </div>
   );

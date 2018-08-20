@@ -1,0 +1,24 @@
+.button {
+  display: block;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 10px;
+  color: #fff;
+  transition: all .1s;
+  background-color: $main;
+  border-bottom: 3px solid #a74a2b;
+  text-align: center;
+  text-decoration: none;
+  min-width: 55px;
+
+  &:hover, &:active {
+    color: #fff;
+    transform: translate(0px,5px);
+  }
+}
+
+.button-with-line-breaks-text {
+  display: block;
+  margin-top: 5px;
+  font-size: 10px;
+}

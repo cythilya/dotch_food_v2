@@ -71,6 +71,10 @@
     "webpack-node-externals": "^1.7.2"
   },
   "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-plumber": "^1.2.0",
+    "gulp-svg-sprite": "^1.4.0",
+    "gulp-svgo": "^1.5.4",
     "lost": "^8.3.0",
     "stylelint": "^9.4.0"
   },

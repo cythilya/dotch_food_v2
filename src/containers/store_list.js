@@ -3,9 +3,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Loader } from 'semantic-ui-react';
+import Newsticker from 'react-newsticker';
 import Header from '../components/header';
 import Slideshow from './slideshow';
-import Newsticker from 'react-newsticker';
 import Notfound from '../components/not_found';
 import StoreItem from '../components/store_item';
 import TagList from '../components/tag_list';
@@ -84,7 +84,15 @@ class StoreList extends Component {
         <div className="app-container">
           <div className="app-main-content">
             <div className="panel">
-              { !isNotFound && <h1 className="panel__main-heading">{ keyword }</h1> }
+              { !isNotFound
+                && (
+                  <h1 className="panel__main-heading">
+                    {
+                      keyword
+                    }
+                  </h1>
+                )
+              }
               { this.renderStores() }
               { isNotFound && this.renderNotFound(defaultHotTags) }
               { isLoading && this.renderLoading() }

@@ -10,6 +10,7 @@ import Newsticker from 'react-newsticker';
 import Card from '../components/card';
 import TagList from '../components/tag_list';
 import Footer from '../components/footer';
+import Icon from '../components/icon';
 import data from '../data/data';
 import {
   fetchNearbyStoreList,
@@ -74,6 +75,12 @@ class Index extends Component {
             <div className="panel">
               <h1 className="panel__main-heading">
                 離我最近
+                <Icon
+                  name="pin-map"
+                  fill="#767676"
+                  className="panel__heading-deco"
+                  size="24"
+                />
               </h1>
               <Link to="/nearby" className="panel__view-more">
                 看更多
@@ -96,6 +103,12 @@ class Index extends Component {
             <div className="panel">
               <h1 className="panel__main-heading">
                 熱門推薦
+                <Icon
+                  name="star"
+                  fill="#f2dc6d"
+                  className="panel__heading-deco"
+                  size="24"
+                />
               </h1>
               <Link to="/tags/熱門" className="panel__view-more">
                 看更多
@@ -121,15 +134,12 @@ class Index extends Component {
 }
 
 Index.propTypes = {
-  keyword: PropTypes.string,
-  match: PropTypes.object.isRequired,
   nearbyStoresData: PropTypes.array,
   recommendStoresData: PropTypes.array,
   hotStoresData: PropTypes.array,
 };
 
 Index.defaultProps = {
-  keyword: null,
   nearbyStoresData: null,
   recommendStoresData: null,
   hotStoresData: null,

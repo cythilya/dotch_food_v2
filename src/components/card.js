@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import '../../style/components/card.css';
+import StoreControlButtons from './store_control_buttons';
 
 const Card = ({ store }) => {
   return (
@@ -30,43 +31,7 @@ const Card = ({ store }) => {
             })
           }
         </div>
-        <div styleName="card__button-group">
-          { store.booking.phone
-            && (
-            <a
-              title="電話訂位"
-              href={`tel:${store.booking.phone}`}
-              className="button"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              電話訂位
-            </a>
-            )
-          }
-          { store.booking.online
-            && (
-            <a
-              title="線上訂位"
-              href={`${store.booking.online}`}
-              className="button"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              線上訂位
-            </a>
-            )
-          }
-          <a
-            title="導航"
-            href={`https://www.google.com.tw/maps/search/${store.location.address}`}
-            className="button"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            導航
-          </a>
-        </div>
+        <StoreControlButtons store={store} />
       </div>
     </div>
   );

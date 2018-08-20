@@ -17,6 +17,7 @@
 }
 
 :local .store-item__container {
+  width: 100%;
   padding: 0 15px 15px 15px;
 }
 
@@ -32,8 +33,17 @@
 
 :local .store-item__detail {
   margin: 0 0 10px 0;
+  padding: 10px;
   color: $font-contnet-color;
   line-height: 1.6;
+  background: #f7f7f7;
+}
+
+:local .store-item__detail__item {
+  margin-bottom: 10px;
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 :local .store-item__tag-list {
@@ -55,12 +65,6 @@
   :global .store-item__tag-link {
     color: #999;
   }
-}
-
-:local .store-item__button-group {
-  display: flex;
-  justify-content: flex-start;
-  margin: 10px 0 0 -5px;
 }
 
 @media $breakpoint-big-mobile {
