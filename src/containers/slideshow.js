@@ -133,7 +133,7 @@ class Slideshow extends Component {
     );
   }
 
-  renderSlideshow() {
+  renderSlideshow(isChrome) {
     const { slideshows } = this.props;
 
     return _.map(slideshows, (item) => {
@@ -149,10 +149,24 @@ class Slideshow extends Component {
             to={item.link}
             target="_blank"
           >
-            <img
-              alt={item.title}
-              src={item.image}
-            />
+            {
+              isChrome
+              && (
+              <img
+                alt={item.title}
+                src={item.imageWebp}
+              />
+              )
+            }
+            {
+              !isChrome
+              && (
+              <img
+                alt={item.title}
+                src={item.image}
+              />
+              )
+            }
           </Link>
         </div>
       );
@@ -184,6 +198,7 @@ class Slideshow extends Component {
     const leftMargin = (window.innerWidth - controlWidth) / 2;
     const arrowPos = (window.innerWidth - 720) / 2;
     const isLoading = _.isObject(slideshows) && !_.isArray(slideshows) && _.isEmpty(slideshows);
+    const isChrome = !!window.chrome && !!window.chrome.webstore;
     const dotsStyles = {
       width: `${controlWidth}px`,
       left: `${leftMargin}px`,
@@ -202,7 +217,7 @@ class Slideshow extends Component {
             ref={(ref) => { this._ref = ref; }}
             styleName="slideshow__container"
           >
-            { this.renderSlideshow() }
+            { this.renderSlideshow(isChrome) }
           </div>
           <div styleName="slideshow__control" style={dotsStyles}>
             { this.renderControlDots() }
