@@ -6,7 +6,7 @@ import { Loader } from 'semantic-ui-react';
 import Newsticker from 'react-newsticker';
 import Header from '../components/header';
 import Slideshow from './slideshow';
-import Notfound from '../components/not_found';
+import Notfound from './not_found';
 import StoreItem from '../components/store_item';
 import TagList from '../components/tag_list';
 import Footer from '../components/footer';

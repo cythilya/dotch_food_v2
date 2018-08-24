@@ -1,9 +1,9 @@
-import _ from 'lodash';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { Loader } from 'semantic-ui-react';
+import _ from 'lodash';
 import Header from '../components/header';
 import Slideshow from './slideshow';
 import Newsticker from 'react-newsticker';
@@ -145,7 +145,7 @@ Index.defaultProps = {
   hotStoresData: null,
 };
 
-function mapStateToProps({ filteredStores }, ownProps) {
+function mapStateToProps({ filteredStores }) {
   const { nearbyStoresData, recommendStoresData, hotStoresData } = filteredStores;
 
   return {
