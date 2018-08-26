@@ -13,6 +13,10 @@ a {
   text-decoration: none;
 }
 
+input, textarea, select, button {
+  font-size: 14px;
+}
+
 :global .show {
   display: block;
 }

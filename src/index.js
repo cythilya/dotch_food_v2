@@ -9,6 +9,11 @@ import Index from './containers/index';
 import StoreList from './containers/store_list';
 import '../style/index.css'; // global styles
 
+// if (process.env.NODE_ENV !== 'production') {
+//   const { whyDidYouUpdate } = require('why-did-you-update');
+//   whyDidYouUpdate(React);
+// }
+
 const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
 
 ReactDOM.render(

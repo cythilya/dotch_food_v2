@@ -131,7 +131,7 @@ class Slideshow extends Component {
       <Icon
         name="loading"
         className="loading"
-        size="40"
+        size={40}
       />
     );
   }
@@ -151,6 +151,7 @@ class Slideshow extends Component {
           <Link
             to={item.link}
             target="_blank"
+            title={item.title}
           >
             <LazyLoad offsetVertical="0">
               <figure>

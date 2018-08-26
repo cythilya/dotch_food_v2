@@ -63,7 +63,7 @@ class StoreList extends Component {
       <Icon
         name="loading"
         className="loading"
-        size="40"
+        size={40}
       />
     );
   }

@@ -15,54 +15,54 @@ const Footer = () => {
         <div className="align-row">
           <ul className="unordered-list-circle">
             <li>
-              <Link to="/tags/美式料理">
+              <Link to="/tags/美式料理" title="美式">
                 美式
               </Link>
             </li>
             <li>
-              <Link to="/tags/日式料理">
+              <Link to="/tags/日式料理" title="日式">
                 日式
               </Link>
             </li>
             <li>
-              <Link to="/tags/韓式料理">
+              <Link to="/tags/韓式料理" title="韓式">
                 韓式
               </Link>
             </li>
             <li>
-              <Link to="/tags/港式料理">
+              <Link to="/tags/港式料理" title="港式">
                 港式
               </Link>
             </li>
             <li>
-              <Link to="/tags/泰式料理">
+              <Link to="/tags/泰式料理" title="泰式">
                 泰式
               </Link>
             </li>
           </ul>
           <ul className="unordered-list-circle">
             <li>
-              <Link to="/tags/甜點">
+              <Link to="/tags/甜點" title="甜點">
                 甜點
               </Link>
             </li>
             <li>
-              <Link to="/tags/素食">
+              <Link to="/tags/素食" title="素食">
                 素食
               </Link>
             </li>
             <li>
-              <Link to="/tags/主題特色">
+              <Link to="/tags/主題特色" title="主題特色">
                 主題特色
               </Link>
             </li>
             <li>
-              <Link to="/tags/飲品">
+              <Link to="/tags/飲品" title="咖啡、茶飲">
                 咖啡、茶飲
               </Link>
             </li>
             <li>
-              <Link to="/tags/特別推薦">
+              <Link to="/tags/特別推薦" title="特別推薦">
                 特別推薦
               </Link>
             </li>
@@ -79,59 +79,59 @@ const Footer = () => {
         >
           <ul className="unordered-list-circle">
             <li>
-              <Link to="/tags/一個人">
+              <Link to="/tags/一個人" title="一個人要吃什麼好？">
                 一個人要吃什麼好？
               </Link>
             </li>
             <li>
-              <Link to="/tags/情人節大餐">
+              <Link to="/tags/情人節大餐" title="台北最適合約會的餐廳">
                 台北最適合約會的餐廳 (♡˙︶˙♡)
               </Link>
             </li>
             <li>
-              <Link to="/tags/瘦身">
+              <Link to="/tags/瘦身" title="怎麼吃才會瘦？秘訣在這裡">
                 怎麼吃才會瘦？秘訣在這裡
               </Link>
             </li>
             <li>
-              <Link to="/tags/親子餐廳">
+              <Link to="/tags/親子餐廳" title="寵物小孩一起大口吃！">
                 寵物小孩一起大口吃！
               </Link>
             </li>
             <li>
-              <Link to="/tags/不限時">
+              <Link to="/tags/不限時" title="不限時！和朋友歡聚暢聊不設限">
                 不限時！和朋友歡聚暢聊不設限
               </Link>
             </li>
             <li>
-              <Link to="/tags/工作">
+              <Link to="/tags/工作" title="最適合工作的咖啡廳清單">
                 最適合工作的咖啡廳清單
               </Link>
             </li>
           </ul>
           <ul className="unordered-list-circle">
             <li>
-              <Link to="/tags/寶可夢">
+              <Link to="/tags/寶可夢" title="寶可夢補給站！休息，充電和 Wifi">
                 寶可夢補給站！休息，充電和 Wifi
               </Link>
             </li>
             <li>
-              <Link to="/tags/會議室">
+              <Link to="/tags/會議室" title="想找個地方開會？會議室出租">
                 想找個地方開會？會議室出租
               </Link>
             </li>
             <li>
-              <Link to="/tags/會員卡">
+              <Link to="/tags/會員卡" title="超值會員卡大集合，辦了絕對不後悔">
                 超值會員卡大集合，辦了絕對不後悔
               </Link>
             </li>
             <li>
-              <Link to="/tags/漫畫">
+              <Link to="/tags/漫畫" title="無限漫畫看到飽">
                 無限漫畫看到飽
               </Link>
             </li>
             <li>
-              <Link to="/tags/足球">
+              <Link to="/tags/足球" title="一起看足球賽，超大電視螢幕、啤酒">
                 一起看足球賽，超大電視螢幕、啤酒
               </Link>
             </li>
@@ -149,7 +149,7 @@ const Footer = () => {
               href="https://cythilya.github.io/2015/02/02/dotchi/"
               target="_blank"
               rel="noopener noreferrer"
-              >
+            >
                 什麼是「吃什麼，どっち」？
             </a>
           </li>
@@ -159,7 +159,7 @@ const Footer = () => {
               href="https://cythilya.github.io/2015/02/02/dotchi/#disqus_thread"
               target="_blank"
               rel="noopener noreferrer"
-              >
+            >
               聯絡我們
             </a>
           </li>

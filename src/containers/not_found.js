@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import _ from 'lodash';
 import { Link } from 'react-router-dom';
 import Card from '../components/card';
-import Icon from '../components/icon';
 import { fetchRecommendStoreList } from '../actions';
 
 class Notfound extends Component {
@@ -40,15 +39,15 @@ class Notfound extends Component {
           回首頁
         </Link>
         或看熱門關鍵字
-        <Link to={`/tags/${tags[0]}`}>
+        <Link to={`/tags/${tags[0]}`} title={tags[0]}>
           {tags[0]}
         </Link>
         、
-        <Link to={`/tags/${tags[1]}`}>
+        <Link to={`/tags/${tags[1]}`} title={tags[1]}>
           {tags[1]}
         </Link>
         、
-        <Link to={`/tags/${tags[2]}`}>
+        <Link to={`/tags/${tags[2]}`} title={tags[2]}>
           {tags[2]}
         </Link>
         <hr />

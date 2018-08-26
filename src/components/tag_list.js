@@ -10,7 +10,10 @@ const TagList = ({ tags }) => {
         _.map(tags, (item, index) => {
           return (
             <li key={index}>
-              <Link to={`/tags/${item}`}>
+              <Link
+                to={`/tags/${item}`}
+                title={item}
+              >
                 {item}
               </Link>
             </li>

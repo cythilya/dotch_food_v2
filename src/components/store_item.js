@@ -53,7 +53,7 @@ const StoreItem = ({ store }) => {
             <Icon
               name="pin-map"
               title={iconData.address}
-              size="14"
+              size={14}
               fill={iconColor}
               inContent
             />
@@ -70,7 +70,7 @@ const StoreItem = ({ store }) => {
             <Icon
               name="phone"
               title={iconData.phone}
-              size="14"
+              size={14}
               fill={iconColor}
               inContent
             />
@@ -87,7 +87,7 @@ const StoreItem = ({ store }) => {
             <Icon
               name="clock-circular-outline"
               title={iconData.openingHour}
-              size="14"
+              size={14}
               fill={iconColor}
               inContent
             />
@@ -99,7 +99,7 @@ const StoreItem = ({ store }) => {
             <Icon
               name="dollar"
               title={iconData.price}
-              size="14"
+              size={14}
               fill={iconColor}
               inContent
             />
@@ -111,7 +111,7 @@ const StoreItem = ({ store }) => {
             <Icon
               name="global"
               title={iconData.website}
-              size="14"
+              size={14}
               fill={iconColor}
               inContent
             />
@@ -129,7 +129,11 @@ const StoreItem = ({ store }) => {
             store.tags.map((item) => {
               return (
                 <div key={item} styleName="store-item__tag-item">
-                  <Link className="store-item__tag-link" to={`/tags/${item}`}>
+                  <Link
+                    className="store-item__tag-link"
+                    to={`/tags/${item}`}
+                    title={item}
+                  >
                     {item}
                   </Link>
                 </div>

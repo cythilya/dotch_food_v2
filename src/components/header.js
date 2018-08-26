@@ -16,7 +16,7 @@ const Header = () => {
             name="logo"
             className="header__logo"
             title={common.title}
-            size="40"
+            size={40}
           />
         </Link>
         <Link
@@ -30,8 +30,10 @@ const Header = () => {
       </div>
       <div styleName="header__searchbox">
         <input
+          id="search-input"
           styleName="header__search-input"
           placeholder="有什麼好吃的？"
+          aria-label="有什麼好吃的？"
         />
       </div>
     </div>

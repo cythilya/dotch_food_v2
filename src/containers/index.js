@@ -74,10 +74,14 @@ class Index extends Component {
                   name="pin-map"
                   fill="#767676"
                   className="panel__heading-deco"
-                  size="24"
+                  size={24}
                 />
               </h1>
-              <Link to="/nearby" className="panel__view-more">
+              <Link
+                to="/nearby"
+                className="panel__view-more"
+                title="看更多-離我最近"
+              >
                 看更多
               </Link>
               <div className="card-list">
@@ -88,7 +92,11 @@ class Index extends Component {
               <h1 className="panel__main-heading">
                 猜你想吃
               </h1>
-              <Link to="/recommend" className="panel__view-more">
+              <Link
+                to="/recommend"
+                className="panel__view-more"
+                title="看更多-猜你想吃"
+              >
                 看更多
               </Link>
               <div className="card-list">
@@ -102,10 +110,14 @@ class Index extends Component {
                   name="star"
                   fill="#f2dc6d"
                   className="panel__heading-deco"
-                  size="24"
+                  size={24}
                 />
               </h1>
-              <Link to="/tags/熱門" className="panel__view-more">
+              <Link
+                to="/tags/熱門"
+                className="panel__view-more"
+                title="看更多-熱門推薦"
+              >
                 看更多
               </Link>
               <div className="card-list">

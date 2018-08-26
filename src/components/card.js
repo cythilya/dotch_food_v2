@@ -7,7 +7,10 @@ import StoreControlButtons from './store_control_buttons';
 
 const Card = ({ store }) => {
   return (
-    <div styleName="card">
+    <div
+      key={store.id}
+      styleName="card"
+    >
       <LazyLoad offsetVertical="100">
         <figure>
           <picture>
@@ -90,7 +93,10 @@ const Card = ({ store }) => {
       </LazyLoad>
       <div styleName="card__container">
         <h2 styleName="card__title">
-          <Link to={`/store/${store.id}`}>
+          <Link
+            to={`/store/${store.id}`}
+            title={store.name}
+          >
             {store.name}
           </Link>
         </h2>
@@ -99,7 +105,11 @@ const Card = ({ store }) => {
             store.tags.map((item) => {
               return (
                 <div key={item} styleName="card__tag-item">
-                  <Link className="card__tag-link" to={`/tags/${item}`}>
+                  <Link
+                    className="card__tag-link"
+                    to={`/tags/${item}`}
+                    title={item}
+                  >
                     {item}
                   </Link>
                 </div>
