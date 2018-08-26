@@ -2,7 +2,6 @@ import _ from 'lodash';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { Loader } from 'semantic-ui-react';
 import Newsticker from 'react-newsticker';
 import Header from '../components/header';
 import Slideshow from './slideshow';
@@ -10,6 +9,7 @@ import Notfound from './not_found';
 import StoreItem from '../components/store_item';
 import TagList from '../components/tag_list';
 import Footer from '../components/footer';
+import Icon from '../components/icon';
 import data from '../data/data';
 import { fetchStoreList, fetchStoreListByTag } from '../actions';
 
@@ -59,7 +59,13 @@ class StoreList extends Component {
   }
 
   renderLoading() {
-    return (<Loader active inline="centered" />);
+    return (
+      <Icon
+        name="loading"
+        className="loading"
+        size="40"
+      />
+    );
   }
 
   render() {

@@ -1,6 +1,16 @@
-:global body {
+body {
   font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,'Helvetica Neue','Noto Sans','Noto Sans CJK TC',sans-serif;
+  font-size: 14px;
   line-height: 1.6;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+a {
+  color: #4183c4;
+  text-decoration: none;
 }
 
 :global .show {
@@ -80,6 +90,12 @@
     text-overflow: ellipsis;
     overflow: hidden;
   }
+}
+
+:global .loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
 }
 
 @media $breakpoint-medium-desktop {

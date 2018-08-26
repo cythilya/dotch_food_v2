@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Button, Divider } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 
 const HOC = (WrappedComponent, state, fetchDataFn, isMore) => class extends Component {

@@ -1,6 +1,6 @@
 .button {
   display: block;
-  margin: 5px;
+  margin: 5px 3px;
   padding: 5px;
   border-radius: 10px;
   color: #fff;
@@ -9,7 +9,7 @@
   border-bottom: 3px solid #a74a2b;
   text-align: center;
   text-decoration: none;
-  min-width: 55px;
+  min-width: 50px;
 
   &:hover, &:active {
     color: #fff;

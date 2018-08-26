@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import { Loader } from 'semantic-ui-react';
 import _ from 'lodash';
 import Newsticker from 'react-newsticker';
 import Header from '../components/header';
@@ -29,7 +28,6 @@ class Index extends Component {
     super(props);
 
     this.renderCards = this.renderCards.bind(this);
-    this.renderLoading = this.renderLoading.bind(this);
   }
 
   componentDidMount() {
@@ -54,10 +52,6 @@ class Index extends Component {
         <Card key={store.id} store={store} />
       );
     });
-  }
-
-  renderLoading() {
-    return (<Loader active inline="centered" />);
   }
 
   render() {

@@ -3,9 +3,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import { Loader } from 'semantic-ui-react';
 import LazyLoad from 'react-lazy-load';
 import { fetchSlidesData } from '../actions';
+import Icon from '../components/icon';
 import '../../style/components/slideshow.css';
 
 const SLIDEHSOW_WIDTH = 720;
@@ -128,9 +128,11 @@ class Slideshow extends Component {
 
   renderLoading() {
     return (
-      <div styleName="slideshow__loading">
-        <Loader active inline="centered" />
-      </div>
+      <Icon
+        name="loading"
+        className="loading"
+        size="40"
+      />
     );
   }
 

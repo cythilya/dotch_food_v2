@@ -35,7 +35,6 @@
 
 :local .card__tag-item {
   display: inline-block;
-  height: 25px;
   margin: 5px 5px 5px 0;
   padding: 3px;
   word-break: keep-all;

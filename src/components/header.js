@@ -1,12 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Dropdown } from 'semantic-ui-react';
-import '../../style/components/header.css';
 import Icon from './icon';
-import data from '../data/data';
+import '../../style/components/header.css';
 import { common } from '../data/locale_tw';
-
-const { hotTagsObj } = data;
 
 const Header = () => {
   return (
@@ -33,14 +29,9 @@ const Header = () => {
         </Link>
       </div>
       <div styleName="header__searchbox">
-        <Dropdown
-          icon="search"
+        <input
+          styleName="header__search-input"
           placeholder="有什麼好吃的？"
-          inline
-          search
-          selection
-          options={hotTagsObj}
-          noResultsMessage="找不到！"
         />
       </div>
     </div>

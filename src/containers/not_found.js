@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
 import { Link } from 'react-router-dom';
-import { Loader } from 'semantic-ui-react';
 import Card from '../components/card';
+import Icon from '../components/icon';
 import { fetchRecommendStoreList } from '../actions';
 
 class Notfound extends Component {
@@ -12,7 +12,6 @@ class Notfound extends Component {
     super(props);
 
     this.renderCards = this.renderCards.bind(this);
-    this.renderLoading = this.renderLoading.bind(this);
   }
 
   componentDidMount() {
@@ -27,10 +26,6 @@ class Notfound extends Component {
         <Card key={store.id} store={store} />
       );
     });
-  }
-
-  renderLoading() {
-    return (<Loader active inline="centered" />);
   }
 
   render() {
