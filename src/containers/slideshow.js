@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { Loader } from 'semantic-ui-react';
+import LazyLoad from 'react-lazy-load';
 import { fetchSlidesData } from '../actions';
 import '../../style/components/slideshow.css';
 
@@ -133,7 +134,7 @@ class Slideshow extends Component {
     );
   }
 
-  renderSlideshow(isChrome) {
+  renderSlideshow() {
     const { slideshows } = this.props;
 
     return _.map(slideshows, (item) => {
@@ -149,24 +150,26 @@ class Slideshow extends Component {
             to={item.link}
             target="_blank"
           >
-            {
-              isChrome
-              && (
-              <img
-                alt={item.title}
-                src={item.imageWebp}
-              />
-              )
-            }
-            {
-              !isChrome
-              && (
-              <img
-                alt={item.title}
-                src={item.image}
-              />
-              )
-            }
+            <LazyLoad offsetVertical="0">
+              <figure>
+                <picture>
+                  <source
+                    media="all"
+                    srcSet={item.imageWebp}
+                    type="image/webp"
+                  />
+                  <source
+                    media="all"
+                    srcSet={item.image}
+                    type="image/jpeg"
+                  />
+                  <img src={item.image} alt={item.title} />
+                </picture>
+                <figcaption className="hide">
+                  {item.title}
+                </figcaption>
+              </figure>
+            </LazyLoad>
           </Link>
         </div>
       );

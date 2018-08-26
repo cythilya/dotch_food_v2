@@ -53,6 +53,7 @@
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
     "react-hot-loader": "^4.0.0",
+    "react-lazy-load": "^3.0.13",
     "react-newsticker": "^1.0.3",
     "react-redux": "5.0.4",
     "react-router": "^2.0.1",

@@ -4,14 +4,15 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { Loader } from 'semantic-ui-react';
 import _ from 'lodash';
+import Newsticker from 'react-newsticker';
 import Header from '../components/header';
 import Slideshow from './slideshow';
-import Newsticker from 'react-newsticker';
 import Card from '../components/card';
 import TagList from '../components/tag_list';
 import Footer from '../components/footer';
 import Icon from '../components/icon';
 import data from '../data/data';
+
 import {
   fetchNearbyStoreList,
   fetchRecommendStoreList,

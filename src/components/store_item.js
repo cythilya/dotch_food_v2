@@ -2,6 +2,7 @@ import _ from 'lodash';
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import LazyLoad from 'react-lazy-load';
 import '../../style/components/store_item.css';
 import Icon from './icon';
 import StoreControlButtons from './store_control_buttons';
@@ -15,24 +16,26 @@ const StoreItem = ({ store }) => {
       key={store.id}
       styleName="store-item"
     >
-      <figure>
-        <picture>
-          <source
-            media="all"
-            srcSet={`${store.image[5].url} 1x, ${store.image[6].url} 2x`}
-            type="image/webp"
-          />
-          <source
-            media="all"
-            srcSet={`${store.image[1].url} 1x, ${store.image[2].url} 2x`}
-            type="image/jpeg"
-          />
-          <img styleName="store-item__image" src={store.image[1].url} alt={store.name} />
-        </picture>
-        <figcaption className="hide">
-          {store.name}
-        </figcaption>
-      </figure>
+      <LazyLoad offsetVertical="100">
+        <figure>
+          <picture>
+            <source
+              media="all"
+              srcSet={`${store.image[5].url} 1x, ${store.image[6].url} 2x`}
+              type="image/webp"
+            />
+            <source
+              media="all"
+              srcSet={`${store.image[1].url} 1x, ${store.image[2].url} 2x`}
+              type="image/jpeg"
+            />
+            <img styleName="store-item__image" src={store.image[1].url} alt={store.name} />
+          </picture>
+          <figcaption className="hide">
+            {store.name}
+          </figcaption>
+        </figure>
+      </LazyLoad>
       <div styleName="store-item__container">
         <h2 styleName="store-item__title">
           <Link

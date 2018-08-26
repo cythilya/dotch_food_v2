@@ -4,6 +4,9 @@
   background: #ddd;
   will-change: transform;
   overflow: hidden;
+  :global figure {
+    margin: 0;
+  }
 }
 
 :local .slideshow__container {
