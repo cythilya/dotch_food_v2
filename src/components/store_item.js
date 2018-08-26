@@ -1,4 +1,3 @@
-import _ from 'lodash';
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
@@ -10,32 +9,39 @@ import { icon as iconData } from '../data/locale_tw';
 
 const StoreItem = ({ store }) => {
   const iconColor = '#aaa';
+  const boxStyle = {
+    background: '#e8e8e8',
+    width: '175px',
+    height: '175px',
+  };
 
   return (
     <div
       key={store.id}
       styleName="store-item"
     >
-      <LazyLoad offsetVertical="100">
-        <figure>
-          <picture>
-            <source
-              media="all"
-              srcSet={`${store.image[5].url} 1x, ${store.image[6].url} 2x`}
-              type="image/webp"
-            />
-            <source
-              media="all"
-              srcSet={`${store.image[1].url} 1x, ${store.image[2].url} 2x`}
-              type="image/jpeg"
-            />
-            <img styleName="store-item__image" src={store.image[1].url} alt={store.name} />
-          </picture>
-          <figcaption className="hide">
-            {store.name}
-          </figcaption>
-        </figure>
-      </LazyLoad>
+      <div styleName="store-item__image" style={boxStyle}>
+        <LazyLoad offsetVertical={100} height={175}>
+          <figure>
+            <picture>
+              <source
+                media="all"
+                srcSet={`${store.image[5].url} 1x, ${store.image[6].url} 2x`}
+                type="image/webp"
+              />
+              <source
+                media="all"
+                srcSet={`${store.image[1].url} 1x, ${store.image[2].url} 2x`}
+                type="image/jpeg"
+              />
+              <img src={store.image[1].url} alt={store.name} />
+            </picture>
+            <figcaption className="hide">
+              {store.name}
+            </figcaption>
+          </figure>
+        </LazyLoad>
+      </div>
       <div styleName="store-item__container">
         <h2 styleName="store-item__title">
           <Link

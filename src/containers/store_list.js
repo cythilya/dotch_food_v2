@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Newsticker from 'react-newsticker';
 import Header from '../components/header';
-import Slideshow from './slideshow';
 import Notfound from './not_found';
 import StoreItem from '../components/store_item';
 import TagList from '../components/tag_list';
@@ -71,14 +70,12 @@ class StoreList extends Component {
   render() {
     const { stores, match } = this.props;
     const { keyword } = match.params;
-    const isAutoPlay = process.env.NODE_ENV === 'production';
     const isNotFound = _.isArray(stores) && _.isEmpty(stores);
     const isLoading = _.isObject(stores) && !_.isArray(stores) && _.isEmpty(stores);
 
     return (
       <div>
         <Header />
-        { !keyword && <Slideshow interval={1000} pause={4000} auto={isAutoPlay} /> }
         {
           !isNotFound
           && (
@@ -92,7 +89,7 @@ class StoreList extends Component {
             <div className="panel">
               { !isNotFound
                 && (
-                  <h1 className="panel__main-heading">
+                  <h1 className="panel__main-heading mb-2x">
                     {
                       keyword
                     }

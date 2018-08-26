@@ -31,8 +31,10 @@
 :local .header__searchbox {}
 
 :local .header__search-input {
-  padding: 5px;
+  padding: 8px 6px;
   border-radius: 3px;
+  border-style: none;
+  outline: none;
 }
 
 @media $breakpoint-big-mobile{

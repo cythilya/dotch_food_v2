@@ -56,6 +56,10 @@ input, textarea, select, button {
   border-bottom: 1px dashed $border-color;
   border-radius: 5px;
 
+  &:first-child {
+    margin-top: 0;
+  }
+
   &:last-child {
     border-bottom: none;
   }
@@ -85,7 +89,7 @@ input, textarea, select, button {
 
 :global .newsticker {
   width: $containter-large-desktop-width;
-  margin: 15px auto;
+  margin: 15px auto 0 auto;
   padding: 0 15px;
 
   li {

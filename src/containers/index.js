@@ -6,7 +6,7 @@ import _ from 'lodash';
 import Newsticker from 'react-newsticker';
 import Header from '../components/header';
 import Slideshow from './slideshow';
-import Card from '../components/card';
+import Card from './card';
 import TagList from '../components/tag_list';
 import Footer from '../components/footer';
 import Icon from '../components/icon';
@@ -27,11 +27,31 @@ class Index extends Component {
   constructor(props) {
     super(props);
 
+    this.state = {
+      width: 0,
+    };
+
+    this.index = React.createRef();
     this.renderCards = this.renderCards.bind(this);
   }
 
   componentDidMount() {
+    const rect = this.index.getBoundingClientRect();
+    this.setState({
+      width: rect.width,
+    });
     this.fetchStoresData();
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    const { width: prevWidth } = prevState;
+    const rect = this.index.getBoundingClientRect();
+
+    if (prevWidth !== rect.width) {
+      this.setState({
+        width: rect.width,
+      });
+    }
   }
 
   fetchStoresData() {
@@ -57,11 +77,13 @@ class Index extends Component {
   render() {
     const { nearbyStoresData, recommendStoresData, hotStoresData } = this.props;
     const isAutoPlay = process.env.NODE_ENV === 'production';
+    const { width } = this.state;
+    const isDisplaySlideshow = width >= 1080;
 
     return (
-      <div>
+      <div ref={(ref) => { this.index = ref; }}>
         <Header />
-        <Slideshow interval={1000} pause={4000} auto={isAutoPlay} />
+        {isDisplaySlideshow && <Slideshow interval={1000} pause={4000} auto={isAutoPlay} /> }
         <div className="newsticker">
           <Newsticker news={news} />
         </div>

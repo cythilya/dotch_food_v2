@@ -17,7 +17,7 @@
 }
 
 :local .store-item__container {
-  width: 100%;
+  width: calc(100% - 175px - 30px);
   padding: 0 15px 15px 15px;
 }
 
@@ -49,7 +49,6 @@
 :local .store-item__tag-list {
   display: flex;
   flex-wrap: wrap;
-  max-height: 70px;
   overflow: hidden;
 }
 

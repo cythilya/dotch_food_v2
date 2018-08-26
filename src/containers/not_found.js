@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
 import { Link } from 'react-router-dom';
-import Card from '../components/card';
+import Card from './card';
 import { fetchRecommendStoreList } from '../actions';
 
 class Notfound extends Component {
@@ -19,10 +19,9 @@ class Notfound extends Component {
 
   renderCards() {
     const { recommendStoresData: stores } = this.props;
-
     return _.map(stores, (store) => {
       return (
-        <Card key={store.id} store={store} />
+        <Card key={store.id} store={store} ref={this.card} />
       );
     });
   }
