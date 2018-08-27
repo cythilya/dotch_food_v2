@@ -19,7 +19,7 @@ import {
 } from '../actions';
 
 const {
-  hotTags: defaultHotTags,
+  hotCategory: hotCategories,
   news,
 } = data;
 
@@ -149,10 +149,10 @@ class Index extends Component {
           </div>
           <div className="app-menu">
             <div className="panel">
-              <h1 className="panel__main-heading">
+              <h1 className="panel__main-heading mb-1x">
                 熱門主題
               </h1>
-              <TagList tags={defaultHotTags} />
+              <TagList tags={hotCategories} />
             </div>
           </div>
         </div>

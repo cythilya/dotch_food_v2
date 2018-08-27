@@ -13,7 +13,8 @@ import data from '../data/data';
 import { fetchStoreList, fetchStoreListByTag } from '../actions';
 
 const {
-  hotTags: defaultHotTags,
+  hotCategory: hotCategories,
+  hotTags,
   news,
 } = data;
 
@@ -97,16 +98,16 @@ class StoreList extends Component {
                 )
               }
               { this.renderStores() }
-              { isNotFound && this.renderNotFound(defaultHotTags) }
+              { isNotFound && this.renderNotFound(hotTags) }
               { isLoading && this.renderLoading() }
             </div>
           </div>
           <div className="app-menu">
             <div className="panel">
-              <h1 className="panel__main-heading">
+              <h1 className="panel__main-heading mb-1x">
                 熱門主題
               </h1>
-              <TagList tags={defaultHotTags} />
+              <TagList tags={hotCategories} />
             </div>
           </div>
         </div>

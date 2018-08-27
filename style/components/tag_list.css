@@ -1,0 +1,32 @@
+@import '../variables/_variable.css';
+
+:local .tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 5px;
+  background: #eee;
+}
+
+:local .tag-list__item {
+  box-sizing: border-box;
+  margin: 5px 0;
+  padding: 5px;
+  background: #e3e3e3;
+  border-radius: 5px;
+}
+
+:local .tag-list__item__title {
+  display: block;
+  text-align: center;
+}
+
+:local .tag-list__item__link {
+  display: block;
+  font-size: 10px;
+  color: $font-contnet-color;
+}
+
+:local .tag-list__item__icon {
+  display: block;
+}

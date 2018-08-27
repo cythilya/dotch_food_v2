@@ -38,6 +38,10 @@ input, textarea, select, button {
   margin-top: 20px;
 }
 
+.mb-1x {
+  margin-bottom: 10px;
+}
+
 :global .mb-2x {
   margin-bottom: 20px;
 }
