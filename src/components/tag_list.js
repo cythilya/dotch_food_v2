@@ -7,18 +7,18 @@ import '../../style/components/tag_list.css';
 
 const TagList = ({ tags }) => {
   return (
-    <div styleName="tag-list">
+    <div className="tag-list">
       {
         _.map(tags, (item) => {
           return (
             <div
               key={item.id}
-              styleName="tag-list__item"
+              className="tag-list__item"
             >
               <Link
                 to={`/tags/${item.tag}`}
                 title={item.title}
-                styleName="tag-list__item__link"
+                className="tag-list__item__link"
               >
                 <Icon
                   name={item.className}
@@ -27,7 +27,7 @@ const TagList = ({ tags }) => {
                   fill=""
                 />
                 <span
-                  styleName="tag-list__item__title"
+                  className="tag-list__item__title"
                 >
                   {item.title}
                 </span>

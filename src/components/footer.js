@@ -1,6 +1,11 @@
+import _ from 'lodash';
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Icon from './icon';
 import '../../style/components/footer.css';
+import data from '../data/data';
+
+const { categories } = data;
 
 const Footer = () => {
   return (
@@ -8,68 +13,42 @@ const Footer = () => {
       className="app-container"
       styleName="footer"
     >
-      <div styleName="footer__column">
+      <div styleName="footer__column footer__column-2x">
         <h2 styleName="footer__heading">
           分類
         </h2>
-        <div className="align-row">
-          <ul className="unordered-list-circle">
-            <li>
-              <Link to="/tags/美式料理" title="美式">
-                美式
-              </Link>
-            </li>
-            <li>
-              <Link to="/tags/日式料理" title="日式">
-                日式
-              </Link>
-            </li>
-            <li>
-              <Link to="/tags/韓式料理" title="韓式">
-                韓式
-              </Link>
-            </li>
-            <li>
-              <Link to="/tags/港式料理" title="港式">
-                港式
-              </Link>
-            </li>
-            <li>
-              <Link to="/tags/泰式料理" title="泰式">
-                泰式
-              </Link>
-            </li>
-          </ul>
-          <ul className="unordered-list-circle">
-            <li>
-              <Link to="/tags/甜點" title="甜點">
-                甜點
-              </Link>
-            </li>
-            <li>
-              <Link to="/tags/素食" title="素食">
-                素食
-              </Link>
-            </li>
-            <li>
-              <Link to="/tags/主題特色" title="主題特色">
-                主題特色
-              </Link>
-            </li>
-            <li>
-              <Link to="/tags/飲品" title="咖啡、茶飲">
-                咖啡、茶飲
-              </Link>
-            </li>
-            <li>
-              <Link to="/tags/特別推薦" title="特別推薦">
-                特別推薦
-              </Link>
-            </li>
-          </ul>
+        <div className="tag-list">
+          {
+            _.map(categories, (item) => {
+              return (
+                <div
+                  key={item.id}
+                  className="tag-list__item"
+                >
+                  <Link
+                    to={`/tags/${item.tag}`}
+                    title={item.title}
+                    className="tag-list__item__link"
+                  >
+                    <Icon
+                      name={item.className}
+                      title={item.title}
+                      size={50}
+                      fill=""
+                    />
+                    <span
+                      className="tag-list__item__title"
+                    >
+                      {item.title}
+                    </span>
+                  </Link>
+                </div>
+              );
+            })
+          }
         </div>
       </div>
-      <div styleName="footer__column footer__column-2x">
+      <div styleName="footer__column">
         <h2 styleName="footer__heading">
           熱門討論
         </h2>
@@ -108,8 +87,6 @@ const Footer = () => {
                 最適合工作的咖啡廳清單
               </Link>
             </li>
-          </ul>
-          <ul className="unordered-list-circle">
             <li>
               <Link to="/tags/寶可夢" title="寶可夢補給站！休息，充電和 Wifi">
                 寶可夢補給站！休息，充電和 Wifi

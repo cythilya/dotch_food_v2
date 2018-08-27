@@ -1,4 +1,5 @@
 @import '../variables/_variable.css';
+@import 'tag_list.css';
 
 :local .footer {
   padding: 15px 15px 60px 15px;
