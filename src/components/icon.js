@@ -11,8 +11,8 @@ const Icon = ({
   inContent,
 }) => {
   const style = {
-    'marginRight': '10px',
-    'verticalAlign': 'middle',
+    marginRight: '10px',
+    verticalAlign: 'middle',
   };
 
   return (

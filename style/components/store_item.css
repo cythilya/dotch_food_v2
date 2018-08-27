@@ -46,6 +46,13 @@
   }
 }
 
+:local .store-item__detail__item__icon {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin-right: 10px;
+}
+
 :local .store-item__tag-list {
   display: flex;
   flex-wrap: wrap;

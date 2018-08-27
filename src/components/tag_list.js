@@ -2,7 +2,7 @@ import _ from 'lodash';
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import Icon from './icon';
+// import Icon from './icon';
 import '../../style/components/tag_list.css';
 
 const TagList = ({ tags }) => {
@@ -20,12 +20,16 @@ const TagList = ({ tags }) => {
                 title={item.title}
                 className="tag-list__item__link"
               >
-                <Icon
+                <span
+                  title={item.title}
+                  className={`tag-list__item__icon icon-${item.className}`}
+                />
+                {/* <Icon
                   name={item.className}
                   title={item.title}
                   size={50}
                   fill=""
-                />
+                /> */}
                 <span
                   className="tag-list__item__title"
                 >

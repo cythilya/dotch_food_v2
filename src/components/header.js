@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Icon from './icon';
+// import Icon from './icon';
 import '../../style/components/header.css';
 import { common } from '../data/locale_tw';
 
@@ -12,12 +12,16 @@ const Header = () => {
           to="/"
           title={common.title}
         >
-          <Icon
+          <i
+            styleName="header__logo header__logo__image"
+            className="icon-logo"
+          />
+          {/* <Icon
             name="logo"
             className="header__logo"
             title={common.title}
             size={40}
-          />
+          /> */}
         </Link>
         <Link
           to="/"

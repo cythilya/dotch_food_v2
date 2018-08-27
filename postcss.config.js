@@ -10,5 +10,6 @@ module.exports = {
       ],
     },
     lost: {},
+    'postcss-extend-rule': {},
   },
 };

@@ -19,6 +19,7 @@ const StoreControlButtons = ({ store }) => {
           <Icon
             name="phone"
             title={iconData.phoneBooking}
+            size="24"
           />
           <span className="button-with-line-breaks-text">
             {iconData.phoneBooking}
@@ -38,6 +39,7 @@ const StoreControlButtons = ({ store }) => {
           <Icon
             name="online-booking"
             title={iconData.onlineBooking}
+            size="24"
           />
           <span className="button-with-line-breaks-text">
             {iconData.onlineBooking}
@@ -55,6 +57,7 @@ const StoreControlButtons = ({ store }) => {
         <Icon
           name="pin-on-map"
           title={iconData.navigation}
+          size="24"
         />
         <span className="button-with-line-breaks-text short-word">
           {iconData.navigation}

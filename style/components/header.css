@@ -17,9 +17,16 @@
   margin-right: 5px;
 }
 
-:global .header__logo {
+:local .header__logo {
   display: block;
   margin: 0 15px 0 0;
+}
+
+/* base64 */
+:local .header__logo__image {
+  display: block;
+  width: 40px;
+  height: 40px;
 }
 
 :local .header__title {

@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import LazyLoad from 'react-lazy-load';
 import '../../style/components/store_item.css';
-import Icon from './icon';
+// import Icon from './icon';
 import StoreControlButtons from './store_control_buttons';
 import { icon as iconData } from '../data/locale_tw';
 
 const StoreItem = ({ store }) => {
-  const iconColor = '#aaa';
+  // const iconColor = '#aaa';
   const boxStyle = {
     background: '#e8e8e8',
     width: '175px',
@@ -56,13 +56,18 @@ const StoreItem = ({ store }) => {
         </div>
         <ul styleName="store-item__detail">
           <li styleName="store-item__detail__item">
-            <Icon
+            <i
+              className="icon-pin-map"
+              styleName="store-item__detail__item__icon"
+              title={iconData.address}
+            />
+            {/* <Icon
               name="pin-map"
               title={iconData.address}
               size={14}
               fill={iconColor}
               inContent
-            />
+            /> */}
             <a
               title={iconData.navigation}
               href={`https://www.google.com.tw/maps/search/${store.location.address}`}
@@ -73,13 +78,18 @@ const StoreItem = ({ store }) => {
             </a>
           </li>
           <li styleName="store-item__detail__item">
-            <Icon
+            <i
+              className="icon-phone"
+              styleName="store-item__detail__item__icon"
+              title={iconData.phone}
+            />
+            {/* <Icon
               name="phone"
               title={iconData.phone}
               size={14}
               fill={iconColor}
               inContent
-            />
+            /> */}
             <a
               title={iconData.phone}
               href={`${store.phone}`}
@@ -90,37 +100,52 @@ const StoreItem = ({ store }) => {
             </a>
           </li>
           <li styleName="store-item__detail__item">
-            <Icon
+            <i
+              className="icon-clock-circular-outline"
+              styleName="store-item__detail__item__icon"
+              title={iconData.openingHour}
+            />
+            {/* <Icon
               name="clock-circular-outline"
               title={iconData.openingHour}
               size={14}
               fill={iconColor}
               inContent
-            />
+            /> */}
             {store.openingHour.start}
             ~
             {store.openingHour.end}
           </li>
           <li styleName="store-item__detail__item">
-            <Icon
+            <i
+              className="icon-dollar"
+              styleName="store-item__detail__item__icon"
+              title={iconData.price}
+            />
+            {/* <Icon
               name="dollar"
               title={iconData.price}
               size={14}
               fill={iconColor}
               inContent
-            />
+            /> */}
             {store.price.lowest}
             ~
             {store.price.highest}
           </li>
           <li styleName="store-item__detail__item">
-            <Icon
+            <i
+              className="icon-global"
+              styleName="store-item__detail__item__icon"
+              title={iconData.website}
+            />
+            {/* <Icon
               name="global"
               title={iconData.website}
               size={14}
               fill={iconColor}
               inContent
-            />
+            /> */}
             <Link
               to={store.sns.website}
               title={store.name}

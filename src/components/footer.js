@@ -30,12 +30,16 @@ const Footer = () => {
                     title={item.title}
                     className="tag-list__item__link"
                   >
-                    <Icon
+                    <i
+                      title={item.title}
+                      className={`tag-list__item__icon icon-${item.className}`}
+                    />
+                    {/* <Icon
                       name={item.className}
                       title={item.title}
                       size={50}
                       fill=""
-                    />
+                    /> */}
                     <span
                       className="tag-list__item__title"
                     >
