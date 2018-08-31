@@ -89,4 +89,8 @@
   .store-item__container {
     width: 100%;
   }
+
+  .store-item__tag-item {
+    padding: 5px;
+  }
 }

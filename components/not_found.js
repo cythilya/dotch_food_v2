@@ -23,7 +23,7 @@ class Notfound extends Component {
 
   render() {
     const { tags } = this.props;
-    const { recommendStoresData } = this.props.filteredStores;
+    const { filteredStores: { recommendStoresData } } = this.props;
 
     return (
       <div>
@@ -31,19 +31,27 @@ class Notfound extends Component {
           找不到！
         </h1>
         <Link href="/">
-          <a title="回「吃什麼」首頁">回首頁</a>
+          <a title="回「吃什麼」首頁">
+            回首頁
+          </a>
         </Link>
         或看熱門關鍵字
-        <Link href={`/tags/${tags[0]}`}>
-          <a title={tags[0]}>{tags[0]}</a>
+        <Link href={`/tag?keyword=${tags[0]}`}>
+          <a title={tags[0]}>
+            {tags[0]}
+          </a>
         </Link>
         、
-        <Link href={`/tags/${tags[1]}`}>
-          <a title={tags[1]}>{tags[1]}</a>
+        <Link href={`/tag?keyword=${tags[1]}`}>
+          <a title={tags[1]}>
+            {tags[1]}
+          </a>
         </Link>
         、
-        <Link href={`/tags/${tags[2]}`}>
-          <a title={tags[2]}>{tags[2]}</a>
+        <Link href={`/tag?keyword=${tags[2]}`}>
+          <a title={tags[2]}>
+            { tags[2] }
+          </a>
         </Link>
         <hr />
         <div className="mt-2x">
@@ -62,11 +70,11 @@ class Notfound extends Component {
 
 Notfound.propTypes = {
   tags: PropTypes.array.isRequired,
-  recommendStoresData: PropTypes.array,
+  filteredStores: PropTypes.object,
 };
 
 Notfound.defaultProps = {
-  recommendStoresData: null,
+  filteredStores: null,
 };
 
 export default connect(state => state)(Notfound);

@@ -51,4 +51,12 @@
   .card {
     width: calc(100% - 10px);
   }
+
+  .card__tag-list {
+    max-height: 84px;
+  }
+
+  .card__tag-item {
+    padding: 5px;
+  }
 }
