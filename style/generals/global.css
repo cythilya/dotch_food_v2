@@ -17,24 +17,24 @@ input, textarea, select, button {
   font-size: 14px;
 }
 
-:global .show {
+.show {
   display: block;
 }
 
-:global .hide {
+.hide {
   display: none;
 }
 
-:global .align-row {
+.align-row {
   display: flex;
   justify-content: space-evenly;
 }
 
-:global .align-center {
+.align-center {
   text-align: center;
 }
 
-:global .mt-2x {
+.mt-2x {
   margin-top: 20px;
 }
 
@@ -42,18 +42,18 @@ input, textarea, select, button {
   margin-bottom: 10px;
 }
 
-:global .mb-2x {
+.mb-2x {
   margin-bottom: 20px;
 }
 
-:global .unordered-list-circle {
+.unordered-list-circle {
   width: 100%;
   margin-left: 10px;
   list-style-type: disc;
   list-style-position: inside;
 }
 
-:global .panel {
+.panel {
   position: relative;
   margin: 15px 0;
   padding: 15px;
@@ -74,24 +74,27 @@ input, textarea, select, button {
   align-items: center;
   font-size: $heading-main-font-size;
   .panel__heading-deco {
+    width: 24px;
+    height: 24px;
     margin: 0 0 0 5px;
+    fill: #767676;
   }
 }
 
-:global .panel__view-more {
+.panel__view-more {
   position: absolute;
   top: 15px;
   right: 15px;
 }
 
-:global .card-list {
+.card-list {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   padding: 10px 0;
 }
 
-:global .newsticker {
+.newsticker {
   width: $containter-large-desktop-width;
   margin: 15px auto 0 auto;
   padding: 0 15px;
@@ -104,42 +107,42 @@ input, textarea, select, button {
   }
 }
 
-:global .loading {
+.loading {
   position: absolute;
   top: 50%;
   left: 50%;
 }
 
 @media $breakpoint-medium-desktop {
-  :global .newsticker {
+  .newsticker {
     width: $containter-medium-desktop-width;
   }
 }
 
 @media $breakpoint-wide-tablets {
-  :global .newsticker {
+  newsticker {
     width: $containter-wide-tablets-width;
   }
 }
 
 @media $breakpoint-tablet {
-  :global .newsticker {
+  .newsticker {
     width: $containter-tablet-width;
   }
 
-  :global .app-menu {
-    :global .panel__main-heading {
+  .app-menu {
+    .panel__main-heading {
       font-size: $heading-font-size;
     }
   }
 }
 
 @media $breakpoint-big-mobile {
-  :global .card-list {
+  .card-list {
     justify-content: center;
   }
 
-  :global .unordered-list-circle {
+  .unordered-list-circle {
     font-size: 15px;
   }
 }

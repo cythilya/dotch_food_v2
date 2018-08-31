@@ -19,6 +19,18 @@
 
 .button-with-line-breaks-text {
   display: block;
-  margin-top: 5px;
   font-size: 10px;
+}
+
+@media $breakpoint-big-mobile {
+  .button {
+    flex-grow: 1;
+    padding: 10px;
+  }
+  .button-with-line-breaks-text {
+    font-size: 14px;
+  }
+  .short-word {
+    padding: 0 14px;
+  }
 }

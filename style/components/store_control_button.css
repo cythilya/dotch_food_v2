@@ -1,0 +1,14 @@
+@import '../variables/_variable.css';
+
+.store-control-buttons {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin: 10px 0 0 -5px;
+}
+
+.store-control-buttons__icon {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+}

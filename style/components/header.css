@@ -1,6 +1,6 @@
 @import '../variables/_variable.css';
 
-:local .header {
+.header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -9,7 +9,7 @@
   padding: 5px 20px;
 }
 
-:local .header__nav {
+.header__nav {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -17,27 +17,20 @@
   margin-right: 5px;
 }
 
-:local .header__logo {
+.header__logo {
   display: block;
   margin: 0 15px 0 0;
-}
-
-/* base64 */
-:local .header__logo__image {
-  display: block;
   width: 40px;
   height: 40px;
 }
 
-:local .header__title {
+.header__title {
   display: block;
   font-size: 17px;
   color: #fff;
 }
 
-:local .header__searchbox {}
-
-:local .header__search-input {
+.header__search-input {
   padding: 8px 6px;
   border-radius: 3px;
   border-style: none;
@@ -45,7 +38,7 @@
 }
 
 @media $breakpoint-big-mobile{
-  :local .header__nav {
+  .header__nav {
     justify-content: center;
   }
 }

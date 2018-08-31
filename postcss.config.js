@@ -9,7 +9,8 @@ module.exports = {
         'Explorer >= 11',
       ],
     },
-    lost: {},
+    // lost: {},
     'postcss-extend-rule': {},
+    'postcss-css-variables': {},
   },
 };
