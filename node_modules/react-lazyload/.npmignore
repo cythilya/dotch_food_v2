@@ -1,6 +1,0 @@
-examples/
-.babelrc
-.eslintrc
-webpack.config.js
-src/
-test/
