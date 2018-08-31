@@ -18,6 +18,7 @@ const {
 
 function Page(props) {
   const { id } = props;
+  const reverse = id === 'index' ? 'app-container--reverse' : '';
 
   return (
     <div>
@@ -29,7 +30,7 @@ function Page(props) {
         <div className="newsticker">
           <Newsticker news={news} />
         </div>
-        <div className="app-container">
+        <div className={`app-container ${reverse}`}>
           <div className="app-main-content">
             { props.children }
           </div>

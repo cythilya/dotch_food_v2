@@ -573,75 +573,76 @@ var hotCategories = __WEBPACK_IMPORTED_MODULE_7__data_data__["a" /* default */].
 
 function Page(props) {
   var id = props.id;
+  var reverse = id === 'index' ? 'app-container--reverse' : '';
   return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 23
-    }
-  }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 24
     }
-  }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__header__["a" /* default */], {
+  }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 25
+    }
+  }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__header__["a" /* default */], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 26
     }
   }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
     className: "newsticker",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 29
+      lineNumber: 30
     }
   }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4_react_newsticker___default.a, {
     news: news,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30
+      lineNumber: 31
     }
   })), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
-    className: "app-container",
+    className: "app-container ".concat(reverse),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32
+      lineNumber: 33
     }
   }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
     className: "app-main-content",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 33
+      lineNumber: 34
     }
   }, props.children), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
     className: "app-menu",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36
+      lineNumber: 37
     }
   }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
     className: "panel",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37
+      lineNumber: 38
     }
   }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("h1", {
     className: "panel__main-heading mb-1x",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38
+      lineNumber: 39
     }
   }, "\u71B1\u9580\u4E3B\u984C"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6__tag_list__["a" /* default */], {
     tags: hotCategories,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41
+      lineNumber: 42
     }
   })))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__footer__["a" /* default */], {
     categories: categories,
     topics: hotTopics,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45
+      lineNumber: 46
     }
   })));
 }
