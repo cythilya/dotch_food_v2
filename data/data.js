@@ -318,8 +318,8 @@ const data = {
     {
       id: '25',
       className: 'food-truck',
-      title: '餐車',
-      tag: '餐車',
+      title: '小販餐車',
+      tag: '小販餐車',
     },
     {
       id: '26',
@@ -347,6 +347,48 @@ const data = {
       className: 'man-in-a-party-dancing-with-people',
       title: '多人',
       tag: '多人',
+
+    },
+    {
+      id: '30',
+      className: 'garage',
+      title: '停車位',
+      tag: '停車位',
+
+    },
+    {
+      id: '31',
+      className: 'pokecoin',
+      title: '寶可夢',
+      tag: '寶可夢',
+
+    },
+    {
+      id: '32',
+      className: 'train',
+      title: '捷運沿線',
+      tag: '捷運沿線',
+
+    },
+    {
+      id: '33',
+      className: 'superheroe-black',
+      title: '漫畫',
+      tag: '漫畫',
+
+    },
+    {
+      id: '34',
+      className: 'social-media',
+      title: '拍照打卡',
+      tag: '網紅',
+
+    },
+    {
+      id: '35',
+      className: 'sofa',
+      title: '沙發',
+      tag: '沙發',
 
     },
     {
