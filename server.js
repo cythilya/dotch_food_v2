@@ -2,6 +2,7 @@ const express = require('express');
 const next = require('next');
 const { parse } = require('url');
 const { join } = require('path');
+const compression = require('compression');
 
 const port = parseInt(process.env.PORT, 10) || 3000;
 const dev = process.env.NODE_ENV !== 'production';
@@ -17,6 +18,7 @@ const rootStaticFiles = [
 app.prepare()
   .then(() => {
     const server = express();
+    server.use(compression());
 
     server.get('/tag/:name', (req, res) => {
       const actualPage = '/tag';
