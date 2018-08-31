@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://dotch-food.herokuapp.com/sitemap.xml

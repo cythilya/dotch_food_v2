@@ -1,57 +1,57 @@
-:global .app-container {
+.app-container {
   display: flex;
   width: 1170px;
   margin: 0 auto;
 }
 
-:global .app-main-content {
+.app-main-content {
   width: 80%;
 }
 
-:global .app-menu {
+.app-menu {
   width: 20%;
 }
 
 @media $breakpoint-medium-desktop {
-  :global .app-container {
+  .app-container {
     width: 970px;
   }
 }
 
 @media $breakpoint-wide-tablets {
-  :global .app-container {
+  .app-container {
     width: 750px;
   }
 
-  :global .app-main-content {
+  .app-main-content {
     width: 75%;
   }
 
-  :global .app-menu {
+  .app-menu {
     width: 25%;
   }
 }
 
 @media $breakpoint-tablet {
-  :global .app-container {
+  .app-container {
     width: auto;
   }
 }
 
 @media $breakpoint-big-mobile {
-  :global .app-container {
+  .app-container {
     flex-wrap: wrap;
   }
 
-  :global .app-container--reverse {
+  .app-container--reverse {
     flex-wrap: wrap-reverse;
   }
 
-  :global .app-main-content {
+  .app-main-content {
     width: 100%;
   }
 
-  :global .app-menu {
+  .app-menu {
     width: 100%;
   }
 }
