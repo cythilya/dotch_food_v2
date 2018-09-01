@@ -7,6 +7,7 @@ import {
   FETCH_SLIDES_DATA,
   SAVE_STORE_DATA,
 } from '../constants';
+const uuidv1 = require('uuid/v1');
 
 const firebase = require('firebase');
 require('firebase/firestore');
@@ -62,11 +63,80 @@ export function fetchSlidesData() {
 }
 
 export function saveStoreData(formData) {
-  // managing form data here...
-  const data = JSON.stringify(formData);
-  console.log(`actions: ${data}`);
+  const data = {
+    id: uuidv1(),
+    name: formData.name,
+    description: formData.description || null,
+    image: [
+      // original
+      {
+        url: 'https://res.cloudinary.com/dfgridmvn/image/upload/v1535796583/kitty-outline-512.png',
+      },
+      // 177 jpg
+      {
+        url: 'https://res.cloudinary.com/dfgridmvn/image/upload/c_scale,w_177/v1535796583/kitty-outline-512.jpg',
+      },
+      // 354 jpg
+      {
+        url: 'https://res.cloudinary.com/dfgridmvn/image/upload/c_scale,w_354/v1535796583/kitty-outline-512.jpg',
+      },
+      // 531 jpg
+      {
+        url: 'https://res.cloudinary.com/dfgridmvn/image/upload/c_scale,w_531/v1535796583/kitty-outline-512.jpg',
+      },
+      // 708 jpg
+      {
+        url: 'https://res.cloudinary.com/dfgridmvn/image/upload/c_scale,w_708/v1535796583/kitty-outline-512.jpg',
+      },
+      // 177 webp
+      {
+        url: 'https://res.cloudinary.com/dfgridmvn/image/upload/c_scale,w_177/v1535796583/kitty-outline-512.webp',
+      },
+      // 354 webp
+      {
+        url: 'https://res.cloudinary.com/dfgridmvn/image/upload/c_scale,w_354/v1535796583/kitty-outline-512.webp',
+      },
+      // 531 webp
+      {
+        url: 'https://res.cloudinary.com/dfgridmvn/image/upload/c_scale,w_531/v1535796583/kitty-outline-512.webp',
+      },
+      // 708 webp
+      {
+        url: 'https://res.cloudinary.com/dfgridmvn/image/upload/c_scale,w_708/v1535796583/kitty-outline-512.webp',
+      },
+    ],
+    phone: formData.phone || null,
+    location: {
+      address: formData.address || null,
+      zip: null,
+      coordinates: null,
+    },
+    openingHour: {
+      start: '0 AM',
+      end: '0 PM',
+    },
+    price: {
+      lowest: 0,
+      highest: 999999,
+    },
+    booking: {
+      online: formData.bookingOnline || null,
+      phone: formData.bookingPhone || null,
+    },
+    sns: {
+      facebook: formData.facebook || null,
+      website: formData.website || null,
+    },
+    hot: false,
+    nearby: false,
+    recommend: false,
+    tags: {
+      '測試': true,
+    },
+  };
+
   return {
     type: SAVE_STORE_DATA,
-    payload: firebase.firestore().collection('text').add(formData),
+    payload: firebase.firestore().collection('stores').add(data),
   };
 }

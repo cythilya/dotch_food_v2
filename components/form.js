@@ -10,15 +10,120 @@ const SimpleForm = (props) => {
   return (
     <form onSubmit={handleSubmit}>
       <div>
-        <label>First Name</label>
+        <label>
+          店家名稱
+        </label>
         <div>
-          <Field name="firstName" component="input" type="text" placeholder="First Name"/>
+          <Field
+            type="text"
+            component="input"
+            name="name"
+            placeholder="店家名稱"
+          />
         </div>
       </div>
       <div>
-        <label>Last Name</label>
+        <label>
+          描述
+        </label>
         <div>
-          <Field name="lastName" component="input" type="text" placeholder="Last Name"/>
+          <Field
+            type="text"
+            component="input"
+            name="description"
+            placeholder="描述"
+          />
+        </div>
+      </div>
+      <div>
+        <label>
+          電話
+        </label>
+        <div>
+          <Field
+            type="text"
+            component="input"
+            name="phone"
+            placeholder="電話"
+          />
+        </div>
+      </div>
+      <div>
+        <label>
+          地址
+        </label>
+        <div>
+          <Field
+            type="text"
+            component="input"
+            name="address"
+            placeholder="地址"
+          />
+        </div>
+      </div>
+      <div>
+        <label>
+          預約電話
+        </label>
+        <div>
+          <Field
+            type="text"
+            component="input"
+            name="bookingPhone"
+            placeholder="預約電話"
+          />
+        </div>
+      </div>
+      <div>
+        <label>
+          預約網址
+        </label>
+        <div>
+          <Field
+            type="text"
+            component="input"
+            name="bookingOnline"
+            placeholder="預約網址"
+          />
+        </div>
+      </div>
+      <div>
+        <label>
+          網站
+        </label>
+        <div>
+          <Field
+            type="text"
+            component="input"
+            name="website"
+            placeholder="網站"
+          />
+        </div>
+      </div>
+      <div>
+        <label>
+          Facebook
+        </label>
+        <div>
+          <Field
+            type="text"
+            component="input"
+            name="facebook"
+            placeholder="Facebook"
+          />
+        </div>
+      </div>
+      <div>
+        <label>
+          標籤
+        </label>
+        <div>
+          <Field
+            type="text"
+            component="input"
+            name="tags"
+            placeholder="標籤"
+          />
         </div>
       </div>
       <div>
