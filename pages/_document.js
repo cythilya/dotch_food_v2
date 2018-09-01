@@ -10,7 +10,7 @@ export default class MyDocument extends Document {
           <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
           <link rel="preconnect" href="https://res.cloudinary.com" />
           <link rel="preconnect" href="https://firestore.googleapis.com" />
-          <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+          <link rel="icon" type="image/x-icon" href="/static/favicon.ico" />
           <link rel="stylesheet" href="/_next/static/style.css" />
         </Head>
         <body>
