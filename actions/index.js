@@ -5,6 +5,7 @@ import {
   FETCH_RECOMMEND_STORE_LIST,
   FETCH_HOT_STORE_LIST,
   FETCH_SLIDES_DATA,
+  SAVE_STORE_DATA,
 } from '../constants';
 
 const firebase = require('firebase');
@@ -57,5 +58,15 @@ export function fetchSlidesData() {
   return {
     type: FETCH_SLIDES_DATA,
     payload: firebase.firestore().collection('slideshows').orderBy('id').get(),
+  };
+}
+
+export function saveStoreData(formData) {
+  // managing form data here...
+  const data = JSON.stringify(formData);
+  console.log(`actions: ${data}`);
+  return {
+    type: SAVE_STORE_DATA,
+    payload: firebase.firestore().collection('stores').add(formData),
   };
 }

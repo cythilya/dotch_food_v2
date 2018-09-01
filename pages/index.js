@@ -6,6 +6,8 @@ import Link from 'next/link';
 import NoSSR from 'react-no-ssr';
 import Page from '../components/page';
 import Card from '../components/card';
+import SimpleForm from '../components/form';
+
 import {
   fetchNearbyStoreList,
   fetchRecommendStoreList,
@@ -18,6 +20,10 @@ const renderCards = (stores) => {
       <Card key={store.id} store={store} />
     );
   });
+};
+
+const subimt = (values) => {
+  console.log(values);
 };
 
 class Index extends Component {
@@ -34,6 +40,7 @@ class Index extends Component {
 
     return (
       <Page title="首頁" id="index">
+        <SimpleForm onSubmit={subimt} />
         <div className="panel">
           <h1 className="panel__main-heading">
             離我最近
