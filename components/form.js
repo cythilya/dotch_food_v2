@@ -22,8 +22,8 @@ const SimpleForm = (props) => {
         </div>
       </div>
       <div>
-        <button type="submit">Submit</button>
         <button type="button" disabled={pristine || submitting} onClick={reset}>Clear Values</button>
+        <button type="submit">Submit</button>
       </div>
     </form>
   )

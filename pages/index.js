@@ -12,6 +12,7 @@ import {
   fetchNearbyStoreList,
   fetchRecommendStoreList,
   fetchHotStoreList,
+  saveStoreData,
 } from '../actions/index';
 
 const renderCards = (stores) => {
@@ -22,11 +23,14 @@ const renderCards = (stores) => {
   });
 };
 
-const subimt = (values) => {
-  console.log(values);
-};
-
 class Index extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {};
+    this.subimt = this.subimt.bind(this);
+  }
+
   componentDidMount() {
     const { dispatch } = this.props;
 
@@ -35,12 +39,17 @@ class Index extends Component {
     dispatch(fetchHotStoreList());
   }
 
+  subimt(values) {
+    const { dispatch } = this.props;
+    dispatch(saveStoreData(values));
+  }
+
   render() {
     const { nearbyStoresData, recommendStoresData, hotStoresData } = this.props.filteredStores;
 
     return (
       <Page title="首頁" id="index">
-        <SimpleForm onSubmit={subimt} />
+        <SimpleForm onSubmit={this.subimt} />
         <div className="panel">
           <h1 className="panel__main-heading">
             離我最近

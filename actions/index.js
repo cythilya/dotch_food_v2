@@ -67,6 +67,6 @@ export function saveStoreData(formData) {
   console.log(`actions: ${data}`);
   return {
     type: SAVE_STORE_DATA,
-    payload: firebase.firestore().collection('stores').add(formData),
+    payload: firebase.firestore().collection('text').add(formData),
   };
 }
