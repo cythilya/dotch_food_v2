@@ -5,7 +5,7 @@
   border-radius: 10px;
   color: #fff;
   transition: all .1s;
-  background-color: $main;
+  background: $main;
   border-bottom: 3px solid #a74a2b;
   text-align: center;
   text-decoration: none;
@@ -15,6 +15,12 @@
     color: #fff;
     transform: translate(0px,5px);
   }
+}
+
+.button--default {
+  @extend .button;
+  background: #ccc;
+  border-bottom: 3px solid #aaa;
 }
 
 .button-with-line-breaks-text {
