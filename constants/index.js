@@ -8,11 +8,4 @@ export const FETCH_HOT_STORE_LIST = 'FETCH_HOT_STORE_LIST'; // 熱門推薦
 export const FETCH_SLIDES_DATA = 'FETCH_SLIDES_DATA';
 export const FETCH_SLIDES_DATA_SUCCESS = 'FETCH_SLIDES_DATA_SUCCESS';
 
-export const FAILURE = 'FAILURE';
-export const INCREMENT = 'INCREMENT';
-export const DECREMENT = 'DECREMENT';
-export const RESET = 'RESET';
-export const LOAD_DATA = 'LOAD_DATA';
-export const LOAD_DATA_SUCCESS = 'LOAD_DATA_SUCCESS';
-export const START_CLOCK = 'START_CLOCK';
-export const TICK_CLOCK = 'TICK_CLOCK';
+export const SAVE_STORE_DATA = 'SAVE_STORE_DATA';

@@ -6,6 +6,7 @@ import Link from 'next/link';
 import NoSSR from 'react-no-ssr';
 import Page from '../components/page';
 import Card from '../components/card';
+
 import {
   fetchNearbyStoreList,
   fetchRecommendStoreList,

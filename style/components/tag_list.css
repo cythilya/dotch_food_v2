@@ -24,7 +24,7 @@
 .tag-list__item__link {
   display: block;
   font-size: 10px;
-  color: $font-contnet-color;
+  color: $font-content-color;
 }
 
 .tag-list__item__icon {

@@ -28,7 +28,9 @@
     "react-no-ssr": "^1.1.0",
     "react-redux": "5.0.7",
     "redux": "4.0.0",
+    "redux-form": "^7.4.2",
     "redux-promise": "^0.6.0",
+    "uuid": "^3.3.2",
     "zlib": "^1.0.5"
   },
   "devDependencies": {

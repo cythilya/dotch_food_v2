@@ -28,13 +28,13 @@
 
 .store-item__description {
   margin: 0 0 10px 0;
-  color: $font-contnet-color;
+  color: $font-content-color;
 }
 
 .store-item__detail {
   margin: 0 0 10px 0;
   padding: 10px;
-  color: $font-contnet-color;
+  color: $font-content-color;
   line-height: 1.6;
   background: #f7f7f7;
 }

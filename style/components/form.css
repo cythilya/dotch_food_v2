@@ -1,0 +1,61 @@
+@import '../variables/_variable.css';
+
+.form {
+  padding: 20px;
+  background: #fff;
+}
+
+.form-store-info {
+  border: 1px solid $border-color;
+  border-radius: 5px;
+}
+
+.form__main-heading {
+  font-size: $heading-main-font-size;
+}
+
+.form__block {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.form__group {
+  width: 100%;
+  margin: 7px 0;
+  display: flex;
+}
+
+.form__field {
+  display: block;
+  width: calc(100% - 120px);
+}
+
+.form__label {
+  display: block;
+  width: 120px;
+  margin: 5px 15px 0 0;
+  color: $font-hint-color;
+  text-align: right;
+}
+
+.form__input-text {
+  box-sizing: border-box;
+  width: 100%;
+  height: 35px;
+  padding: 5px;
+  color: $font-content-color;
+  border-radius: 5px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #eee;
+}
+
+.form__hint {
+  color: $font-content-color;
+}
+
+.form__button-group {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 15px;
+}
