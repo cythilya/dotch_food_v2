@@ -128,6 +128,12 @@ const data = {
       tag: '簡餐',
     },
     {
+      id: '72815cd4-768a-4e6f-a520-a8fb002d04c2',
+      className: 'salad-bowl',
+      title: '輕食',
+      tag: '輕食',
+    },
+    {
       id: '11ee2741-7a51-4907-93a4-e38a85bcbad6',
       className: 'toast',
       title: '烘焙糕點',
@@ -163,12 +169,12 @@ const data = {
       title: '咖啡茶飲',
       tag: '飲品',
     },
-    {
-      id: '97c2e5f3-4397-4d47-b80f-88e62521c7f6',
-      className: 'dinner-table',
-      title: '其他',
-      tag: '其他',
-    },
+    // {
+    //   id: '97c2e5f3-4397-4d47-b80f-88e62521c7f6',
+    //   className: 'dinner-table',
+    //   title: '其他',
+    //   tag: '其他',
+    // },
   ],
   hotCategories: [
     {
@@ -193,7 +199,7 @@ const data = {
       id: '4',
       className: 'burger',
       title: '漢堡',
-      tag: '美式料理',
+      tag: '漢堡',
     },
     {
       id: '5',
@@ -289,7 +295,7 @@ const data = {
       id: '20',
       className: 'spaguetti',
       title: '義大利麵',
-      tag: '義式料理',
+      tag: '義大利麵',
     },
     {
       id: '21',
@@ -302,18 +308,6 @@ const data = {
       className: 'doll',
       title: '主題特色',
       tag: '主題特色',
-    },
-    {
-      id: '23',
-      className: 'coupon',
-      title: '優惠',
-      tag: '優惠',
-    },
-    {
-      id: '24',
-      className: 'sprout',
-      title: '季節限定',
-      tag: '季節限定',
     },
     {
       id: '25',
@@ -343,13 +337,6 @@ const data = {
 
     },
     {
-      id: '29',
-      className: 'man-in-a-party-dancing-with-people',
-      title: '多人',
-      tag: '多人',
-
-    },
-    {
       id: '30',
       className: 'garage',
       title: '停車位',
@@ -373,8 +360,8 @@ const data = {
     {
       id: '33',
       className: 'superheroe-black',
-      title: '漫畫',
-      tag: '漫畫',
+      title: '漫畫雜誌',
+      tag: '漫畫雜誌',
 
     },
     {
@@ -448,11 +435,6 @@ const data = {
       link: '/tag?keyword=工作',
     },
     {
-      id: '0ed42a1a-e55b-47c8-a939-ba81d381eaf4',
-      title: '想找個地方開會？會議室出租',
-      link: '/tag?keyword=會議室',
-    },
-    {
       id: 'e73418b4-b0f7-43bb-8381-355f2269900e',
       title: '寶可夢補給站！休息，充電和 Wifi',
       link: '/tag?keyword=寶可夢',
@@ -465,7 +447,7 @@ const data = {
     {
       id: '0b664a52-fb2c-42e2-8e73-13e592ef6091',
       title: '無限漫畫看到飽',
-      link: '/tag?keyword=漫畫',
+      link: '/tag?keyword=漫畫雜誌',
     },
     {
       id: 'd91b94a8-7ff7-4377-b49b-1d9db14b51b4',
