@@ -2,7 +2,7 @@ import _ from 'lodash';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import Page from '../components/page';
+import PageFull from '../components/page_full';
 import StoreDataForm from '../components/form';
 
 import {
@@ -24,11 +24,11 @@ class New extends Component {
 
   render() {
     return (
-      <Page title="新增店家" id="new">
+      <PageFull title="新增店家" id="new">
         <div className="panel">
           <StoreDataForm onSubmit={this.subimt} />
         </div>
-      </Page>
+      </PageFull>
     );
   }
 }

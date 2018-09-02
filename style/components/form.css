@@ -21,21 +21,27 @@
 
 .form__group {
   width: 100%;
-  margin: 10px 0;
+  margin: 7px 0;
+  display: flex;
 }
 
-.form__field {}
+.form__field {
+  display: block;
+  width: calc(100% - 120px);
+}
 
 .form__label {
   display: block;
-  margin-bottom: 3px;
+  width: 120px;
+  margin: 5px 15px 0 0;
   color: $font-hint-color;
+  text-align: right;
 }
 
 .form__input-text {
   box-sizing: border-box;
   width: 100%;
-  height: 40px;
+  height: 35px;
   padding: 5px;
   color: $font-content-color;
   border-radius: 5px;

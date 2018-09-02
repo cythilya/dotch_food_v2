@@ -10,6 +10,7 @@
   text-align: center;
   text-decoration: none;
   min-width: 50px;
+  cursor: pointer;
 
   &:hover, &:active {
     color: #fff;

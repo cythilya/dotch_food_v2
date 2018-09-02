@@ -70,8 +70,6 @@ export function saveStoreData(formData) {
   const tagArray = formData.tags ? formData.tags.split(' ') : [];
   let tagList = {};
 
-  console.log(formData.isBookingPhone)
-
   if (tagArray.length) {
     _.each(tagArray, (item) => {
       const obj = {};

@@ -21,7 +21,7 @@ const StoreDataForm = (props) => {
               type="text"
               component="input"
               name="name"
-              placeholder="店家名稱"
+              placeholder=""
               className="form__input-text"
             />
           </div>
@@ -35,7 +35,7 @@ const StoreDataForm = (props) => {
               type="text"
               component="input"
               name="description"
-              placeholder="描述"
+              placeholder=""
               className="form__input-text"
             />
           </div>
@@ -49,7 +49,7 @@ const StoreDataForm = (props) => {
               type="text"
               component="input"
               name="image"
-              placeholder="圖片名稱"
+              placeholder="v1535796583/kitty-outline-512"
               className="form__input-text"
             />
           </div>
@@ -63,7 +63,7 @@ const StoreDataForm = (props) => {
               type="text"
               component="input"
               name="phone"
-              placeholder="電話"
+              placeholder=""
               className="form__input-text"
             />
             <Field
@@ -83,77 +83,77 @@ const StoreDataForm = (props) => {
               type="text"
               component="input"
               name="address"
-              placeholder="地址"
+              placeholder=""
               className="form__input-text"
             />
           </div>
         </div>
         <div className="form__group">
           <label className="form__label">
-            Zip
+            郵遞區號（Zip）
           </label>
           <div className="form__field">
             <Field
               type="text"
               component="input"
               name="zip"
-              placeholder="Zip"
+              placeholder=""
               className="form__input-text"
             />
           </div>
         </div>
         <div className="form__group">
           <label className="form__label">
-            Start
+            營業時間 Start
           </label>
           <div className="form__field">
             <Field
               type="text"
               component="input"
               name="start"
-              placeholder="Start"
+              placeholder=""
               className="form__input-text"
             />
           </div>
         </div>
         <div className="form__group">
           <label className="form__label">
-            End
+            營業時間 End
           </label>
           <div className="form__field">
             <Field
               type="text"
               component="input"
               name="end"
-              placeholder="End"
+              placeholder=""
               className="form__input-text"
             />
           </div>
         </div>
         <div className="form__group">
           <label className="form__label">
-            Lowest
+            最低價格
           </label>
           <div className="form__field">
             <Field
               type="text"
               component="input"
               name="lowest"
-              placeholder="Lowest"
+              placeholder=""
               className="form__input-text"
             />
           </div>
         </div>
         <div className="form__group">
           <label className="form__label">
-            Highest
+            最高價格
           </label>
           <div className="form__field">
             <Field
               type="text"
               component="input"
               name="highest"
-              placeholder="Highest"
+              placeholder=""
               className="form__input-text"
             />
           </div>
@@ -167,7 +167,7 @@ const StoreDataForm = (props) => {
               type="text"
               component="input"
               name="bookingOnline"
-              placeholder="預約網址"
+              placeholder=""
               className="form__input-text"
             />
           </div>
@@ -181,7 +181,7 @@ const StoreDataForm = (props) => {
               type="text"
               component="input"
               name="website"
-              placeholder="網站"
+              placeholder=""
               className="form__input-text"
             />
           </div>
@@ -195,7 +195,7 @@ const StoreDataForm = (props) => {
               type="text"
               component="input"
               name="facebook"
-              placeholder="Facebook"
+              placeholder=""
               className="form__input-text"
             />
           </div>
@@ -209,7 +209,7 @@ const StoreDataForm = (props) => {
               type="text"
               component="input"
               name="tags"
-              placeholder="標籤"
+              placeholder=""
               className="form__input-text"
             />
           </div>
@@ -222,7 +222,7 @@ const StoreDataForm = (props) => {
           onClick={reset}
           className="button--default"
         >
-          取消
+          清空 / 取消
         </button>
         <button
           type="submit"
