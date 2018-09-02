@@ -1,46 +1,36 @@
 @import '../variables/_variable.css';
 
 .form {
+  padding: 20px;
   background: #fff;
-  padding: 15px;
+}
+
+.form-store-info {
+  border: 1px solid $border-color;
+  border-radius: 5px;
 }
 
 .form__main-heading {
   font-size: $heading-main-font-size;
 }
 
-.form__title {
-  font-size: $heading-font-size;
-}
-
 .form__block {
-
-}
-
-.form-store-info {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  z-index: $modal-z-index;
-  box-sizing: border-box;
-  width: 280px;
-  height: 90%;
-  border: 1px solid $border-color;
-  border-radius: 5px;
-  overflow:scroll;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .form__group {
+  width: 100%;
   margin: 10px 0;
 }
+
+.form__field {}
 
 .form__label {
   display: block;
   margin-bottom: 3px;
   color: $font-hint-color;
 }
-
-.form__field {}
 
 .form__input-text {
   box-sizing: border-box;
@@ -52,6 +42,10 @@
   border-width: 1px;
   border-style: solid;
   border-color: #eee;
+}
+
+.form__hint {
+  color: $font-content-color;
 }
 
 .form__button-group {

@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import {
   FETCH_STORE_LIST,
   FETCH_STORE_LIST_BY_TAG,
@@ -7,6 +8,7 @@ import {
   FETCH_SLIDES_DATA,
   SAVE_STORE_DATA,
 } from '../constants';
+
 const uuidv1 = require('uuid/v1');
 
 const firebase = require('firebase');
@@ -63,65 +65,84 @@ export function fetchSlidesData() {
 }
 
 export function saveStoreData(formData) {
+  const imageName = formData.image || 'v1535796583/kitty-outline-512';
+  const bookingPhone = formData.isBookingPhone ? formData.phone : null;
+  const tagArray = formData.tags ? formData.tags.split(' ') : [];
+  let tagList = {};
+
+  console.log(formData.isBookingPhone)
+
+  if (tagArray.length) {
+    _.each(tagArray, (item) => {
+      const obj = {};
+      obj[item] = true;
+      tagList = Object.assign(tagList, obj);
+    });
+  } else {
+    tagList = {
+      '測試': true,
+    };
+  }
+
   const data = {
     id: uuidv1(),
-    name: formData.name,
+    name: formData.name || '測試',
     description: formData.description || null,
     image: [
       // original
       {
-        url: 'https://res.cloudinary.com/dfgridmvn/image/upload/v1535796583/kitty-outline-512.png',
+        url: `https://res.cloudinary.com/dfgridmvn/image/upload/v1535796583/${imageName}.png`,
       },
       // 177 jpg
       {
-        url: 'https://res.cloudinary.com/dfgridmvn/image/upload/c_scale,w_177/v1535796583/kitty-outline-512.jpg',
+        url: `https://res.cloudinary.com/dfgridmvn/image/upload/c_scale,w_177/${imageName}.jpg`,
       },
       // 354 jpg
       {
-        url: 'https://res.cloudinary.com/dfgridmvn/image/upload/c_scale,w_354/v1535796583/kitty-outline-512.jpg',
+        url: `https://res.cloudinary.com/dfgridmvn/image/upload/c_scale,w_354/${imageName}.jpg`,
       },
       // 531 jpg
       {
-        url: 'https://res.cloudinary.com/dfgridmvn/image/upload/c_scale,w_531/v1535796583/kitty-outline-512.jpg',
+        url: `https://res.cloudinary.com/dfgridmvn/image/upload/c_scale,w_531/${imageName}.jpg`,
       },
       // 708 jpg
       {
-        url: 'https://res.cloudinary.com/dfgridmvn/image/upload/c_scale,w_708/v1535796583/kitty-outline-512.jpg',
+        url: `https://res.cloudinary.com/dfgridmvn/image/upload/c_scale,w_708/${imageName}.jpg`,
       },
       // 177 webp
       {
-        url: 'https://res.cloudinary.com/dfgridmvn/image/upload/c_scale,w_177/v1535796583/kitty-outline-512.webp',
+        url: `https://res.cloudinary.com/dfgridmvn/image/upload/c_scale,w_177/${imageName}.webp`,
       },
       // 354 webp
       {
-        url: 'https://res.cloudinary.com/dfgridmvn/image/upload/c_scale,w_354/v1535796583/kitty-outline-512.webp',
+        url: `https://res.cloudinary.com/dfgridmvn/image/upload/c_scale,w_354/${imageName}.webp`,
       },
       // 531 webp
       {
-        url: 'https://res.cloudinary.com/dfgridmvn/image/upload/c_scale,w_531/v1535796583/kitty-outline-512.webp',
+        url: `https://res.cloudinary.com/dfgridmvn/image/upload/c_scale,w_531/${imageName}.webp`,
       },
       // 708 webp
       {
-        url: 'https://res.cloudinary.com/dfgridmvn/image/upload/c_scale,w_708/v1535796583/kitty-outline-512.webp',
+        url: `https://res.cloudinary.com/dfgridmvn/image/upload/c_scale,w_708/${imageName}.webp`,
       },
     ],
     phone: formData.phone || null,
     location: {
       address: formData.address || null,
-      zip: null,
+      zip: formData.zip || null,
       coordinates: null,
     },
     openingHour: {
-      start: '0 AM',
-      end: '0 PM',
+      start: formData.start || '0 AM',
+      end: formData.end || '0 PM',
     },
     price: {
-      lowest: 0,
-      highest: 999999,
+      lowest: formData.lowest || 0,
+      highest: formData.highest || 999999,
     },
     booking: {
       online: formData.bookingOnline || null,
-      phone: formData.bookingPhone || null,
+      phone: bookingPhone,
     },
     sns: {
       facebook: formData.facebook || null,
@@ -130,13 +151,14 @@ export function saveStoreData(formData) {
     hot: false,
     nearby: false,
     recommend: false,
-    tags: {
-      '測試': true,
-    },
+    tags: tagList,
   };
+
+  console.log(data);
 
   return {
     type: SAVE_STORE_DATA,
-    payload: firebase.firestore().collection('test').add(data),
+    payload: firebase.firestore().collection('stores').add(data),
+    // payload: firebase.firestore().collection('test').add(data),
   };
 }
