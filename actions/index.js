@@ -89,7 +89,7 @@ export function saveStoreData(formData) {
     image: [
       // original
       {
-        url: `https://res.cloudinary.com/dfgridmvn/image/upload/v1535796583/${imageName}.png`,
+        url: `https://res.cloudinary.com/dfgridmvn/image/upload/${imageName}.png`,
       },
       // 177 jpg
       {
