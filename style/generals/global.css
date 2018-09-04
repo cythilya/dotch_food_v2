@@ -113,6 +113,10 @@ input, textarea, select, button {
   left: 50%;
 }
 
+.item-group {
+  display: flex;
+}
+
 @media $breakpoint-medium-desktop {
   .newsticker {
     width: $containter-medium-desktop-width;

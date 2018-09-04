@@ -152,11 +152,12 @@ export function saveStoreData(formData) {
     tags: tagList,
   };
 
-  console.log(data);
+  // console.log(data);
 
   return {
     type: SAVE_STORE_DATA,
-    payload: firebase.firestore().collection('stores').add(data),
-    // payload: firebase.firestore().collection('test').add(data),
+    // payload: firebase.firestore().collection('stores').add(data),
+    payload: firebase.firestore().collection('test').add(data),
+    // payload: firebase.firestore().collection('test').add('123'),
   };
 }

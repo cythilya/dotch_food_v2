@@ -1,0 +1,33 @@
+@import '../variables/_variable.css';
+
+.alert {
+  display: flex;
+  align-items: center;
+  margin: 15px 0;
+  background: #fefefe;
+  border-radius: 5px;
+}
+
+.alert--danger {
+  border: 2px solid $danger;
+}
+
+.alert--success {
+  border: 2px solid $success;
+}
+
+.alert--info {
+  border: 2px solid $info;
+}
+
+.alert--icon {
+  margin: 0 15px;
+  font-size: 20px;
+  padding: 5px;
+  vertical-align: middle;
+}
+
+.alert--content {
+  width: calc(100% - 115px);
+  color: $font-content-color;
+}
