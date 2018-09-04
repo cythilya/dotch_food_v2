@@ -5,8 +5,7 @@ const { join } = require('path');
 const compression = require('compression');
 
 const port = parseInt(process.env.PORT, 10) || 3000;
-const dev = process.env.NODE_ENV !== 'production';
-const app = next({ dev });
+const app = next();
 const handle = app.getRequestHandler();
 
 const rootStaticFiles = [
@@ -38,10 +37,14 @@ app.prepare()
 
     server.get('*', (req, res) => {
       const parsedUrl = parse(req.url, true);
+      const { pathname } = parsedUrl;
 
-      if (rootStaticFiles.indexOf(parsedUrl.pathname) > -1) {
-        const path = join(__dirname, 'static', parsedUrl.pathname);
+      if (rootStaticFiles.indexOf(pathname) > -1) {
+        const path = join(__dirname, 'static', pathname);
         app.serveStatic(req, res, path);
+      } else if (pathname === '/service-worker.js') {
+        const filePath = join(__dirname, '.next', pathname);
+        app.serveStatic(req, res, filePath);
       } else {
         handle(req, res, parsedUrl);
       }

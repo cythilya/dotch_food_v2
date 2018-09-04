@@ -1,15 +1,11 @@
 const withCSS = require('@zeit/next-css');
 const zlib = require('zlib');
 const iltorb = require('iltorb');
+const withOffline = require('next-offline');
 
-module.exports = withCSS({
+module.exports = withOffline(withCSS({
   postcssLoaderOptions: {
     parser: true,
-    config: {
-      ctx: {
-        theme: JSON.stringify(process.env.REACT_APP_THEME),
-      },
-    },
   },
   compress: {
     br() {
@@ -21,4 +17,4 @@ module.exports = withCSS({
       });
     },
   },
-});
+}));
