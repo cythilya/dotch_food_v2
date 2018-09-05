@@ -298,7 +298,6 @@ const StoreDataForm = (props) => {
             </button>
           </div>
         </form>
-
       </div>
     </div>
   );
