@@ -17,6 +17,7 @@ const Header = () => {
         </Link>
         <Link href="/">
           <a
+            href="/"
             className="header__title"
             title={common.title}
           >
