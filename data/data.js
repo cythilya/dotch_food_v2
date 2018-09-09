@@ -62,6 +62,12 @@ const data = {
       tag: '印度料理',
     },
     {
+      id: 'bc41ee12-8b72-4bf4-9961-3919c302301b',
+      className: 'merlion',
+      title: '星馬南洋',
+      tag: '星馬南洋料理',
+    },
+    {
       id: '086f0866-1ed4-4d5d-836f-4b42ebaec24d',
       className: 'wok',
       title: '異國',
@@ -72,12 +78,6 @@ const data = {
       className: 'buffet',
       title: '吃到飽',
       tag: '吃到飽',
-    },
-    {
-      id: 'e34686f1-88b3-4219-b5fa-62d49a3a368e',
-      className: 'beer',
-      title: '酒吧',
-      tag: '酒吧',
     },
     {
       id: '5cdce9c4-c9b5-425f-b62d-bdc903b56abd',
@@ -98,16 +98,28 @@ const data = {
       tag: '鐵板燒',
     },
     {
-      id: '84c0e0de-3e65-4ab9-bb9a-2f7433ea4a3c',
-      className: 'cake-with-strawberry',
-      title: '下午茶',
-      tag: '下午茶',
+      id: '1e6d0d1b-e152-434a-a954-8cf205ab1c19',
+      className: 'breakfast',
+      title: '複合/簡餐',
+      tag: '複合餐飲',
     },
     {
-      id: 'f3865f75-f4ed-431d-b130-b890b3be444f',
-      className: 'lettuce',
-      title: '素食',
-      tag: '素食',
+      id: '6892b0ab-b7be-41d1-b84d-e1998089c70b',
+      className: 'self-service',
+      title: '自助餐',
+      tag: '自助餐',
+    },
+    {
+      id: 'e3561ce3-928a-45c4-8759-6f007230ab58',
+      className: 'lunch-box',
+      title: '便當',
+      tag: '便當',
+    },
+    {
+      id: '31725bce-b40c-11e8-96f8-529269fb1459',
+      className: 'popcorn',
+      title: '速食',
+      tag: '速食',
     },
     {
       id: '9011f22f-449c-459f-bd1b-6f2924adb39c',
@@ -116,34 +128,52 @@ const data = {
       tag: '早午餐',
     },
     {
-      id: '01f558aa-ca2d-4ca2-add7-7ca945dba6e9',
-      className: 'noodles',
-      title: '小吃',
-      tag: '小吃',
-    },
-    {
-      id: 'bc41ee12-8b72-4bf4-9961-3919c302301b',
-      className: 'breakfast',
-      title: '簡餐',
-      tag: '簡餐',
-    },
-    {
       id: '72815cd4-768a-4e6f-a520-a8fb002d04c2',
       className: 'salad-bowl',
       title: '輕食',
       tag: '輕食',
     },
     {
-      id: '11ee2741-7a51-4907-93a4-e38a85bcbad6',
-      className: 'toast',
-      title: '烘焙糕點',
-      tag: '烘焙糕點',
+      id: '9d2df9cc-c5e5-4eaa-8123-b7c0ee14073d',
+      className: 'piece-of-cake',
+      title: '甜點',
+      tag: '甜點',
+    },
+    {
+      id: '84c0e0de-3e65-4ab9-bb9a-2f7433ea4a3c',
+      className: 'cake-with-strawberry',
+      title: '下午茶',
+      tag: '下午茶',
+    },
+    {
+      id: 'e34686f1-88b3-4219-b5fa-62d49a3a368e',
+      className: 'beer',
+      title: '酒吧',
+      tag: '酒吧',
+    },
+    {
+      id: '01f558aa-ca2d-4ca2-add7-7ca945dba6e9',
+      className: 'noodles',
+      title: '小吃',
+      tag: '小吃',
+    },
+    {
+      id: 'f3865f75-f4ed-431d-b130-b890b3be444f',
+      className: 'lettuce',
+      title: '素食',
+      tag: '素食',
+    },
+    {
+      id: 'ac890d9c-b409-11e8-96f8-529269fb1459',
+      className: 'instant-noodles',
+      title: '調理包',
+      tag: '調理包',
     },
     {
       id: 'c5a95896-c009-4af3-83df-aee304b84ea8',
-      className: 'takeaway',
-      title: '外帶',
-      tag: '外帶',
+      className: 'network',
+      title: '網咖',
+      tag: '網咖',
     },
     {
       id: 'bea91673-c6b4-4ac3-87b4-b1b9258d9a3e',
@@ -164,17 +194,35 @@ const data = {
       tag: '寵物友善',
     },
     {
+      id: 'ac891954-b409-11e8-96f8-529269fb1459',
+      className: 'baking',
+      title: 'DIY',
+      tag: 'DIY',
+    },
+    {
+      id: 'a96feaff-4711-469e-a20f-5fef8f0d9d96',
+      className: 'food-truck',
+      title: '小販餐車',
+      tag: '小販餐車',
+    },
+    {
       id: '4479113d-2297-45b8-9657-a35089d59504',
       className: 'orange-juice',
       title: '咖啡茶飲',
-      tag: '飲品',
+      tag: '咖啡茶飲',
     },
-    // {
-    //   id: '97c2e5f3-4397-4d47-b80f-88e62521c7f6',
-    //   className: 'dinner-table',
-    //   title: '其他',
-    //   tag: '其他',
-    // },
+    {
+      id: '11ee2741-7a51-4907-93a4-e38a85bcbad6',
+      className: 'toast',
+      title: '烘焙糕點',
+      tag: '烘焙糕點',
+    },
+    {
+      id: '97c2e5f3-4397-4d47-b80f-88e62521c7f6',
+      className: 'dinner-table',
+      title: '其他',
+      tag: '其他',
+    },
   ],
   hotCategories: [
     {
@@ -315,12 +363,18 @@ const data = {
       title: '小販餐車',
       tag: '小販餐車',
     },
+    // {
+    //   id: '26',
+    //   className: 'champagne',
+    //   title: '慶賀',
+    //   tag: '慶賀',
+
+    // },
     {
       id: '26',
-      className: 'champagne',
-      title: '慶賀',
-      tag: '慶賀',
-
+      className: 'takeaway',
+      title: '外帶',
+      tag: '外帶',
     },
     {
       id: '27',
@@ -368,7 +422,7 @@ const data = {
       id: '34',
       className: 'social-media',
       title: '拍照打卡',
-      tag: '網紅',
+      tag: '拍照打卡',
 
     },
     {
@@ -452,12 +506,12 @@ const data = {
     {
       id: 'd91b94a8-7ff7-4377-b49b-1d9db14b51b4',
       title: '一起看足球賽，超大電視螢幕、啤酒',
-      link: '/tag?keyword=足球',
+      link: '/tag?keyword=運動酒吧',
     },
     {
       id: '056bfcdb-4b5c-4845-89b2-abfb0159cb2b',
       title: '你也可以當網紅！來這裡拍照打卡',
-      link: '/tag?keyword=網紅',
+      link: '/tag?keyword=拍照打卡',
     },
   ],
 };

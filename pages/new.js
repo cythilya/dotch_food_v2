@@ -17,7 +17,7 @@ class New extends Component {
       isFormValid: 1, // 0: error, 1: initial, 2: success
     };
     this.subimt = this.subimt.bind(this);
-    this.handlenSubmitFail = this.handlenSubmitFail.bind(this);
+    this.handleSubmitFail = this.handleSubmitFail.bind(this);
     this.resetFormStatus = this.resetFormStatus.bind(this);
   }
 
@@ -29,7 +29,7 @@ class New extends Component {
     });
   }
 
-  handlenSubmitFail() {
+  handleSubmitFail() {
     this.setState({ isFormValid: 0 });
   }
 
@@ -45,7 +45,7 @@ class New extends Component {
         <div className="panel">
           <StoreDataForm
             onSubmit={this.subimt}
-            onSubmitFail={this.handlenSubmitFail}
+            onSubmitFail={this.handleSubmitFail}
             isFormValid={isFormValid}
             resetFormStatus={this.resetFormStatus}
           />

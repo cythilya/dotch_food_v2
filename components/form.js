@@ -11,7 +11,7 @@ const StoreDataForm = (props) => {
     pristine,
     reset,
     submitting,
-    handlenSubmitFail
+    handleSubmitFail,
   } = props;
   const showForm = isFormValid !== 2 ? '' : 'hide';
   const showErrMsg = !isFormValid ? '' : 'hide';
@@ -66,7 +66,7 @@ const StoreDataForm = (props) => {
         <form
           className="form form-store-info"
           onSubmit={handleSubmit}
-          onSubmitFail={handlenSubmitFail}
+          onSubmitFail={handleSubmitFail}
         >
           <div className="form__block">
             <div className="form__group">
