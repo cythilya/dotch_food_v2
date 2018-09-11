@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: https://dotch-food.herokuapp.com/sitemap.xml
+Sitemap: https://dotch-food.now.sh/sitemap.xml
