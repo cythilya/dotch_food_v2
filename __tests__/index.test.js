@@ -1,12 +1,12 @@
 import { shallow } from 'enzyme';
 import React from 'react';
-import renderer from 'react-test-renderer';
+// import renderer from 'react-test-renderer';
 
-import App from '../pages/index';
+import Header from '../components/header';
 
 describe('With Enzyme', () => {
   it('title: 吃什麼，どっち', () => {
-    const app = shallow(<App />);
+    const app = shallow(<Header />);
     expect(app.find('.header__title').text()).toEqual('吃什麼，どっち');
   });
 });
