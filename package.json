@@ -53,7 +53,8 @@
     "postcss-extend-rule": "^2.0.0",
     "precss": "^3.1.2",
     "react-addons-test-utils": "15.6.2",
-    "react-test-renderer": "16.2.0"
+    "react-test-renderer": "16.2.0",
+    "redux-mock-store": "^1.5.3"
   },
   "now": {
     "alias": "dotch-food.now.sh"
