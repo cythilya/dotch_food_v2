@@ -7,6 +7,7 @@ import {
   FETCH_HOT_STORE_LIST,
   FETCH_SLIDES_DATA,
   SAVE_STORE_DATA,
+  FETCH_STORE_INFO,
 } from '../constants';
 
 const uuidv1 = require('uuid/v1');
@@ -54,6 +55,13 @@ export function fetchHotStoreList() {
   return {
     type: FETCH_HOT_STORE_LIST,
     payload: firebase.firestore().collection('stores').where('hot', '==', true).limit(4).get(),
+  };
+}
+
+export function fetchStoreInfo(id) {
+  return {
+    type: FETCH_STORE_INFO,
+    payload: firebase.firestore().collection('stores').where('id', '==', id).limit(1).get(),
   };
 }
 

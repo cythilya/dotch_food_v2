@@ -97,7 +97,7 @@ const Card = ({ store }) => {
       </LazyLoad>
       <div className="card__container">
         <h2 className="card__title">
-          <Link href={`/store/${store.id}`}>
+          <Link href={`/store?id=${store.id}`}>
             <a title={store.name}>
               {store.name}
             </a>

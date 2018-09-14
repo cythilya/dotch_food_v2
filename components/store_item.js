@@ -43,7 +43,7 @@ const StoreItem = ({ store }) => {
         </div>
         <div className="store-item__container">
           <h2 className="store-item__title">
-            <Link href={`/store/${store.id}`}>
+            <Link href={`/store/?id=${store.id}`}>
               <a title={store.name}>
                 {store.name}
               </a>
