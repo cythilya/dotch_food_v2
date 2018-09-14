@@ -93,35 +93,35 @@ export function saveStoreData(formData) {
       },
       // 177 jpg
       {
-        url: `https://res.cloudinary.com/dfgridmvn/image/upload/c_scale,w_177/${imageName}.jpg`,
+        url: `https://res.cloudinary.com/dfgridmvn/image/upload/c_scale,w_177,fl_progressive/${imageName}.jpg`,
       },
       // 354 jpg
       {
-        url: `https://res.cloudinary.com/dfgridmvn/image/upload/c_scale,w_354/${imageName}.jpg`,
+        url: `https://res.cloudinary.com/dfgridmvn/image/upload/c_scale,w_354,fl_progressive/${imageName}.jpg`,
       },
       // 531 jpg
       {
-        url: `https://res.cloudinary.com/dfgridmvn/image/upload/c_scale,w_531/${imageName}.jpg`,
+        url: `https://res.cloudinary.com/dfgridmvn/image/upload/c_scale,w_531,fl_progressive/${imageName}.jpg`,
       },
       // 708 jpg
       {
-        url: `https://res.cloudinary.com/dfgridmvn/image/upload/c_scale,w_708/${imageName}.jpg`,
+        url: `https://res.cloudinary.com/dfgridmvn/image/upload/c_scale,w_708,fl_progressive/${imageName}.jpg`,
       },
       // 177 webp
       {
-        url: `https://res.cloudinary.com/dfgridmvn/image/upload/c_scale,w_177/${imageName}.webp`,
+        url: `https://res.cloudinary.com/dfgridmvn/image/upload/c_scale,w_177,fl_progressive/${imageName}.webp`,
       },
       // 354 webp
       {
-        url: `https://res.cloudinary.com/dfgridmvn/image/upload/c_scale,w_354/${imageName}.webp`,
+        url: `https://res.cloudinary.com/dfgridmvn/image/upload/c_scale,w_354,fl_progressive/${imageName}.webp`,
       },
       // 531 webp
       {
-        url: `https://res.cloudinary.com/dfgridmvn/image/upload/c_scale,w_531/${imageName}.webp`,
+        url: `https://res.cloudinary.com/dfgridmvn/image/upload/c_scale,w_531,fl_progressive/${imageName}.webp`,
       },
       // 708 webp
       {
-        url: `https://res.cloudinary.com/dfgridmvn/image/upload/c_scale,w_708/${imageName}.webp`,
+        url: `https://res.cloudinary.com/dfgridmvn/image/upload/c_scale,w_708,fl_progressive/${imageName}.webp`,
       },
     ],
     phone: formData.phone || null,

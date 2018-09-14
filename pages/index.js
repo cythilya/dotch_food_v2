@@ -13,14 +13,6 @@ import {
   fetchHotStoreList,
 } from '../actions/index';
 
-const renderCards = (stores) => {
-  return _.map(stores, (store) => {
-    return (
-      <Card key={store.id} store={store} />
-    );
-  });
-};
-
 class Index extends Component {
   componentDidMount() {
     const { dispatch } = this.props;
@@ -28,7 +20,15 @@ class Index extends Component {
     dispatch(fetchNearbyStoreList());
     dispatch(fetchRecommendStoreList());
     dispatch(fetchHotStoreList());
+
+    this.renderCards = this.renderCards.bind(this);
   }
+
+  renderCards(stores) {
+    return _.map(stores, (store) => {
+      return <Card key={store.id} store={store} />;
+    });
+  };
 
   render() {
     const { nearbyStoresData, recommendStoresData, hotStoresData } = this.props.filteredStores;
@@ -50,7 +50,7 @@ class Index extends Component {
           </Link>
           <NoSSR>
             <div className="card-list">
-              { renderCards(nearbyStoresData) }
+              { this.renderCards(nearbyStoresData) }
             </div>
           </NoSSR>
         </div>
@@ -68,7 +68,7 @@ class Index extends Component {
           </Link>
           <NoSSR>
             <div className="card-list">
-              { renderCards(recommendStoresData) }
+              { this.renderCards(recommendStoresData) }
             </div>
           </NoSSR>
         </div>
@@ -87,7 +87,7 @@ class Index extends Component {
           </Link>
           <NoSSR>
             <div className="card-list">
-              { renderCards(hotStoresData) }
+              { this.renderCards(hotStoresData) }
             </div>
           </NoSSR>
         </div>
@@ -95,7 +95,6 @@ class Index extends Component {
     );
   }
 }
-
 
 Index.propTypes = {
   nearbyStoresData: PropTypes.array,
