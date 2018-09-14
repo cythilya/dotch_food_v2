@@ -156,8 +156,8 @@ export function saveStoreData(formData) {
 
   return {
     type: SAVE_STORE_DATA,
-    payload: firebase.firestore().collection('stores').add(data),
-    // payload: firebase.firestore().collection('test').add(data),
+    // payload: firebase.firestore().collection('stores').add(data),
+    payload: firebase.firestore().collection('test').add(data),
     // payload: firebase.firestore().collection('test').add('123'),
   };
 }
