@@ -6,7 +6,6 @@ import StoreControlButtons from './store_control_button';
 import '../style/components/card.css';
 
 const Card = ({ store }) => {
-  console.log(store);
   return (
     <div
       key={store.id}
