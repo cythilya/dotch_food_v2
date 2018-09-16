@@ -1,0 +1,23 @@
+@import '../variables/_variable.css';
+
+.feature-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+  padding: 10px 0;
+}
+
+.feature-list__icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
+
+.feature-list__text {
+  margin-right: 10px;
+  padding: 1px 2px;
+  color: $font-hint-color;
+  font-size: 10px;
+  border: 1px solid $border-color;
+  border-radius: 5px;
+}
