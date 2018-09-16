@@ -77,6 +77,7 @@ export function saveStoreData(formData) {
   const bookingPhone = formData.isBookingPhone ? formData.phone : null;
   const tagArray = formData.tags ? formData.tags.split(' ') : [];
   let tagList = {};
+  let featureList = {};
 
   if (tagArray.length) {
     _.each(tagArray, (item) => {
@@ -88,6 +89,127 @@ export function saveStoreData(formData) {
     tagList = {
       '測試': true,
     };
+  }
+
+
+  if (formData.twentyfourhr) {
+    const feature = {};
+    feature['twentyfourhr'] = true;
+    featureList = Object.assign(featureList, feature);
+
+    const obj = {};
+    obj['24 小時營業'] = true;
+    tagList = Object.assign(tagList, obj);
+  }
+
+  if (formData.mrt) {
+    const feature = {};
+    feature['mrt'] = true;
+    featureList = Object.assign(featureList, feature);
+
+    const obj = {};
+    obj['捷運沿線'] = true;
+    tagList = Object.assign(tagList, obj);
+  }
+
+  if (formData.noTimeLimit) {
+    const feature = {};
+    feature['noTimeLimit'] = true;
+    featureList = Object.assign(featureList, feature);
+
+    const obj = {};
+    obj['不限時'] = true;
+    tagList = Object.assign(tagList, obj);
+  }
+
+  if (formData.parking) {
+    const feature = {};
+    feature['parking'] = true;
+    featureList = Object.assign(featureList, feature);
+
+    const obj = {};
+    obj['停車位'] = true;
+    tagList = Object.assign(tagList, obj);
+  }
+
+  if (formData.socket) {
+    const feature = {};
+    feature['socket'] = true;
+    featureList = Object.assign(featureList, feature);
+
+    // const obj = {};
+    // obj['提供插座'] = true;
+    // tagList = Object.assign(tagList, obj);
+  }
+
+  if (formData.takeout) {
+    const feature = {};
+    feature['takeout'] = true;
+    featureList = Object.assign(featureList, feature);
+
+    const obj = {};
+    obj['外帶'] = true;
+    tagList = Object.assign(tagList, obj);
+  }
+
+  if (formData.wifi) {
+    const feature = {};
+    feature['wifi'] = true;
+    featureList = Object.assign(featureList, feature);
+
+    // const obj = {};
+    // obj['wifi'] = true;
+    // tagList = Object.assign(tagList, obj);
+  }
+
+  if (formData.cashOnly) {
+    const feature = {};
+    feature['cashOnly'] = true;
+    featureList = Object.assign(featureList, feature);
+
+    // const obj = {};
+    // obj['只接受現金'] = true;
+    // tagList = Object.assign(tagList, obj);
+  }
+
+  if (formData.customService) {
+    const feature = {};
+    feature['customService'] = true;
+    featureList = Object.assign(featureList, feature);
+
+    // const obj = {};
+    // obj['客製化服務'] = true;
+    // tagList = Object.assign(tagList, obj);
+  }
+
+  if (formData.family) {
+    const feature = {};
+    feature['family'] = true;
+    featureList = Object.assign(featureList, feature);
+
+    const obj = {};
+    obj['親子友善'] = true;
+    tagList = Object.assign(tagList, obj);
+  }
+
+  if (formData.pet) {
+    const feature = {};
+    feature['pet'] = true;
+    featureList = Object.assign(featureList, feature);
+
+    const obj = {};
+    obj['寵物友善'] = true;
+    tagList = Object.assign(tagList, obj);
+  }
+
+  if (formData.pokemon) {
+    const feature = {};
+    feature['pokemon'] = true;
+    featureList = Object.assign(featureList, feature);
+
+    const obj = {};
+    obj['寶可夢'] = true;
+    tagList = Object.assign(tagList, obj);
   }
 
   const data = {
@@ -158,6 +280,7 @@ export function saveStoreData(formData) {
     nearby: false,
     recommend: false,
     tags: tagList,
+    features: featureList,
   };
 
   // console.log(data);

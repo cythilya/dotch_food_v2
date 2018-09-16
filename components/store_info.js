@@ -6,7 +6,6 @@ import StoreControlButtons from './store_control_button';
 import FeatureList from './feature_list';
 import { icon as iconData } from '../data/locale_tw';
 import '../style/components/store_info.css';
-import '../style/components/tab.css';
 
 const StoreInfo = ({ store }) => {
   const boxStyle = {

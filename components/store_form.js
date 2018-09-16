@@ -271,6 +271,109 @@ const StoreDataForm = (props) => {
                 />
               </div>
             </div>
+            <div className="form__group">
+              <label className="form__label">
+                特色
+              </label>
+              <div className="form__field-list">
+                <div className="form__filed-item">
+                  <Field
+                    type="checkbox"
+                    name="twentyfourhr"
+                    component="input"
+                  />
+                  <label className="form__hint">24 小時營業</label>
+                </div>
+                <div className="form__filed-item">
+                  <Field
+                    type="checkbox"
+                    name="mrt"
+                    component="input"
+                  />
+                  <label className="form__hint">捷運沿線</label>
+                </div>
+                <div className="form__filed-item">
+                  <Field
+                    type="checkbox"
+                    name="noTimeLimit"
+                    component="input"
+                  />
+                  <label className="form__hint">不限時</label>
+                </div>
+                <div className="form__filed-item">
+                  <Field
+                    type="checkbox"
+                    name="parking"
+                    component="input"
+                  />
+                  <label className="form__hint">附近有停車位</label>
+                </div>
+                <div className="form__filed-item">
+                  <Field
+                    type="checkbox"
+                    name="socket"
+                    component="input"
+                  />
+                  <label className="form__hint">提供插座</label>
+                </div>
+                <div className="form__filed-item">
+                  <Field
+                    type="checkbox"
+                    name="takeout"
+                    component="input"
+                  />
+                  <label className="form__hint">可外帶</label>
+                </div>
+                <div className="form__filed-item">
+                  <Field
+                    type="checkbox"
+                    name="wifi"
+                    component="input"
+                  />
+                  <label className="form__hint">免費 Wifi</label>
+                </div>
+                <div className="form__filed-item">
+                  <Field
+                    type="checkbox"
+                    name="cashOnly"
+                    component="input"
+                  />
+                  <label className="form__hint">只接受現金</label>
+                </div>
+                <div className="form__filed-item">
+                  <Field
+                    type="checkbox"
+                    name="customService"
+                    component="input"
+                  />
+                  <label className="form__hint">客製化服務</label>
+                </div>
+                <div className="form__filed-item">
+                  <Field
+                    type="checkbox"
+                    name="family"
+                    component="input"
+                  />
+                  <label className="form__hint">親子友善</label>
+                </div>
+                <div className="form__filed-item">
+                  <Field
+                    type="checkbox"
+                    name="pet"
+                    component="input"
+                  />
+                  <label className="form__hint">寵物友善</label>
+                </div>
+                <div className="form__filed-item">
+                  <Field
+                    type="checkbox"
+                    name="pokemon"
+                    component="input"
+                  />
+                  <label className="form__hint">有寶可夢補給站</label>
+                </div>
+              </div>
+            </div>
           </div>
           <div className="alert alert--info">
             <div className="alert--icon">
