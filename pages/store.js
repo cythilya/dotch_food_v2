@@ -2,9 +2,10 @@ import _ from 'lodash';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'next/router';
+import Link from 'next/link';
 import PropTypes from 'prop-types';
 import Page from '../components/page';
-import StoreItem from '../components/store_item';
+import StoreInfo from '../components/store_info';
 import Notfound from '../components/not_found';
 
 import {
@@ -55,11 +56,13 @@ class Store extends Component {
             && (
               <div>
                 <h1 className="panel__main-heading mb-2x">
-                  {
-                    store.name
-                  }
+                  <Link href={`/store/?id=${store.id}`}>
+                    <a title={store.name}>
+                      {store.name}
+                    </a>
+                  </Link>
                 </h1>
-                <StoreItem key={store.id} store={store} />
+                <StoreInfo key={store.id} store={store} />
               </div>
             )
           }

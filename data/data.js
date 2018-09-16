@@ -392,7 +392,7 @@ const data = {
     },
     {
       id: '30',
-      className: 'garage',
+      className: 'parking-yellow',
       title: '停車位',
       tag: '停車位',
 

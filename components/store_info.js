@@ -3,10 +3,11 @@ import PropTypes from 'prop-types';
 import Link from 'next/link';
 import LazyLoad from 'react-lazyload';
 import StoreControlButtons from './store_control_button';
+import FeatureList from './feature_list';
 import { icon as iconData } from '../data/locale_tw';
-import '../style/components/store_item.css';
+import '../style/components/store_info.css';
 
-const StoreItem = ({ store }) => {
+const StoreInfo = ({ store }) => {
   const boxStyle = {
     background: '#e8e8e8',
     width: '175px',
@@ -17,9 +18,9 @@ const StoreItem = ({ store }) => {
     <div>
       <div
         key={store.id}
-        className="store-item"
+        className="store-info"
       >
-        <div className="store-item__image" style={boxStyle}>
+        <div className="store-info__image" style={boxStyle}>
           <LazyLoad offsetVertical={100} height={175}>
             <figure>
               <picture>
@@ -41,21 +42,14 @@ const StoreItem = ({ store }) => {
             </figure>
           </LazyLoad>
         </div>
-        <div className="store-item__container">
-          <h2 className="store-item__title">
-            <Link href={`/store?id=${store.id}`}>
-              <a title={store.name}>
-                {store.name}
-              </a>
-            </Link>
-          </h2>
-          <div className="store-item__description ">
+        <div className="store-info__container">
+          <div className="store-info__description ">
             {store.description}
           </div>
-          <ul className="store-item__detail">
-            <li className="store-item__detail__item">
+          <ul className="store-info__detail">
+            <li className="store-info__detail__item">
               <i
-                className="store-item__detail__item__icon icon-pin-map"
+                className="store-info__detail__item__icon icon-pin-map"
                 title={iconData.address}
               />
               <a
@@ -67,9 +61,9 @@ const StoreItem = ({ store }) => {
                 {store.location.address}
               </a>
             </li>
-            <li className="store-item__detail__item">
+            <li className="store-info__detail__item">
               <i
-                className="store-item__detail__item__icon icon-phone"
+                className="store-info__detail__item__icon icon-phone"
                 title={iconData.phone}
               />
               <a
@@ -81,27 +75,27 @@ const StoreItem = ({ store }) => {
                 {store.phone}
               </a>
             </li>
-            <li className="store-item__detail__item">
+            <li className="store-info__detail__item">
               <i
-                className="store-item__detail__item__icon icon-clock-circular-outline"
+                className="store-info__detail__item__icon icon-clock-circular-outline"
                 title={iconData.openingHour}
               />
               {store.openingHour.start}
               ~
               {store.openingHour.end}
             </li>
-            <li className="store-item__detail__item">
+            <li className="store-info__detail__item">
               <i
-                className="store-item__detail__item__icon icon-dollar"
+                className="store-info__detail__item__icon icon-dollar"
                 title={iconData.price}
               />
               {store.price.lowest}
               ~
               {store.price.highest}
             </li>
-            <li className="store-item__detail__item">
+            <li className="store-info__detail__item">
               <i
-                className="store-item__detail__item__icon icon-global"
+                className="store-info__detail__item__icon icon-global"
                 title={iconData.website}
               />
               <a
@@ -114,14 +108,15 @@ const StoreItem = ({ store }) => {
               </a>
             </li>
           </ul>
-          <div className="store-item__tag-list">
+          { store.features && <FeatureList features={store.features} /> }
+          <div className="store-info__tag-list">
             {
               store.tags.map((item) => {
                 return (
-                  <div key={item} className="store-item__tag-item">
+                  <div key={item} className="store-info__tag-item">
                     <Link href={`/tag?keyword=${item}`}>
                       <a
-                        className="store-item__tag-link"
+                        className="store-info__tag-link"
                         title={item}
                       >
                         {item}
@@ -139,8 +134,8 @@ const StoreItem = ({ store }) => {
   );
 };
 
-StoreItem.propTypes = {
+StoreInfo.propTypes = {
   store: PropTypes.object.isRequired,
 };
 
-export default StoreItem;
+export default StoreInfo;
