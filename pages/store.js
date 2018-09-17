@@ -6,10 +6,12 @@ import Link from 'next/link';
 import PropTypes from 'prop-types';
 import Page from '../components/page';
 import StoreInfo from '../components/store_info';
+import StoreComments from '../components/store_comments';
 import Notfound from '../components/not_found';
 
 import {
   fetchStoreInfo,
+  fetchStoreComments,
 } from '../actions/index';
 import data from '../data/data';
 
@@ -32,6 +34,7 @@ class Store extends Component {
     const { dispatch, router } = this.props;
     const { id } = router.query;
     dispatch(fetchStoreInfo(id));
+    dispatch(fetchStoreComments(id));
   }
 
   componentDidUpdate(prevProps) {
@@ -40,11 +43,12 @@ class Store extends Component {
 
     if (id !== prevProps.router.query.id) {
       dispatch(fetchStoreInfo(id));
+      dispatch(fetchStoreComments(id));
     }
   }
 
   render() {
-    const { store } = this.props;
+    const { store, storeComments } = this.props;
     const id = this.props.router.query.id;
     const isNotFound = _.isEmpty(store);
     const isLoading = _.isObject(store) && _.isEmpty(store);
@@ -62,7 +66,8 @@ class Store extends Component {
                     </a>
                   </Link>
                 </h1>
-                <StoreInfo key={store.id} store={store} />
+                <StoreInfo store={store} />
+                { (storeComments.length > 0) && <StoreComments comments={storeComments} />}
               </div>
             )
           }
@@ -76,6 +81,11 @@ class Store extends Component {
 
 Store.propTypes = {
   store: PropTypes.object.isRequired,
+  storeComments: PropTypes.array,
+};
+
+Store.defaultProps = {
+  storeComments: [],
 };
 
 export default withRouter(connect(state => state)(Store));

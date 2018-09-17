@@ -8,6 +8,7 @@ import {
   FETCH_SLIDES_DATA,
   SAVE_STORE_DATA,
   FETCH_STORE_INFO,
+  FETCH_STORE_COMMENTS,
 } from '../constants';
 
 const uuidv1 = require('uuid/v1');
@@ -40,28 +41,32 @@ export function fetchStoreListByTag(tag) {
 export function fetchNearbyStoreList() {
   return {
     type: FETCH_NEARBY_STORE_LIST,
-    payload: firebase.firestore().collection('stores').where('nearby', '==', true).limit(4).get(),
+    payload: firebase.firestore().collection('stores').where('nearby', '==', true).limit(4)
+      .get(),
   };
 }
 
 export function fetchRecommendStoreList() {
   return {
     type: FETCH_RECOMMEND_STORE_LIST,
-    payload: firebase.firestore().collection('stores').where('recommend', '==', true).limit(4).get(),
+    payload: firebase.firestore().collection('stores').where('recommend', '==', true).limit(4)
+      .get(),
   };
 }
 
 export function fetchHotStoreList() {
   return {
     type: FETCH_HOT_STORE_LIST,
-    payload: firebase.firestore().collection('stores').where('hot', '==', true).limit(4).get(),
+    payload: firebase.firestore().collection('stores').where('hot', '==', true).limit(4)
+      .get(),
   };
 }
 
 export function fetchStoreInfo(id) {
   return {
     type: FETCH_STORE_INFO,
-    payload: firebase.firestore().collection('stores').where('id', '==', id).limit(1).get(),
+    payload: firebase.firestore().collection('stores').where('id', '==', id).limit(1)
+      .get(),
   };
 }
 
@@ -87,14 +92,14 @@ export function saveStoreData(formData) {
     });
   } else {
     tagList = {
-      '測試': true,
+      測試: true,
     };
   }
 
 
   if (formData.twentyfourhr) {
     const feature = {};
-    feature['twentyfourhr'] = true;
+    feature.twentyfourhr = true;
     featureList = Object.assign(featureList, feature);
 
     const obj = {};
@@ -104,7 +109,7 @@ export function saveStoreData(formData) {
 
   if (formData.mrt) {
     const feature = {};
-    feature['mrt'] = true;
+    feature.mrt = true;
     featureList = Object.assign(featureList, feature);
 
     const obj = {};
@@ -114,7 +119,7 @@ export function saveStoreData(formData) {
 
   if (formData.noTimeLimit) {
     const feature = {};
-    feature['noTimeLimit'] = true;
+    feature.noTimeLimit = true;
     featureList = Object.assign(featureList, feature);
 
     const obj = {};
@@ -124,7 +129,7 @@ export function saveStoreData(formData) {
 
   if (formData.parking) {
     const feature = {};
-    feature['parking'] = true;
+    feature.parking = true;
     featureList = Object.assign(featureList, feature);
 
     const obj = {};
@@ -134,7 +139,7 @@ export function saveStoreData(formData) {
 
   if (formData.socket) {
     const feature = {};
-    feature['socket'] = true;
+    feature.socket = true;
     featureList = Object.assign(featureList, feature);
 
     // const obj = {};
@@ -144,7 +149,7 @@ export function saveStoreData(formData) {
 
   if (formData.takeout) {
     const feature = {};
-    feature['takeout'] = true;
+    feature.takeout = true;
     featureList = Object.assign(featureList, feature);
 
     const obj = {};
@@ -154,7 +159,7 @@ export function saveStoreData(formData) {
 
   if (formData.wifi) {
     const feature = {};
-    feature['wifi'] = true;
+    feature.wifi = true;
     featureList = Object.assign(featureList, feature);
 
     // const obj = {};
@@ -164,7 +169,7 @@ export function saveStoreData(formData) {
 
   if (formData.cashOnly) {
     const feature = {};
-    feature['cashOnly'] = true;
+    feature.cashOnly = true;
     featureList = Object.assign(featureList, feature);
 
     // const obj = {};
@@ -174,7 +179,7 @@ export function saveStoreData(formData) {
 
   if (formData.customService) {
     const feature = {};
-    feature['customService'] = true;
+    feature.customService = true;
     featureList = Object.assign(featureList, feature);
 
     // const obj = {};
@@ -184,7 +189,7 @@ export function saveStoreData(formData) {
 
   if (formData.family) {
     const feature = {};
-    feature['family'] = true;
+    feature.family = true;
     featureList = Object.assign(featureList, feature);
 
     const obj = {};
@@ -194,7 +199,7 @@ export function saveStoreData(formData) {
 
   if (formData.pet) {
     const feature = {};
-    feature['pet'] = true;
+    feature.pet = true;
     featureList = Object.assign(featureList, feature);
 
     const obj = {};
@@ -204,7 +209,7 @@ export function saveStoreData(formData) {
 
   if (formData.pokemon) {
     const feature = {};
-    feature['pokemon'] = true;
+    feature.pokemon = true;
     featureList = Object.assign(featureList, feature);
 
     const obj = {};
@@ -283,12 +288,18 @@ export function saveStoreData(formData) {
     features: featureList,
   };
 
-  // console.log(data);
-
   return {
     type: SAVE_STORE_DATA,
     // payload: firebase.firestore().collection('stores').add(data),
     payload: firebase.firestore().collection('test').add(data),
     // payload: firebase.firestore().collection('test').add('123'),
+  };
+}
+
+export function fetchStoreComments(id) {
+  return {
+    type: FETCH_STORE_COMMENTS,
+    payload: firebase.firestore().collection('comments').where('id', '==', id).limit(2)
+      .get(),
   };
 }

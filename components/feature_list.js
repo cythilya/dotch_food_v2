@@ -137,11 +137,11 @@ const FeatureList = ({ features }) => {
 };
 
 FeatureList.propTypes = {
-  features: PropTypes.array,
+  features: PropTypes.object,
 };
 
 FeatureList.defaultProps = {
-  features: [],
+  features: {},
 };
 
 export default FeatureList;
