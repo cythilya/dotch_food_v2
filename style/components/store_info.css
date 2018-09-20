@@ -18,7 +18,7 @@
 
 .store-info__container {
   width: calc(100% - 175px - 30px);
-  padding: 0 15px 15px 15px;
+  padding: 0 15px 15px 20px;
 }
 
 .store-info__title {
