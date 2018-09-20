@@ -18,7 +18,7 @@
 
 .store-info__container {
   width: calc(100% - 175px - 30px);
-  padding: 0 15px 15px 15px;
+  padding: 0 15px 15px 20px;
 }
 
 .store-info__title {
@@ -26,17 +26,18 @@
   font-size: $heading-font-size;
 }
 
-.store-info__description {
-  margin: 0 0 10px 0;
+.store-info__content {
   color: $font-content-color;
+  background: #fff;
+  border-bottom: 1px dashed #eee;
 }
 
 .store-info__detail {
+  box-sizing: border-box;
   margin: 0 0 10px 0;
   padding: 10px;
   color: $font-content-color;
   line-height: 1.6;
-  background: $panel-background;
 }
 
 .store-info__detail__item {
@@ -72,6 +73,21 @@
   .store-info__tag-link {
     color: #999;
   }
+}
+
+.store-info__no-comments {
+  color: $font-content-color;
+}
+
+.store-info__image-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.store-info__image-list__item {
+  display: block;
+  margin: 0 5px 5px 0;
 }
 
 @media $breakpoint-big-mobile {

@@ -36,7 +36,7 @@
   padding: 10px;
   color: $font-content-color;
   line-height: 1.6;
-  background: $panel-background;
+  background: #f7f7f7;
 }
 
 .store-item__detail__item {

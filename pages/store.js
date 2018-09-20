@@ -6,14 +6,12 @@ import Link from 'next/link';
 import PropTypes from 'prop-types';
 import Page from '../components/page';
 import StoreInfo from '../components/store_info';
-import StoreComments from '../components/store_comments';
 import Notfound from '../components/not_found';
-
+import data from '../data/data';
 import {
   fetchStoreInfo,
   fetchStoreComments,
 } from '../actions/index';
-import data from '../data/data';
 
 const {
   hotTags,
@@ -38,8 +36,7 @@ class Store extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    const { dispatch } = this.props;
-    const id = this.props.router.query.id;
+    const { dispatch, router: { query: { id } } } = this.props;
 
     if (id !== prevProps.router.query.id) {
       dispatch(fetchStoreInfo(id));
@@ -49,7 +46,6 @@ class Store extends Component {
 
   render() {
     const { store, storeComments } = this.props;
-    const id = this.props.router.query.id;
     const isNotFound = _.isEmpty(store);
     const isLoading = _.isObject(store) && _.isEmpty(store);
 
@@ -57,19 +53,18 @@ class Store extends Component {
       <Page title="商店單頁" id="store">
         <div className="panel">
           { !isNotFound
-            && (
-              <div>
-                <h1 className="panel__main-heading mb-2x">
-                  <Link href={`/store/?id=${store.id}`}>
-                    <a title={store.name}>
-                      {store.name}
-                    </a>
-                  </Link>
-                </h1>
-                <StoreInfo store={store} />
-                { (storeComments.length > 0) && <StoreComments comments={storeComments} />}
-              </div>
-            )
+          && (
+            <div>
+              <h1 className="panel__main-heading mb-2x">
+                <Link href={`/store/?id=${store.id}`}>
+                  <a title={store.name}>
+                    {store.name}
+                  </a>
+                </Link>
+              </h1>
+              <StoreInfo store={store} comments={storeComments} />
+            </div>
+          )
           }
           { isNotFound && renderNotFound() }
           { isLoading && renderLoading() }

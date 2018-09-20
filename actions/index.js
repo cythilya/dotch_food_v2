@@ -619,7 +619,7 @@ export function saveStoreData(formData) {
 export function fetchStoreComments(id) {
   return {
     type: FETCH_STORE_COMMENTS,
-    payload: firebase.firestore().collection('comments').where('id', '==', id).limit(2)
+    payload: firebase.firestore().collection('comments').where('id', '==', id).limit(5)
       .get(),
   };
 }
