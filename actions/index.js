@@ -8,6 +8,7 @@ import {
   FETCH_SLIDES_DATA,
   SAVE_STORE_DATA,
   FETCH_STORE_INFO,
+  FETCH_STORE_COMMENTS,
 } from '../constants';
 
 const uuidv1 = require('uuid/v1');
@@ -40,28 +41,32 @@ export function fetchStoreListByTag(tag) {
 export function fetchNearbyStoreList() {
   return {
     type: FETCH_NEARBY_STORE_LIST,
-    payload: firebase.firestore().collection('stores').where('nearby', '==', true).limit(4).get(),
+    payload: firebase.firestore().collection('stores').where('nearby', '==', true).limit(4)
+      .get(),
   };
 }
 
 export function fetchRecommendStoreList() {
   return {
     type: FETCH_RECOMMEND_STORE_LIST,
-    payload: firebase.firestore().collection('stores').where('recommend', '==', true).limit(4).get(),
+    payload: firebase.firestore().collection('stores').where('recommend', '==', true).limit(4)
+      .get(),
   };
 }
 
 export function fetchHotStoreList() {
   return {
     type: FETCH_HOT_STORE_LIST,
-    payload: firebase.firestore().collection('stores').where('hot', '==', true).limit(4).get(),
+    payload: firebase.firestore().collection('stores').where('hot', '==', true).limit(4)
+      .get(),
   };
 }
 
 export function fetchStoreInfo(id) {
   return {
     type: FETCH_STORE_INFO,
-    payload: firebase.firestore().collection('stores').where('id', '==', id).limit(1).get(),
+    payload: firebase.firestore().collection('stores').where('id', '==', id).limit(1)
+      .get(),
   };
 }
 
@@ -87,14 +92,13 @@ export function saveStoreData(formData) {
     });
   } else {
     tagList = {
-      '測試': true,
+      測試: true,
     };
   }
 
-
   if (formData.twentyfourhr) {
     const feature = {};
-    feature['twentyfourhr'] = true;
+    feature.twentyfourhr = true;
     featureList = Object.assign(featureList, feature);
 
     const obj = {};
@@ -104,7 +108,7 @@ export function saveStoreData(formData) {
 
   if (formData.mrt) {
     const feature = {};
-    feature['mrt'] = true;
+    feature.mrt = true;
     featureList = Object.assign(featureList, feature);
 
     const obj = {};
@@ -114,7 +118,7 @@ export function saveStoreData(formData) {
 
   if (formData.noTimeLimit) {
     const feature = {};
-    feature['noTimeLimit'] = true;
+    feature.noTimeLimit = true;
     featureList = Object.assign(featureList, feature);
 
     const obj = {};
@@ -124,7 +128,7 @@ export function saveStoreData(formData) {
 
   if (formData.parking) {
     const feature = {};
-    feature['parking'] = true;
+    feature.parking = true;
     featureList = Object.assign(featureList, feature);
 
     const obj = {};
@@ -134,7 +138,7 @@ export function saveStoreData(formData) {
 
   if (formData.socket) {
     const feature = {};
-    feature['socket'] = true;
+    feature.socket = true;
     featureList = Object.assign(featureList, feature);
 
     // const obj = {};
@@ -144,7 +148,7 @@ export function saveStoreData(formData) {
 
   if (formData.takeout) {
     const feature = {};
-    feature['takeout'] = true;
+    feature.takeout = true;
     featureList = Object.assign(featureList, feature);
 
     const obj = {};
@@ -154,7 +158,7 @@ export function saveStoreData(formData) {
 
   if (formData.wifi) {
     const feature = {};
-    feature['wifi'] = true;
+    feature.wifi = true;
     featureList = Object.assign(featureList, feature);
 
     // const obj = {};
@@ -164,7 +168,7 @@ export function saveStoreData(formData) {
 
   if (formData.cashOnly) {
     const feature = {};
-    feature['cashOnly'] = true;
+    feature.cashOnly = true;
     featureList = Object.assign(featureList, feature);
 
     // const obj = {};
@@ -174,7 +178,7 @@ export function saveStoreData(formData) {
 
   if (formData.customService) {
     const feature = {};
-    feature['customService'] = true;
+    feature.customService = true;
     featureList = Object.assign(featureList, feature);
 
     // const obj = {};
@@ -184,7 +188,7 @@ export function saveStoreData(formData) {
 
   if (formData.family) {
     const feature = {};
-    feature['family'] = true;
+    feature.family = true;
     featureList = Object.assign(featureList, feature);
 
     const obj = {};
@@ -194,7 +198,7 @@ export function saveStoreData(formData) {
 
   if (formData.pet) {
     const feature = {};
-    feature['pet'] = true;
+    feature.pet = true;
     featureList = Object.assign(featureList, feature);
 
     const obj = {};
@@ -204,11 +208,332 @@ export function saveStoreData(formData) {
 
   if (formData.pokemon) {
     const feature = {};
-    feature['pokemon'] = true;
+    feature.pokemon = true;
     featureList = Object.assign(featureList, feature);
 
     const obj = {};
     obj['寶可夢'] = true;
+    tagList = Object.assign(tagList, obj);
+  }
+
+  if (formData.sushi) {
+    const obj = {};
+    obj['壽司'] = true;
+    tagList = Object.assign(tagList, obj);
+  }
+
+  if (formData.brunch) {
+    const obj = {};
+    obj['早午餐'] = true;
+    tagList = Object.assign(tagList, obj);
+  }
+
+  if (formData.barbecue) {
+    const obj = {};
+    obj['燒烤'] = true;
+    tagList = Object.assign(tagList, obj);
+  }
+
+  if (formData.burger) {
+    const obj = {};
+    obj['漢堡'] = true;
+    tagList = Object.assign(tagList, obj);
+  }
+
+  if (formData.salad) {
+    const obj = {};
+    obj['輕食'] = true;
+    tagList = Object.assign(tagList, obj);
+  }
+
+  if (formData.steak) {
+    const obj = {};
+    obj['牛排'] = true;
+    tagList = Object.assign(tagList, obj);
+  }
+
+  if (formData.cake) {
+    const obj = {};
+    obj['甜點'] = true;
+    tagList = Object.assign(tagList, obj);
+  }
+
+  if (formData.dimsum) {
+    const obj = {};
+    obj['港式料理'] = true;
+    tagList = Object.assign(tagList, obj);
+  }
+
+  if (formData.lowprice) {
+    const obj = {};
+    obj['平價'] = true;
+    tagList = Object.assign(tagList, obj);
+  }
+
+  if (formData.beer) {
+    const obj = {};
+    obj['居酒屋'] = true;
+    tagList = Object.assign(tagList, obj);
+  }
+
+  if (formData.coffee) {
+    const obj = {};
+    obj['咖啡'] = true;
+    tagList = Object.assign(tagList, obj);
+  }
+
+  if (formData.thaifood) {
+    const obj = {};
+    obj['泰國菜'] = true;
+    tagList = Object.assign(tagList, obj);
+
+    const obj1 = {};
+    obj1['泰式料理'] = true;
+    tagList = Object.assign(tagList, obj1);
+  }
+
+  if (formData.tea) {
+    const obj = {};
+    obj['茶'] = true;
+    tagList = Object.assign(tagList, obj);
+  }
+
+  if (formData.crab) {
+    const obj = {};
+    obj['海鮮'] = true;
+    tagList = Object.assign(tagList, obj);
+  }
+
+  if (formData.friedchicken) {
+    const obj = {};
+    obj['炸雞'] = true;
+    tagList = Object.assign(tagList, obj);
+  }
+
+  if (formData.americanfood) {
+    const obj = {};
+    obj['美式料理'] = true;
+    tagList = Object.assign(tagList, obj);
+  }
+
+  if (formData.rice) {
+    const obj = {};
+    obj['家常菜'] = true;
+    tagList = Object.assign(tagList, obj);
+  }
+
+  if (formData.lettuce) {
+    const obj = {};
+    obj['素食'] = true;
+    tagList = Object.assign(tagList, obj);
+  }
+
+  if (formData.skewer) {
+    const obj = {};
+    obj['串燒'] = true;
+    tagList = Object.assign(tagList, obj);
+  }
+
+  if (formData.baking) {
+    const obj = {};
+    obj['DIY'] = true;
+    tagList = Object.assign(tagList, obj);
+  }
+
+  if (formData.spaguetti) {
+    const obj = {};
+    obj['義大利麵'] = true;
+    tagList = Object.assign(tagList, obj);
+  }
+
+  if (formData.pot) {
+    const obj = {};
+    obj['火鍋'] = true;
+    tagList = Object.assign(tagList, obj);
+  }
+
+  if (formData.doll) {
+    const obj = {};
+    obj['主題特色'] = true;
+    tagList = Object.assign(tagList, obj);
+  }
+
+  if (formData.foodtruck) {
+    const obj = {};
+    obj['小販餐車'] = true;
+    tagList = Object.assign(tagList, obj);
+  }
+
+  if (formData.superheroe) {
+    const obj = {};
+    obj['漫畫雜誌'] = true;
+    tagList = Object.assign(tagList, obj);
+  }
+
+  if (formData.socialmedia) {
+    const obj = {};
+    obj['拍照打卡'] = true;
+    tagList = Object.assign(tagList, obj);
+  }
+
+  if (formData.sofa) {
+    const obj = {};
+    obj['沙發'] = true;
+    tagList = Object.assign(tagList, obj);
+  }
+
+  if (formData.movie) {
+    const obj = {};
+    obj['桌邊服務'] = true;
+    tagList = Object.assign(tagList, obj);
+  }
+  if (formData.review) {
+    const obj = {};
+    obj['特別推薦'] = true;
+    tagList = Object.assign(tagList, obj);
+  }
+
+  if (formData.baker) {
+    const obj = {};
+    obj['無菜單'] = true;
+    tagList = Object.assign(tagList, obj);
+  }
+
+  if (formData.delivery) {
+    const obj = {};
+    obj['外送'] = true;
+    tagList = Object.assign(tagList, obj);
+  }
+
+  if (formData.ricebowl) {
+    const obj = {};
+    obj['中式料理'] = true;
+    tagList = Object.assign(tagList, obj);
+  }
+
+  if (formData.japanesefood) {
+    const obj = {};
+    obj['日式料理'] = true;
+    tagList = Object.assign(tagList, obj);
+  }
+
+  if (formData.sashimi) {
+    const obj = {};
+    obj['韓式料理'] = true;
+    tagList = Object.assign(tagList, obj);
+  }
+
+  if (formData.italianfood) {
+    const obj = {};
+    obj['義式料理'] = true;
+    tagList = Object.assign(tagList, obj);
+  }
+
+  if (formData.croissant) {
+    const obj = {};
+    obj['法式料理'] = true;
+    tagList = Object.assign(tagList, obj);
+  }
+
+  if (formData.curry) {
+    const obj = {};
+    obj['印度料理'] = true;
+    tagList = Object.assign(tagList, obj);
+  }
+
+  if (formData.merlion) {
+    const obj = {};
+    obj['星馬南洋料理'] = true;
+    tagList = Object.assign(tagList, obj);
+  }
+
+  if (formData.wok) {
+    const obj = {};
+    obj['異國料理'] = true;
+    tagList = Object.assign(tagList, obj);
+  }
+
+  if (formData.buffet) {
+    const obj = {};
+    obj['吃到飽'] = true;
+    tagList = Object.assign(tagList, obj);
+  }
+
+  if (formData.tray) {
+    const obj = {};
+    obj['鐵板燒'] = true;
+    tagList = Object.assign(tagList, obj);
+  }
+
+  if (formData.cafe) {
+    const obj = {};
+    obj['複合餐飲'] = true;
+    tagList = Object.assign(tagList, obj);
+  }
+
+  if (formData.selfservice) {
+    const obj = {};
+    obj['自助餐'] = true;
+    tagList = Object.assign(tagList, obj);
+  }
+
+  if (formData.lunchbox) {
+    const obj = {};
+    obj['便當'] = true;
+    tagList = Object.assign(tagList, obj);
+  }
+
+  if (formData.popcorn) {
+    const obj = {};
+    obj['速食'] = true;
+    tagList = Object.assign(tagList, obj);
+  }
+
+  if (formData.dessert) {
+    const obj = {};
+    obj['下午茶'] = true;
+    tagList = Object.assign(tagList, obj);
+  }
+
+  if (formData.beerbar) {
+    const obj = {};
+    obj['酒吧'] = true;
+    tagList = Object.assign(tagList, obj);
+  }
+
+  if (formData.noodles) {
+    const obj = {};
+    obj['小吃'] = true;
+    tagList = Object.assign(tagList, obj);
+  }
+
+  if (formData.instant) {
+    const obj = {};
+    obj['調理包'] = true;
+    tagList = Object.assign(tagList, obj);
+  }
+
+  if (formData.network) {
+    const obj = {};
+    obj['網咖'] = true;
+    tagList = Object.assign(tagList, obj);
+  }
+
+  if (formData.drink) {
+    const obj = {};
+    obj['咖啡茶飲'] = true;
+    tagList = Object.assign(tagList, obj);
+  }
+
+  if (formData.toast) {
+    const obj = {};
+    obj['烘焙糕點'] = true;
+    tagList = Object.assign(tagList, obj);
+  }
+
+  if (formData.other) {
+    const obj = {};
+    obj['其他'] = true;
     tagList = Object.assign(tagList, obj);
   }
 
@@ -283,12 +608,18 @@ export function saveStoreData(formData) {
     features: featureList,
   };
 
-  // console.log(data);
-
   return {
     type: SAVE_STORE_DATA,
     // payload: firebase.firestore().collection('stores').add(data),
     payload: firebase.firestore().collection('test').add(data),
     // payload: firebase.firestore().collection('test').add('123'),
+  };
+}
+
+export function fetchStoreComments(id) {
+  return {
+    type: FETCH_STORE_COMMENTS,
+    payload: firebase.firestore().collection('comments').where('id', '==', id).limit(5)
+      .get(),
   };
 }

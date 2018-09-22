@@ -273,6 +273,446 @@ const StoreDataForm = (props) => {
             </div>
             <div className="form__group">
               <label className="form__label">
+                分類
+              </label>
+              <div className="form__field-list">
+                <div className="form__filed-item">
+                  <Field
+                    type="checkbox"
+                    name="ricebowl"
+                    component="input"
+                  />
+                  <label className="form__hint">中式料理</label>
+                </div>
+                <div className="form__filed-item">
+                  <Field
+                    type="checkbox"
+                    name="dimsum"
+                    component="input"
+                  />
+                  <label className="form__hint">港式料理</label>
+                </div>
+                <div className="form__filed-item">
+                  <Field
+                    type="checkbox"
+                    name="rice"
+                    component="input"
+                  />
+                  <label className="form__hint">家常菜</label>
+                </div>
+                <div className="form__filed-item">
+                  <Field
+                    type="checkbox"
+                    name="noodles"
+                    component="input"
+                  />
+                  <label className="form__hint">小吃</label>
+                </div>
+                <div className="form__filed-item">
+                  <Field
+                    type="checkbox"
+                    name="lunchbox"
+                    component="input"
+                  />
+                  <label className="form__hint">便當</label>
+                </div>
+                <div className="form__filed-item">
+                  <Field
+                    type="checkbox"
+                    name="selfservice"
+                    component="input"
+                  />
+                  <label className="form__hint">自助餐</label>
+                </div>
+                <hr />
+                <div className="form__filed-item">
+                  <Field
+                    type="checkbox"
+                    name="japanesefood"
+                    component="input"
+                  />
+                  <label className="form__hint">日式料理</label>
+                </div>
+                <div className="form__filed-item">
+                  <Field
+                    type="checkbox"
+                    name="sushi"
+                    component="input"
+                  />
+                  <label className="form__hint">壽司</label>
+                </div>
+                <div className="form__filed-item">
+                  <Field
+                    type="checkbox"
+                    name="beer"
+                    component="input"
+                  />
+                  <label className="form__hint">居酒屋</label>
+                </div>
+                <div className="form__filed-item">
+                  <Field
+                    type="checkbox"
+                    name="skewer"
+                    component="input"
+                  />
+                  <label className="form__hint">串燒</label>
+                </div>
+                <hr />
+                <div className="form__filed-item">
+                  <Field
+                    type="checkbox"
+                    name="americanfood"
+                    component="input"
+                  />
+                  <label className="form__hint">美式料理</label>
+                </div>
+                <div className="form__filed-item">
+                  <Field
+                    type="checkbox"
+                    name="burger"
+                    component="input"
+                  />
+                  <label className="form__hint">漢堡</label>
+                </div>
+                <div className="form__filed-item">
+                  <Field
+                    type="checkbox"
+                    name="steak"
+                    component="input"
+                  />
+                  <label className="form__hint">牛排</label>
+                </div>
+                <div className="form__filed-item">
+                  <Field
+                    type="checkbox"
+                    name="friedchicken"
+                    component="input"
+                  />
+                  <label className="form__hint">炸雞</label>
+                </div>
+                <div className="form__filed-item">
+                  <Field
+                    type="checkbox"
+                    name="popcorn"
+                    component="input"
+                  />
+                  <label className="form__hint">速食</label>
+                </div>
+                <div className="form__filed-item">
+                  <Field
+                    type="checkbox"
+                    name="beerbar"
+                    component="input"
+                  />
+                  <label className="form__hint">酒吧</label>
+                </div>
+                <hr />
+                <div className="form__filed-item">
+                  <Field
+                    type="checkbox"
+                    name="italianfood"
+                    component="input"
+                  />
+                  <label className="form__hint">義式料理</label>
+                </div>
+                <div className="form__filed-item">
+                  <Field
+                    type="checkbox"
+                    name="spaguetti"
+                    component="input"
+                  />
+                  <label className="form__hint">義大利麵</label>
+                </div>
+                <hr />
+                <div className="form__filed-item">
+                  <Field
+                    type="checkbox"
+                    name="sashimi"
+                    component="input"
+                  />
+                  <label className="form__hint">韓式料理</label>
+                </div>
+                <div className="form__filed-item">
+                  <Field
+                    type="checkbox"
+                    name="thaifood"
+                    component="input"
+                  />
+                  <label className="form__hint">泰式料理</label>
+                </div>
+                <div className="form__filed-item">
+                  <Field
+                    type="checkbox"
+                    name="croissant"
+                    component="input"
+                  />
+                  <label className="form__hint">法式料理</label>
+                </div>
+                <div className="form__filed-item">
+                  <Field
+                    type="checkbox"
+                    name="curry"
+                    component="input"
+                  />
+                  <label className="form__hint">印度料理</label>
+                </div>
+                <div className="form__filed-item">
+                  <Field
+                    type="checkbox"
+                    name="merlion"
+                    component="input"
+                  />
+                  <label className="form__hint">星馬南洋料理</label>
+                </div>
+                <div className="form__filed-item">
+                  <Field
+                    type="checkbox"
+                    name="wok"
+                    component="input"
+                  />
+                  <label className="form__hint">異國料理</label>
+                </div>
+                <div className="form__filed-item">
+                  <Field
+                    type="checkbox"
+                    name="foodtruck"
+                    component="input"
+                  />
+                  <label className="form__hint">小販餐車</label>
+                </div>
+                <div className="form__filed-item">
+                  <Field
+                    type="checkbox"
+                    name="cafe"
+                    component="input"
+                  />
+                  <label className="form__hint">複合餐飲</label>
+                </div>
+                <hr />
+                <div className="form__filed-item">
+                  <Field
+                    type="checkbox"
+                    name="barbecue"
+                    component="input"
+                  />
+                  <label className="form__hint">燒烤</label>
+                </div>
+                <div className="form__filed-item">
+                  <Field
+                    type="checkbox"
+                    name="pot"
+                    component="input"
+                  />
+                  <label className="form__hint">火鍋</label>
+                </div>
+                <div className="form__filed-item">
+                  <Field
+                    type="checkbox"
+                    name="buffet"
+                    component="input"
+                  />
+                  <label className="form__hint">吃到飽</label>
+                </div>
+                <div className="form__filed-item">
+                  <Field
+                    type="checkbox"
+                    name="tray"
+                    component="input"
+                  />
+                  <label className="form__hint">鐵板燒</label>
+                </div>
+                <hr />
+                <div className="form__filed-item">
+                  <Field
+                    type="checkbox"
+                    name="brunch"
+                    component="input"
+                  />
+                  <label className="form__hint">早午餐</label>
+                </div>
+                <div className="form__filed-item">
+                  <Field
+                    type="checkbox"
+                    name="salad"
+                    component="input"
+                  />
+                  <label className="form__hint">輕食</label>
+                </div>
+                <div className="form__filed-item">
+                  <Field
+                    type="checkbox"
+                    name="cake"
+                    component="input"
+                  />
+                  <label className="form__hint">甜點</label>
+                </div>
+                <div className="form__filed-item">
+                  <Field
+                    type="checkbox"
+                    name="dessert"
+                    component="input"
+                  />
+                  <label className="form__hint">下午茶</label>
+                </div>
+                <div className="form__filed-item">
+                  <Field
+                    type="checkbox"
+                    name="toast"
+                    component="input"
+                  />
+                  <label className="form__hint">烘焙糕點</label>
+                </div>
+                <hr />
+                <div className="form__filed-item">
+                  <Field
+                    type="checkbox"
+                    name="coffee"
+                    component="input"
+                  />
+                  <label className="form__hint">咖啡</label>
+                </div>
+                <div className="form__filed-item">
+                  <Field
+                    type="checkbox"
+                    name="tea"
+                    component="input"
+                  />
+                  <label className="form__hint">茶</label>
+                </div>
+                <div className="form__filed-item">
+                  <Field
+                    type="checkbox"
+                    name="drink"
+                    component="input"
+                  />
+                  <label className="form__hint">咖啡茶飲</label>
+                </div>
+                <hr />
+                <div className="form__filed-item">
+                  <Field
+                    type="checkbox"
+                    name="crab"
+                    component="input"
+                  />
+                  <label className="form__hint">海鮮</label>
+                </div>
+                <div className="form__filed-item">
+                  <Field
+                    type="checkbox"
+                    name="lettuce"
+                    component="input"
+                  />
+                  <label className="form__hint">素食</label>
+                </div>
+                <hr />
+                <div className="form__filed-item">
+                  <Field
+                    type="checkbox"
+                    name="lowprice"
+                    component="input"
+                  />
+                  <label className="form__hint">平價</label>
+                </div>
+                <div className="form__filed-item">
+                  <Field
+                    type="checkbox"
+                    name="baking"
+                    component="input"
+                  />
+                  <label className="form__hint">DIY</label>
+                </div>
+                <div className="form__filed-item">
+                  <Field
+                    type="checkbox"
+                    name="doll"
+                    component="input"
+                  />
+                  <label className="form__hint">主題特色</label>
+                </div>
+                <div className="form__filed-item">
+                  <Field
+                    type="checkbox"
+                    name="superheroe"
+                    component="input"
+                  />
+                  <label className="form__hint">漫畫雜誌</label>
+                </div>
+                <div className="form__filed-item">
+                  <Field
+                    type="checkbox"
+                    name="socialmedia"
+                    component="input"
+                  />
+                  <label className="form__hint">拍照打卡</label>
+                </div>
+                <div className="form__filed-item">
+                  <Field
+                    type="checkbox"
+                    name="sofa"
+                    component="input"
+                  />
+                  <label className="form__hint">沙發</label>
+                </div>
+                <div className="form__filed-item">
+                  <Field
+                    type="checkbox"
+                    name="movie"
+                    component="input"
+                  />
+                  <label className="form__hint">桌邊服務</label>
+                </div>
+                <div className="form__filed-item">
+                  <Field
+                    type="checkbox"
+                    name="review"
+                    component="input"
+                  />
+                  <label className="form__hint">特別推薦</label>
+                </div>
+                <div className="form__filed-item">
+                  <Field
+                    type="checkbox"
+                    name="baker"
+                    component="input"
+                  />
+                  <label className="form__hint">無菜單</label>
+                </div>
+                <div className="form__filed-item">
+                  <Field
+                    type="checkbox"
+                    name="delivery"
+                    component="input"
+                  />
+                  <label className="form__hint">外送</label>
+                </div>
+                <div className="form__filed-item">
+                  <Field
+                    type="checkbox"
+                    name="instant"
+                    component="input"
+                  />
+                  <label className="form__hint">調理包</label>
+                </div>
+                <div className="form__filed-item">
+                  <Field
+                    type="checkbox"
+                    name="network"
+                    component="input"
+                  />
+                  <label className="form__hint">網咖</label>
+                </div>
+                <div className="form__filed-item">
+                  <Field
+                    type="checkbox"
+                    name="other"
+                    component="input"
+                  />
+                  <label className="form__hint">其他</label>
+                </div>
+              </div>
+            </div>
+            <div className="form__group">
+              <label className="form__label">
                 特色
               </label>
               <div className="form__field-list">

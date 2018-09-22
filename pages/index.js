@@ -14,14 +14,18 @@ import {
 } from '../actions/index';
 
 class Index extends Component {
+  constructor(props) {
+    super(props);
+
+    this.renderCards = this.renderCards.bind(this);
+  }
+
   componentDidMount() {
     const { dispatch } = this.props;
 
     dispatch(fetchNearbyStoreList());
     dispatch(fetchRecommendStoreList());
     dispatch(fetchHotStoreList());
-
-    this.renderCards = this.renderCards.bind(this);
   }
 
   renderCards(stores) {
