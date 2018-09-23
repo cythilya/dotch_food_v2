@@ -8,9 +8,9 @@ import '../style/components/comment_form.css';
 
 const required = value => value ? undefined : '必填'
 
-const renderTextField = ({ input, meta: { touched, error, warning } }) => (
+const renderTextField = ({ input, placeholder, meta: { touched, error, warning } }) => (
   <div>
-    <input {...input} type="text" className="form__input-text" />
+    <input {...input} type="text" className="form__input-text" placeholder={placeholder} />
     {touched && ((error && <span>{error}</span>) || (warning && <span>{warning}</span>))}
   </div>
 );
@@ -170,7 +170,7 @@ const CommentDataForm = (props) => {
                   component={renderTextField}
                   id="date"
                   name="date"
-                  placeholder="請填寫用餐日期"
+                  placeholder="yyyy/mm/dd"
                   className="form__input-text"
                   validate={[required]}
                 />

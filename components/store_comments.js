@@ -20,7 +20,7 @@ const StoreComments = ({ comments }) => {
               <div className="store-comments__item__user-image icon-kitty" />
               <div className="store-comments__item__detail">
                 <div className="store-comments__item__user-name">
-                  {user.name}
+                  {user}
                 </div>
                 <div className="store-comments__item__content">
                   {content}
