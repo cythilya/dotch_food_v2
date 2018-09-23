@@ -11,6 +11,7 @@
   text-decoration: none;
   min-width: 50px;
   cursor: pointer;
+  outline: none;
 
   &:hover, &:active {
     color: #fff;

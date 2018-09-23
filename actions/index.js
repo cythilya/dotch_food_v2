@@ -9,6 +9,8 @@ import {
   SAVE_STORE_DATA,
   FETCH_STORE_INFO,
   FETCH_STORE_COMMENTS,
+  SAVE_STORE_COMMENT,
+  INSERT_STORE_COMMENT,
 } from '../constants';
 
 const uuidv1 = require('uuid/v1');
@@ -621,5 +623,39 @@ export function fetchStoreComments(id) {
     type: FETCH_STORE_COMMENTS,
     payload: firebase.firestore().collection('comments').where('id', '==', id).limit(5)
       .get(),
+  };
+}
+
+export function saveCommentData(formData) {
+  const {
+    docid, user, rating, meal, date, content,
+  } = formData;
+  const data = {
+    user, rating, meal, date, content,
+  };
+
+  return {
+    type: SAVE_STORE_COMMENT,
+    payload: firebase.firestore().collection('comments').doc(docid).update({
+      comments: firebase.firestore.FieldValue.arrayUnion(data),
+    }),
+  };
+}
+
+export function insertCommentData(formData) {
+  const {
+    id, user, rating, meal, date, content,
+  } = formData;
+
+  return {
+    type: INSERT_STORE_COMMENT,
+    payload: firebase.firestore().collection('comments').add({
+      id,
+      comments: [
+        {
+          user, rating, meal, date, content,
+        },
+      ],
+    }),
   };
 }

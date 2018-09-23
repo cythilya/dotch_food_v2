@@ -76,11 +76,11 @@ class Store extends Component {
 
 Store.propTypes = {
   store: PropTypes.object.isRequired,
-  storeComments: PropTypes.array,
+  storeComments: PropTypes.object,
 };
 
 Store.defaultProps = {
-  storeComments: [],
+  storeComments: {},
 };
 
 export default withRouter(connect(state => state)(Store));

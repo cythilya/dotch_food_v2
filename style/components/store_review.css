@@ -1,0 +1,14 @@
+@import '../variables/_variable.css';
+
+.store-review__control {
+  margin: 0 0 20px 0;
+  padding: 10px;
+  background: #fff;
+}
+
+.store-review__feedback {
+  margin: 0 3px 0 0;
+  color: #4183c4;
+  cursor: pointer;
+  text-decoration: underline;
+}

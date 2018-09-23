@@ -17,6 +17,11 @@ input, textarea, select, button {
   font-size: 14px;
 }
 
+select {
+  height: 25px;
+  margin-top: 4px;
+}
+
 .show {
   display: block;
 }
