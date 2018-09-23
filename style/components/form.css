@@ -50,6 +50,10 @@
   border-color: #eee;
 }
 
+.form__select {
+  width: 100%;
+}
+
 .form__hint {
   color: $font-content-color;
 }

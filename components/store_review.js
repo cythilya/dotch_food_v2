@@ -16,11 +16,14 @@ class StoreReview extends Component {
 
     this.state = {
       isOpenReviewForm: false,
+      isFormValid: 1, // 0: error, 1: initial, 2: success
     };
 
     this.renderStoreComments = this.renderStoreComments.bind(this);
     this.enableCommentForm = this.enableCommentForm.bind(this);
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
+    this.handleSubmitFail = this.handleSubmitFail.bind(this);
+    this.resetFormStatus = this.resetFormStatus.bind(this);
     this.closeStoreCommentForm = this.closeStoreCommentForm.bind(this);
   }
 
@@ -51,21 +54,32 @@ class StoreReview extends Component {
 
     if (comments.id) {
       dispatch(saveCommentData(values)).then(() => {
-        // this.setState({ isFormValid: 2 });
+        this.setState({ isFormValid: 2 });
       });
     } else {
       dispatch(insertCommentData(values)).then(() => {
-        // this.setState({ isFormValid: 2 });
+        this.setState({ isFormValid: 2 });
       });
     }
   }
 
+  handleSubmitFail() {
+    this.setState({ isFormValid: 0 });
+  }
+
+  resetFormStatus(status) {
+    this.setState({ isFormValid: status });
+  }
+
   closeStoreCommentForm() {
-    this.setState({ isOpenReviewForm: false });
+    this.setState({
+      isOpenReviewForm: false,
+      isFormValid: 1,
+    });
   }
 
   renderStoreComments(commentInfo, storeid) {
-    const { isOpenReviewForm } = this.state;
+    const { isOpenReviewForm, isFormValid } = this.state;
     const comments = commentInfo.commentList || [];
     const commentList = comments.length > 0 ? <StoreComments comments={comments} /> : <div className="store-info__no-comments">暫無評價!</div>;
     return (
@@ -75,8 +89,11 @@ class StoreReview extends Component {
             <CommentDataForm
               id={commentInfo.id}
               storeid={storeid}
+              isFormValid={isFormValid}
               onSubmit={this.handleFormSubmit}
+              onSubmitFail={this.handleSubmitFail}
               closeForm={this.closeStoreCommentForm}
+              resetFormStatus={this.resetFormStatus}
             />
           )
         }

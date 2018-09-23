@@ -38,7 +38,7 @@ class New extends Component {
   }
 
   render() {
-    const isFormValid = this.state.isFormValid;
+    const { isFormValid } = this.state;
 
     return (
       <PageFull title="新增店家" id="new">
