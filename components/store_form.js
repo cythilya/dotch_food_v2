@@ -1,6 +1,7 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 import Link from 'next/link';
+import PropTypes from 'prop-types';
 import '../style/components/form.css';
 
 const StoreDataForm = (props) => {
@@ -845,6 +846,18 @@ const StoreDataForm = (props) => {
     </div>
   );
 };
+
+StoreDataForm.propTypes = {
+  isFormValid: PropTypes.number.isRequired,
+  resetFormStatus: PropTypes.func.isRequired,
+  handleSubmit: PropTypes.func.isRequired,
+  pristine: PropTypes.bool.isRequired,
+  reset: PropTypes.bool.isRequired,
+  submitting: PropTypes.bool.isRequired,
+  handleSubmitFail: PropTypes.func.isRequired,
+};
+
+StoreDataForm.defaultProps = {};
 
 export default reduxForm({
   form: 'storeData',

@@ -1,15 +1,20 @@
 import { FETCH_STORE_COMMENTS } from '../constants';
 
 export default function (state = {}, action) {
-  let commentsData = [];
+  let commentList = [];
+  let id = '';
 
   switch (action.type) {
     case FETCH_STORE_COMMENTS:
       action.payload.forEach((doc) => {
-        commentsData = [...commentsData, doc.data()];
+        id = doc.id;
+        commentList = [...commentList, doc.data()];
       });
 
-      return commentsData;
+      return {
+        id,
+        commentList,
+      };
     default:
       return state;
   }

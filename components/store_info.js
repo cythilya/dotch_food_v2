@@ -5,7 +5,7 @@ import LazyLoad from 'react-lazyload';
 import StoreControlButtons from './store_control_button';
 import FeatureList from './feature_list';
 import Tabs from './tabs';
-import StoreComments from './store_comments';
+import StoreReview from './store_review';
 import { icon as iconData } from '../data/locale_tw';
 import '../style/components/store_info.css';
 
@@ -111,11 +111,8 @@ class StoreInfo extends Component {
     )
   }
 
-  renderStoreComments(comments) {
-    if(comments.length > 0) {
-      return (<StoreComments comments={comments} />);
-    }
-    return (<div className="store-info__no-comments">暫無評價!</div>)
+  renderStoreComments(comments, storeid) {
+    return <StoreReview comments={comments} storeid={storeid} />;
   }
 
   render() {
@@ -132,7 +129,7 @@ class StoreInfo extends Component {
         id: 1,
         title: '評價',
         hash: 'comment',
-        content: this.renderStoreComments(comments),
+        content: this.renderStoreComments(comments, store.id),
       },
     ];
     const boxStyle = {
@@ -192,11 +189,11 @@ class StoreInfo extends Component {
 
 StoreInfo.propTypes = {
   store: PropTypes.object.isRequired,
-  comments: PropTypes.array,
+  comments: PropTypes.object,
 };
 
 StoreInfo.defaultProps = {
-  comments: [],
+  comments: {},
 };
 
 export default StoreInfo;
