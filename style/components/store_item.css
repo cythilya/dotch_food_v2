@@ -78,7 +78,7 @@
   .store-item {
     flex-wrap: wrap;
     justify-content: center;
-    margin: 15px;
+    margin: 15px 0;
   }
 
   .store-item__image {
@@ -88,6 +88,7 @@
 
   .store-item__container {
     width: 100%;
+    padding: 0 0 15px 0;
   }
 
   .store-item__tag-item {

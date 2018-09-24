@@ -18,7 +18,7 @@
 
 .store-info__container {
   width: calc(100% - 175px - 30px);
-  padding: 0 15px 15px 20px;
+  padding: 0 15px 15px 15px;
 }
 
 .store-info__title {
@@ -94,7 +94,7 @@
   .store-info {
     flex-wrap: wrap;
     justify-content: center;
-    margin: 15px;
+    margin: 15px 0;
   }
 
   .store-info__image {
@@ -104,6 +104,7 @@
 
   .store-info__container {
     width: 100%;
+    padding: 0 0 15px 0;
   }
 
   .store-info__tag-item {
