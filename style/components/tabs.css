@@ -6,7 +6,6 @@
 
 .tabs__nav__item {
   display: block;
-  margin-right: 0 5px -1px 0;
   padding: 9px 12px 9px 12px;
   font-size: 13px;
   color: #555;
@@ -14,6 +13,9 @@
   white-space: nowrap;
   outline: none;
   cursor: pointer;
+  border-bottom: 2px solid #fff;
+  outline: none;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
 
   &:hover {
     color: #000;
@@ -23,8 +25,9 @@
     color: #000;
     font-weight: bold;
     background: #fff;
-    border-bottom: 3px solid $main;
+    border-bottom: 2px solid $main;
     cursor: default;
+    transition: border-bottom .2s linear;
   }
 }
 
