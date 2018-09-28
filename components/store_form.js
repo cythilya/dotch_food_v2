@@ -26,7 +26,7 @@ const StoreDataForm = (props) => {
             &#x02717;
           </div>
           <div className="alert--content">
-            資料有誤，請重新再試一次
+            嗚嗚出錯了，請重新再試一次
           </div>
         </div>
       </div>
