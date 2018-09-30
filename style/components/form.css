@@ -63,3 +63,19 @@
   justify-content: flex-end;
   margin-top: 15px;
 }
+
+.form__hint {
+  display: inline-block;
+  margin-top: 5px;
+  font-size: 13px;
+  color: $font-hint-color;
+}
+
+.form__error {
+  @extend .form__hint;
+  color: red;
+}
+
+.form__warning {
+  @extend .form__hint;
+}

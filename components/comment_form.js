@@ -8,19 +8,40 @@ import '../style/components/comment_form.css';
 
 const required = value => value ? undefined : '必填'
 
-const renderTextField = ({ input, placeholder, meta: { touched, error, warning } }) => (
-  <div>
-    <input {...input} type="text" className="form__input-text" placeholder={placeholder} />
-    {touched && ((error && <span>{error}</span>) || (warning && <span>{warning}</span>))}
-  </div>
-);
+const renderTextField = ({ input, placeholder, meta: { touched, error, warning } }) => {
+  return (
+    <div>
+      <input
+        {...input}
+        type="text"
+        className="form__input-text"
+        placeholder={placeholder}
+      />
+      {touched
+        && ((error
+        && (
+        <span className="form__error">
+          {error}
+        </span>)
+        )
+        || (warning
+        && (
+        <span className="form__warning">
+          {warning}
+        </span>
+        )
+        ))
+      }
+    </div>
+  );
+};
 
 const renderSelectField = ({ input, label, type, meta: { touched, error }, children }) => (
   <div>
     <select {...input} className="form__select">
       {children}
     </select>
-    {touched && error && <span>{error}</span>}
+    {touched && error && <span className="form__error">{error}</span>}
   </div>
 );
 
@@ -95,7 +116,7 @@ const CommentDataForm = (props) => {
                   name="rating"
                   validate={[required]}
                 >
-                  <option>
+                  <option value="" disabled>
                     請選擇評等
                   </option>
                   <option value="5">
@@ -130,7 +151,7 @@ const CommentDataForm = (props) => {
                   name="meal"
                   validate={[required]}
                 >
-                  <option>
+                  <option value="" disabled>
                     請選擇餐別
                   </option>
                   <option value="breakfast">
