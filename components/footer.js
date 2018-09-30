@@ -54,9 +54,7 @@ const Footer = ({ categories, topics }) => {
           <li>
             <a
               title="聯絡我們"
-              href="https://cythilya.github.io/2015/02/02/dotchi/#disqus_thread"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="mailto:cythilya@gmail.com"
             >
               聯絡我們
             </a>
