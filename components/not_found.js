@@ -20,7 +20,6 @@ class Notfound extends Component {
     dispatch(fetchRecommendStoreList());
   }
 
-
   render() {
     const { tags } = this.props;
     const { filteredStores: { recommendStoresData } } = this.props;
