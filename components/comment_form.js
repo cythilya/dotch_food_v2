@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
 import PropTypes from 'prop-types';
-import DatePicker from 'react-datepicker';
-import moment from 'moment';
-import 'react-datepicker/dist/react-datepicker.css';
 import '../style/components/form.css';
 import '../style/components/alert.css';
 import '../style/components/store_info.css';
@@ -65,18 +62,6 @@ class CommentDataForm extends Component {
       submitting,
       handleSubmitFail,
     } = props;
-
-    this.state = {
-      date: moment(),
-    };
-
-    this.handleChange = this.handleChange.bind(this);
-  }
-
-  handleChange(date) {
-    this.setState({
-      date,
-    });
   }
 
   render() {
@@ -221,16 +206,14 @@ class CommentDataForm extends Component {
                   用餐日期
                 </label>
                 <div className="form__field">
-                  <DatePicker
-                    dateFormat="YYYY/MM/DD"
-                    selected={this.state.date}
-                    onChange={this.handleChange} //only when value has changed
+                  <Field
+                    type="text"
+                    component="input"
                     id="date"
                     name="date"
                     placeholder="yyyy/mm/dd"
                     className="form__input-text"
                     validate={[required]}
-                    autocomplete="off"
                   />
                 </div>
               </div>
