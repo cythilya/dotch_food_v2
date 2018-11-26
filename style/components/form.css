@@ -26,6 +26,7 @@
 }
 
 .form__field {
+  position: relative;
   display: block;
   width: calc(100% - 120px);
 }
@@ -62,4 +63,20 @@
   display: flex;
   justify-content: flex-end;
   margin-top: 15px;
+}
+
+.form__hint {
+  display: inline-block;
+  margin: 5px 0;
+  font-size: 13px;
+  color: $font-hint-color;
+}
+
+.form__error {
+  @extend .form__hint;
+  color: red;
+}
+
+.form__warning {
+  @extend .form__hint;
 }
