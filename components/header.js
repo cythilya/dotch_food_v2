@@ -24,11 +24,19 @@ const Header = () => {
           </a>
         </Link>
       </div>
-      <input
-        className="header__search-input"
-        placeholder="有什麼好吃的？"
-        aria-label="有什麼好吃的？"
-      />
+      <div className="header__searchbox">
+        <input
+          className="header__search-input"
+          placeholder="有什麼好吃的？"
+          aria-label="有什麼好吃的？"
+        />
+        <button
+          type="submit"
+          className="button header__submit"
+        >
+          送出
+        </button>
+      </div>
     </div>
   );
 };
