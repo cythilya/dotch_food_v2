@@ -63,7 +63,7 @@ class Header extends Component {
             className="header__searchbox__cancel"
             onClick={() => this.onInputChange('')}
           >
-            X
+            x
           </button>
         </div>
       </div>

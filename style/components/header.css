@@ -36,12 +36,17 @@
   .header__searchbox__cancel {
     position: absolute;
     right: 5px;
-    top: 6px;
-    color: #eee;
-    border: 1px solid #eee;
-    border-radius: 25px;
+    top: 4px;
+    width: 25px;
+    padding: 3px 0;
+    color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 100%;
     outline: none;
+    background: #ddd;
     transition: all .1s;
+    text-align: center;
+    vertical-align: middle;
 
     &:hover, &:active {
       transform: translate(0, 1px);
