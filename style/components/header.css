@@ -30,6 +30,25 @@
   color: #fff;
 }
 
+.header__searchbox {
+  position: relative;
+
+  .header__searchbox__cancel {
+    position: absolute;
+    right: 5px;
+    top: 6px;
+    color: #eee;
+    border: 1px solid #eee;
+    border-radius: 25px;
+    outline: none;
+    transition: all .1s;
+
+    &:hover, &:active {
+      transform: translate(0, 1px);
+    }
+  }
+}
+
 .header__search-input {
   padding: 8px 6px;
   border-radius: 3px;
