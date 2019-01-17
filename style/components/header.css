@@ -33,12 +33,15 @@
 .header__searchbox {
   position: relative;
 
-  .header__submit {
+  .header__searchbox__cancel {
     position: absolute;
-    right: 2px;
-    top: 1px;
-    margin: 0;
-    padding: 3px 5px;
+    right: 5px;
+    top: 6px;
+    color: #eee;
+    border: 1px solid #eee;
+    border-radius: 25px;
+    outline: none;
+    transition: all .1s;
 
     &:hover, &:active {
       transform: translate(0, 1px);
