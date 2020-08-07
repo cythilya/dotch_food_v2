@@ -1,16 +1,16 @@
 import _ from 'lodash';
 import {
-  FETCH_STORE_LIST,
-  FETCH_STORE_LIST_BY_TAG,
+  FETCH_HOT_STORE_LIST,
   FETCH_NEARBY_STORE_LIST,
   FETCH_RECOMMEND_STORE_LIST,
-  FETCH_HOT_STORE_LIST,
   FETCH_SLIDES_DATA,
-  SAVE_STORE_DATA,
-  FETCH_STORE_INFO,
   FETCH_STORE_COMMENTS,
-  SAVE_STORE_COMMENT,
+  FETCH_STORE_INFO,
+  FETCH_STORE_LIST_BY_TAG,
+  FETCH_STORE_LIST,
   INSERT_STORE_COMMENT,
+  SAVE_STORE_COMMENT,
+  SAVE_STORE_DATA,
 } from '../constants';
 
 const uuidv1 = require('uuid/v1');
@@ -26,21 +26,22 @@ if (!firebase.apps.length) {
   });
 }
 
-export function fetchStoreList() {
+
+export const fetchStoreList = () => {
   return {
     type: FETCH_STORE_LIST,
     payload: firebase.firestore().collection('stores').orderBy('id').get(),
   };
 }
 
-export function fetchStoreListByTag(tag) {
+export const fetchStoreListByTag = (tag) => {
   return {
     type: FETCH_STORE_LIST_BY_TAG,
     payload: firebase.firestore().collection('stores').where(`tags.${tag}`, '==', true).get(),
   };
 }
 
-export function fetchNearbyStoreList() {
+export const fetchNearbyStoreList = () => {
   return {
     type: FETCH_NEARBY_STORE_LIST,
     payload: firebase.firestore().collection('stores').where('nearby', '==', true).limit(4)
@@ -48,7 +49,7 @@ export function fetchNearbyStoreList() {
   };
 }
 
-export function fetchRecommendStoreList() {
+export const fetchRecommendStoreList = () => {
   return {
     type: FETCH_RECOMMEND_STORE_LIST,
     payload: firebase.firestore().collection('stores').where('recommend', '==', true).limit(4)
@@ -56,7 +57,7 @@ export function fetchRecommendStoreList() {
   };
 }
 
-export function fetchHotStoreList() {
+export const fetchHotStoreList = () => {
   return {
     type: FETCH_HOT_STORE_LIST,
     payload: firebase.firestore().collection('stores').where('hot', '==', true).limit(4)
@@ -64,22 +65,21 @@ export function fetchHotStoreList() {
   };
 }
 
-export function fetchStoreInfo(id) {
+export const fetchStoreInfo = (id) => {
   return {
     type: FETCH_STORE_INFO,
-    payload: firebase.firestore().collection('stores').where('id', '==', id).limit(1)
-      .get(),
+    payload: firebase.firestore().collection('stores').where('id', '==', id).limit(1).get(),
   };
 }
 
-export function fetchSlidesData() {
+export const fetchSlidesData = () => {
   return {
     type: FETCH_SLIDES_DATA,
     payload: firebase.firestore().collection('slideshows').orderBy('id').get(),
   };
 }
 
-export function saveStoreData(formData) {
+export const saveStoreData = (formData) => {
   const imageName = formData.image || 'v1535796583/kitty-outline-512';
   const bookingPhone = formData.isBookingPhone ? formData.phone : null;
   const tagArray = formData.tags ? formData.tags.split(' ') : [];
@@ -618,7 +618,7 @@ export function saveStoreData(formData) {
   };
 }
 
-export function fetchStoreComments(id) {
+export const fetchStoreComments = (id) => {
   return {
     type: FETCH_STORE_COMMENTS,
     payload: firebase.firestore().collection('comments').where('id', '==', id).limit(5)
@@ -626,7 +626,7 @@ export function fetchStoreComments(id) {
   };
 }
 
-export function saveCommentData(formData) {
+export const saveCommentData = (formData) => {
   const {
     docid, user, rating, meal, date, content,
   } = formData;
@@ -642,7 +642,7 @@ export function saveCommentData(formData) {
   };
 }
 
-export function insertCommentData(formData) {
+export const insertCommentData = (formData) => {
   const {
     id, user, rating, meal, date, content,
   } = formData;
