@@ -1,7 +1,7 @@
 .slideshow {
   height: 405px;
   margin: 15px 0;
-  background: #ddd;
+  background: $pearl-river;
   will-change: transform;
   overflow: hidden;
 }
@@ -30,13 +30,13 @@
   width: 10px;
   height: 10px;
   margin: 0 5px;
-  background: #888;
+  background: $stone;
   border-radius: 50%;
   cursor: pointer;
 }
 
 .slideshow__dot--active {
-  background: #666;
+  background: $dark-gray;
 }
 
 .slideshow__arrow-forward {

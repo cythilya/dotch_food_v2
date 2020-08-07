@@ -5,14 +5,14 @@
   flex-wrap: wrap;
   justify-content: space-around;
   padding: 5px;
-  background: #eee;
+  background: $border-color;
 }
 
 .tag-list__item {
   box-sizing: border-box;
   margin: 5px 2px;
   padding: 5px;
-  background: #e3e3e3;
+  background: $light-gray;
   border-radius: 5px;
 }
 

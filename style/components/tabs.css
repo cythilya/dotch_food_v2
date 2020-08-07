@@ -8,23 +8,23 @@
   display: block;
   padding: 9px 12px 9px 12px;
   font-size: 13px;
-  color: #555;
+  color: $dark-gray;
   text-decoration: none;
   white-space: nowrap;
   outline: none;
   cursor: pointer;
-  border-bottom: 2px solid #fff;
+  border-bottom: 2px solid $white;
   outline: none;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
 
   &:hover {
-    color: #000;
+    color: $black
   }
 
   &.selected {
-    color: #000;
+    color: $black;
     font-weight: bold;
-    background: #fff;
+    background: $white;
     border-bottom: 2px solid $main;
     cursor: default;
     transition: border-bottom .2s linear;
@@ -32,8 +32,8 @@
 }
 
 .tab__panel {
-  border-top: 1px solid #eee;
-  background: #fafafa;
+  border-top: 1px solid $border-color;
+  background: $faux-white;
 }
 
 .tabs__panel__item {

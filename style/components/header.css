@@ -27,7 +27,7 @@
 .header__title {
   display: block;
   font-size: 17px;
-  color: #fff;
+  color: $white;
 }
 
 .header__searchbox {
@@ -39,11 +39,11 @@
     top: 4px;
     width: 25px;
     padding: 3px 0;
-    color: #fff;
-    border: 1px solid #ddd;
+    color: $white;
+    border: 1px solid $pearl-river;
     border-radius: 100%;
     outline: none;
-    background: #ddd;
+    background: $pearl-river;
     transition: all .1s;
     text-align: center;
     vertical-align: middle;

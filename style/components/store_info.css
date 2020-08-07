@@ -28,8 +28,8 @@
 
 .store-info__content {
   color: $font-content-color;
-  background: #fff;
-  border-bottom: 1px dashed #eee;
+  background: $white;
+  border-bottom: 1px dashed $border-color;
 }
 
 .store-info__detail {
@@ -67,11 +67,11 @@
   margin: 5px 5px 5px 0;
   padding: 3px;
   word-break: keep-all;
-  background: #e8e8e8;
+  background: $light-gray;
   border-radius: 5px;
 
   .store-info__tag-link {
-    color: #999;
+    color: $gray;
   }
 }
 

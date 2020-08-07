@@ -3,12 +3,12 @@
 .store-review__control {
   margin: 0 0 20px 0;
   padding: 10px;
-  background: #fff;
+  background: $white;
 }
 
 .store-review__feedback {
   margin: 0 3px 0 0;
-  color: #4183c4;
+  color: $blue;
   cursor: pointer;
   text-decoration: underline;
 }

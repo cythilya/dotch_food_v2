@@ -12,6 +12,7 @@ import {
   SAVE_STORE_COMMENT,
   SAVE_STORE_DATA,
 } from '../constants';
+const DEFAULT_IMAGE = 'v1535796583/kitty-outline-512';
 
 const uuidv1 = require('uuid/v1');
 
@@ -25,7 +26,6 @@ if (!firebase.apps.length) {
     projectId: 'dotch-food',
   });
 }
-
 
 export const fetchStoreList = () => {
   return {
@@ -44,24 +44,21 @@ export const fetchStoreListByTag = (tag) => {
 export const fetchNearbyStoreList = () => {
   return {
     type: FETCH_NEARBY_STORE_LIST,
-    payload: firebase.firestore().collection('stores').where('nearby', '==', true).limit(4)
-      .get(),
+    payload: firebase.firestore().collection('stores').where('nearby', '==', true).limit(4).get(),
   };
 }
 
 export const fetchRecommendStoreList = () => {
   return {
     type: FETCH_RECOMMEND_STORE_LIST,
-    payload: firebase.firestore().collection('stores').where('recommend', '==', true).limit(4)
-      .get(),
+    payload: firebase.firestore().collection('stores').where('recommend', '==', true).limit(4).get(),
   };
 }
 
 export const fetchHotStoreList = () => {
   return {
     type: FETCH_HOT_STORE_LIST,
-    payload: firebase.firestore().collection('stores').where('hot', '==', true).limit(4)
-      .get(),
+    payload: firebase.firestore().collection('stores').where('hot', '==', true).limit(4).get(),
   };
 }
 
@@ -80,7 +77,7 @@ export const fetchSlidesData = () => {
 }
 
 export const saveStoreData = (formData) => {
-  const imageName = formData.image || 'v1535796583/kitty-outline-512';
+  const imageName = formData.image || DEFAULT_IMAGE;
   const bookingPhone = formData.isBookingPhone ? formData.phone : null;
   const tagArray = formData.tags ? formData.tags.split(' ') : [];
   let tagList = {};

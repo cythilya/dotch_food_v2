@@ -9,7 +9,7 @@ ol, ul {
 }
 
 a {
-  color: #4183c4;
+  color: $blue;
   text-decoration: none;
 }
 
@@ -82,7 +82,7 @@ select {
     width: 24px;
     height: 24px;
     margin: 0 0 0 5px;
-    fill: #767676;
+    fill: $stone;
   }
 }
 

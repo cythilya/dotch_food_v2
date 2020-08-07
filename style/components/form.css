@@ -2,7 +2,7 @@
 
 .form {
   padding: 20px;
-  background: #fff;
+  background: $white;
 }
 
 .form-store-info {
@@ -48,7 +48,7 @@
   border-radius: 5px;
   border-width: 1px;
   border-style: solid;
-  border-color: #eee;
+  border-color: $border-color;
 }
 
 .form__select {
@@ -74,7 +74,7 @@
 
 .form__error {
   @extend .form__hint;
-  color: red;
+  color: $red;
 }
 
 .form__warning {

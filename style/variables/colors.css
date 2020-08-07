@@ -1,10 +1,26 @@
-$main: #d15d36;
+/* gray */
+$white: #fff;
+$faux-white: #fefefe;
+$pearl-river: #ddd;
+$light-gray: #e8e8e8;
+$gray: #999;
+$stone: #888;
+$dark-gray: #666;
+$black: #000;
+
+$red: red;
+$blue: #4183c4;
+
+$orange: #d15d36;
+$dark-orange: #a74a2b;
+
+/* feature */
+$main: $orange;
 $font-content-color: #666;
 $font-hint-color: #aaa;
 $border-color: #eee;
 $panel-background: #f7f7f7;
 $disabled: #ccc;
-
 $danger: #b8123c;
 $info: #41d2f2;
 $success: #96b0a3;
