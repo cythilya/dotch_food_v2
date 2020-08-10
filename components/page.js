@@ -6,15 +6,13 @@ import Header from './header';
 import Newsticker from 'react-newsticker';
 import Footer from './footer';
 import TagList from './tag_list';
-import data from '../data/data';
-import '../style/index.css';
-
-const {
-  hotCategories,
+import  {
   categories,
+  hotCategories,
   hotTopics,
   news,
-} = data;
+} from '../data/data';
+import '../style/index.css';
 
 function Page(props) {
   const { id } = props;
