@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Link from 'next/link';
 import Router from 'next/router';
-import { common } from '../data/locale_tw';
+import { common } from '../data/data';
 import '../style/components/header.css';
 
 class Header extends Component {

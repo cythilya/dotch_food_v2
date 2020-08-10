@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import PropTypes from 'prop-types';
-import { icon as iconData } from '../data/locale_tw';
+import { icon as iconData } from '../data/data';
 import '../style/components/store_control_button.css';
 
 const StoreControlButtons = ({ store }) => {

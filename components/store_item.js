@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Link from 'next/link';
 import LazyLoad from 'react-lazyload';
 import StoreControlButtons from './store_control_button';
-import { icon as iconData } from '../data/locale_tw';
+import { icon as iconData } from '../data/data';
 import '../style/components/store_item.css';
 
 const StoreItem = ({ store }) => {

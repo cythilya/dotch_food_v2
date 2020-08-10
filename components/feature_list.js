@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { features as featureData } from '../data/locale_tw';
+import { features as featureData } from '../data/data';
 import '../style/components/feature_list.css';
 
 const FeatureList = ({ features }) => {
