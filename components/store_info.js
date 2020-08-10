@@ -6,7 +6,7 @@ import StoreControlButtons from './store_control_button';
 import FeatureList from './feature_list';
 import Tabs from './tabs';
 import StoreReview from './store_review';
-import { icon as iconData } from '../data/locale_tw';
+import { icon as iconData } from '../data/data';
 import '../style/components/store_info.css';
 
 class StoreInfo extends Component {

@@ -12,7 +12,12 @@ import {
   SAVE_STORE_COMMENT,
   SAVE_STORE_DATA,
 } from '../constants';
-const DEFAULT_IMAGE = 'v1535796583/kitty-outline-512';
+import { DEFAULT_IMAGE } from '../constants/common';
+import {
+  API_KEY,
+  AUTH_DOMAIN,
+  PROJECT_ID,
+} from '../constants/config';
 
 const uuidv1 = require('uuid/v1');
 
@@ -21,9 +26,9 @@ require('firebase/firestore');
 
 if (!firebase.apps.length) {
   firebase.initializeApp({
-    apiKey: 'AIzaSyC_xPAyKYsvuIuT6mceI_8gow7H3cSo3BI',
-    authDomain: 'dotch-food.firebaseapp.com',
-    projectId: 'dotch-food',
+    apiKey: API_KEY,
+    authDomain: AUTH_DOMAIN,
+    projectId: PROJECT_ID,
   });
 }
 

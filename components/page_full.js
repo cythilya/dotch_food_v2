@@ -3,14 +3,12 @@ import PropTypes from 'prop-types';
 import Header from './header';
 import Footer from './footer';
 import TagList from './tag_list';
-import data from '../data/data';
-import '../style/index.css';
-
-const {
-  hotCategories,
+import {
   categories,
+  hotCategories,
   hotTopics,
-} = data;
+} from '../data/data';
+import '../style/index.css';
 
 function PageFull(props) {
   const { children } = props;

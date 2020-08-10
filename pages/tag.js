@@ -12,11 +12,7 @@ import {
   fetchStoreList,
   fetchStoreListByTag,
 } from '../actions/index';
-import data from '../data/data';
-
-const {
-  hotTags,
-} = data;
+import { hotTags } from '../data/data';
 
 const renderStores = (stores) => {
   return _.map(stores, (store) => {
