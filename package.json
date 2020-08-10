@@ -6,7 +6,8 @@
     "dev": "node server.js",
     "build": "next build",
     "start": "NODE_ENV=production next start",
-    "test": "NODE_ENV=test jest"
+    "test": "NODE_ENV=test jest",
+    "lighthouse": "./node_modules/lighthouse/lighthouse-cli/index.js $url"
   },
   "dependencies": {
     "@zeit/next-css": "^0.2.0",
@@ -15,6 +16,7 @@
     "express": "4.16.2",
     "firebase": "^5.4.1",
     "isomorphic-unfetch": "2.0.0",
+    "lighthouse": "^6.2.0",
     "lodash": "^4.17.10",
     "moment": "^2.22.2",
     "next": "^6.1.1",
