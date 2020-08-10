@@ -1,0 +1,1 @@
+export const DEFAULT_IMAGE = 'v1535796583/kitty-outline-512';
