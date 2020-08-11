@@ -1,0 +1,324 @@
+[
+    {
+        "booking": {
+            "online": null,
+            "phone": null
+        },
+        "description": "好食、好感、好生活",
+        "features": {
+            "mrt": true,
+            "noTimeLimit": true,
+            "parking": true,
+            "pokemon": true,
+            "socket": true,
+            "takeout": true,
+            "wifi": true
+        },
+        "hot": false,
+        "id": "76d623b4-004e-4f30-a69b-d20943cf0cd2",
+        "image": [
+            {
+                "url": "https://cythilya.github.io/assets/dotch-food-v2/wen-dao-cafe/wen-dao-cafe-1.jpg"
+            },
+            {
+                "url": "https://res.cloudinary.com/dfgridmvn/image/upload/c_scale,q_auto:best,w_177/v1535196130/dotch-food-v2/wen-dao-cafe-1.jpg"
+            },
+            {
+                "url": "https://res.cloudinary.com/dfgridmvn/image/upload/c_scale,q_auto:best,w_354/v1535196130/dotch-food-v2/wen-dao-cafe-1.jpg"
+            },
+            {
+                "url": "https://res.cloudinary.com/dfgridmvn/image/upload/c_scale,q_auto:best,w_531/v1535196130/dotch-food-v2/wen-dao-cafe-1.jpg"
+            },
+            {
+                "url": "https://res.cloudinary.com/dfgridmvn/image/upload/c_scale,q_auto:best,w_708/v1535196130/dotch-food-v2/wen-dao-cafe-1.jpg"
+            },
+            {
+                "url": "https://res.cloudinary.com/dfgridmvn/image/upload/c_scale,q_auto:best,w_177/v1535196130/dotch-food-v2/wen-dao-cafe-1.webp"
+            },
+            {
+                "url": "https://res.cloudinary.com/dfgridmvn/image/upload/c_scale,q_auto:best,w_354/v1535196130/dotch-food-v2/wen-dao-cafe-1.webp"
+            },
+            {
+                "url": "https://res.cloudinary.com/dfgridmvn/image/upload/c_scale,q_auto:best,w_531/v1535196130/dotch-food-v2/wen-dao-cafe-1.webp"
+            },
+            {
+                "url": "https://res.cloudinary.com/dfgridmvn/image/upload/c_scale,q_auto:best,w_708/v1535196130/dotch-food-v2/wen-dao-cafe-1.webp"
+            }
+        ],
+        "location": {
+            "address": "台北市中正區新生南路一段162號",
+            "coordinates": {
+                "_lat": 25.0344877,
+                "_long": 121.5324524
+            },
+            "zip": "100"
+        },
+        "name": "溫叨 CAFE",
+        "nearby": false,
+        "openingHour": {
+            "end": "9 PM",
+            "start": "9 AM"
+        },
+        "phone": "02-23410018",
+        "price": {
+            "highest": 189,
+            "lowest": 100
+        },
+        "recommend": true,
+        "sns": {
+            "facebook": "https://www.facebook.com/wendaocafe/",
+            "website": "http://wendaowendao.com/"
+        },
+        "tags": [
+            "下午茶",
+            "不限時",
+            "咖啡",
+            "咖啡廳",
+            "咖啡茶飲",
+            "大安森林公園",
+            "寶可夢",
+            "工作",
+            "早午餐",
+            "果汁",
+            "沙拉",
+            "甜點",
+            "茶",
+            "輕食",
+            "養生",
+            "鬆餅"
+        ]
+    },
+    {
+        "booking": {
+            "online": null,
+            "phone": null
+        },
+        "description": "巷弄中，簡單溫暖的小店，賣推薦的食材，還有簡單的料理。",
+        "hot": false,
+        "id": "83604539-2b58-4e7d-a40c-f97e05fd40b4",
+        "image": [
+            {
+                "isCover": true,
+                "isFavorite": true,
+                "title": "丼飯",
+                "url": "https://cythilya.github.io/assets/dotch-food-v2/oka-taro-hours/oka-taro-hours.jpg"
+            },
+            {
+                "url": "https://res.cloudinary.com/dfgridmvn/image/upload/c_scale,q_auto:best,w_177/v1535196530/dotch-food-v2/oka-taro-hours.jpg"
+            },
+            {
+                "url": "https://res.cloudinary.com/dfgridmvn/image/upload/c_scale,q_auto:best,w_354/v1535196530/dotch-food-v2/oka-taro-hours.jpg"
+            },
+            {
+                "url": "https://res.cloudinary.com/dfgridmvn/image/upload/c_scale,q_auto:best,w_531/v1535196530/dotch-food-v2/oka-taro-hours.jpg"
+            },
+            {
+                "url": "https://res.cloudinary.com/dfgridmvn/image/upload/c_scale,q_auto:best,w_708/v1535196530/dotch-food-v2/oka-taro-hours.jpg"
+            },
+            {
+                "url": "https://res.cloudinary.com/dfgridmvn/image/upload/c_scale,q_auto:best,w_177/v1535196530/dotch-food-v2/oka-taro-hours.webp"
+            },
+            {
+                "url": "https://res.cloudinary.com/dfgridmvn/image/upload/c_scale,q_auto:best,w_354/v1535196530/dotch-food-v2/oka-taro-hours.webp"
+            },
+            {
+                "url": "https://res.cloudinary.com/dfgridmvn/image/upload/c_scale,q_auto:best,w_531/v1535196530/dotch-food-v2/oka-taro-hours.webp"
+            },
+            {
+                "url": "https://res.cloudinary.com/dfgridmvn/image/upload/c_scale,q_auto:best,w_708/v1535196530/dotch-food-v2/oka-taro-hours.webp"
+            }
+        ],
+        "location": {
+            "address": "台北市和平東路二段175巷12號",
+            "coordinates": {
+                "_lat": 25.0255071,
+                "_long": 121.54167010000003
+            },
+            "zip": "106"
+        },
+        "name": "岡太郎家日式料理",
+        "nearby": false,
+        "openingHour": {
+            "end": "9 PM",
+            "start": "11:30 AM"
+        },
+        "phone": "0973-100860",
+        "price": {
+            "highest": 250,
+            "lowest": 100
+        },
+        "recommend": true,
+        "sns": {
+            "website": "https://www.google.com.tw/search?q=%E5%B2%A1%E5%A4%AA%E9%83%8E%E5%AE%B6%E6%97%A5%E5%BC%8F%E6%96%99%E7%90%86&oq=%E5%B2%A1%E5%A4%AA%E9%83%8E%E5%AE%B6%E6%97%A5%E5%BC%8F%E6%96%99%E7%90%86&aqs=chrome..69i57&sourceid=chrome&ie=UTF-8#lrd=0x3442aa294487a239:0x8e004581a88e942c,1,,,"
+        },
+        "tags": [
+            "咖啡",
+            "咖啡茶飲",
+            "平價",
+            "日式料理",
+            "生魚片",
+            "科技大樓",
+            "關東煮"
+        ]
+    },
+    {
+        "booking": {
+            "online": "http://www.hooters.com.tw/index_down.php?sele=myform&formnumber=2",
+            "phone": "02-27165168 "
+        },
+        "description": "新式美國菜和漢堡類",
+        "hot": false,
+        "id": "c3b57389-2d63-4bb4-80cc-df335ea6f467",
+        "image": [
+            {
+                "url": "https://cythilya.github.io/assets/dotch-food-v2/hooters/hooters-1.jpg"
+            },
+            {
+                "url": "https://res.cloudinary.com/dfgridmvn/image/upload/c_scale,h_177,q_auto:best,w_177/v1535197294/dotch-food-v2/hooters-1.jpg"
+            },
+            {
+                "url": "https://res.cloudinary.com/dfgridmvn/image/upload/c_scale,h_354,q_auto:best,w_354/v1535197294/dotch-food-v2/hooters-1.jpg"
+            },
+            {
+                "url": "https://res.cloudinary.com/dfgridmvn/image/upload/c_scale,h_531,q_auto:best,w_531/v1535197294/dotch-food-v2/hooters-1.jpg"
+            },
+            {
+                "url": "https://res.cloudinary.com/dfgridmvn/image/upload/c_scale,h_708,q_auto:best,w_708/v1535197294/dotch-food-v2/hooters-1.jpg"
+            },
+            {
+                "url": "https://res.cloudinary.com/dfgridmvn/image/upload/c_scale,h_177,q_auto:best,w_177/v1535197294/dotch-food-v2/hooters-1.webp"
+            },
+            {
+                "url": "https://res.cloudinary.com/dfgridmvn/image/upload/c_scale,h_354,q_auto:best,w_354/v1535197294/dotch-food-v2/hooters-1.webp"
+            },
+            {
+                "url": "https://res.cloudinary.com/dfgridmvn/image/upload/c_scale,h_531,q_auto:best,w_531/v1535197294/dotch-food-v2/hooters-1.webp"
+            },
+            {
+                "url": "https://res.cloudinary.com/dfgridmvn/image/upload/c_scale,h_708,q_auto:best,w_708/v1535197294/dotch-food-v2/hooters-1.webp"
+            }
+        ],
+        "location": {
+            "address": "台北市松山區慶城街18號",
+            "coordinates": {
+                "_lat": 25.0532873,
+                "_long": 121.54533229999993
+            },
+            "zip": "105"
+        },
+        "name": "Hooters",
+        "nearby": false,
+        "openingHour": {
+            "end": "12 AM",
+            "start": "11:30 AM"
+        },
+        "phone": "02-27165168",
+        "price": {
+            "highest": 1000,
+            "lowest": 368
+        },
+        "recommend": true,
+        "sns": {
+            "facebook": "https://www.facebook.com/hooterstaipei/",
+            "website": "http://www.hooters.com.tw/index_down.php"
+        },
+        "tags": [
+            "南京復興站",
+            "捷運沿線",
+            "會員卡",
+            "桌邊服務",
+            "沙拉",
+            "漢堡",
+            "炸雞",
+            "牛排",
+            "美式料理",
+            "義大利麵",
+            "酒"
+        ]
+    },
+    {
+        "booking": {
+            "online": "https://m.me/1892531257633558",
+            "phone": "02-26084750"
+        },
+        "description": "RED CARPET以新美式料理為主，並主打芝加哥滿滿起司的厚實比薩，以及具備特殊豐富口感的Hello Kitty主題歡樂漩渦餅~",
+        "features": {
+            "cashOnly": false,
+            "customService": false,
+            "family": true,
+            "mrt": false,
+            "noTimeLimit": true,
+            "parking": true,
+            "socket": false,
+            "takeout": false,
+            "twentyfourhr": false,
+            "wifi": false
+        },
+        "hot": true,
+        "id": "21a37800-b8b6-11e8-a5f9-ef68faa580ad",
+        "image": [
+            {
+                "url": "https://res.cloudinary.com/dfgridmvn/image/upload/v1536994352/dotch-food-v2/hello_kitty_red_carpet.png"
+            },
+            {
+                "url": "https://res.cloudinary.com/dfgridmvn/image/upload/c_scale,w_177,fl_progressive/v1536994352/dotch-food-v2/hello_kitty_red_carpet.jpg"
+            },
+            {
+                "url": "https://res.cloudinary.com/dfgridmvn/image/upload/c_scale,w_354,fl_progressive/v1536994352/dotch-food-v2/hello_kitty_red_carpet.jpg"
+            },
+            {
+                "url": "https://res.cloudinary.com/dfgridmvn/image/upload/c_scale,w_531,fl_progressive/v1536994352/dotch-food-v2/hello_kitty_red_carpet.jpg"
+            },
+            {
+                "url": "https://res.cloudinary.com/dfgridmvn/image/upload/c_scale,w_708,fl_progressive/v1536994352/dotch-food-v2/hello_kitty_red_carpet.jpg"
+            },
+            {
+                "url": "https://res.cloudinary.com/dfgridmvn/image/upload/c_scale,w_177,fl_progressive/v1536994352/dotch-food-v2/hello_kitty_red_carpet.webp"
+            },
+            {
+                "url": "https://res.cloudinary.com/dfgridmvn/image/upload/c_scale,w_354,fl_progressive/v1536994352/dotch-food-v2/hello_kitty_red_carpet.webp"
+            },
+            {
+                "url": "https://res.cloudinary.com/dfgridmvn/image/upload/c_scale,w_531,fl_progressive/v1536994352/dotch-food-v2/hello_kitty_red_carpet.webp"
+            },
+            {
+                "url": "https://res.cloudinary.com/dfgridmvn/image/upload/c_scale,w_708,fl_progressive/v1536994352/dotch-food-v2/hello_kitty_red_carpet.webp"
+            }
+        ],
+        "location": {
+            "address": "新北市林口區文化三路一段356號3樓",
+            "coordinates": {
+                "_lat": 25.0707347,
+                "_long": 121.3639607
+            },
+            "zip": "244"
+        },
+        "name": "Hello Kitty Red Carpet 美式餐廳",
+        "nearby": false,
+        "openingHour": {
+            "end": "10 PM",
+            "start": "11 AM"
+        },
+        "phone": "02-26084750",
+        "price": {
+            "highest": 2399,
+            "lowest": 120
+        },
+        "recommend": true,
+        "sns": {
+            "facebook": "https://www.facebook.com/Hello-Kitty-Red-Carpet%E7%BE%8E%E5%BC%8F%E9%A4%90%E5%BB%B3-1892531257633558/",
+            "website": "https://www.facebook.com/Hello-Kitty-Red-Carpet%E7%BE%8E%E5%BC%8F%E9%A4%90%E5%BB%B3-1892531257633558/"
+        },
+        "tags": [
+            "Hello Kitty",
+            "主題特色",
+            "停車位",
+            "拍照打卡",
+            "漢堡",
+            "特別推薦",
+            "美式料理",
+            "義大利麵",
+            "親子友善"
+        ]
+    }
+]

@@ -1,5 +1,6 @@
 import _ from 'lodash';
 import {
+  FETCH_FAV_LIST,
   FETCH_HOT_STORE_LIST,
   FETCH_NEARBY_STORE_LIST,
   FETCH_RECOMMEND_STORE_LIST,
@@ -18,6 +19,7 @@ import {
   AUTH_DOMAIN,
   PROJECT_ID,
 } from '../constants/config';
+import favListJSON from '../data/favlist.json';
 
 const uuidv1 = require('uuid/v1');
 
@@ -64,6 +66,13 @@ export const fetchHotStoreList = () => {
   return {
     type: FETCH_HOT_STORE_LIST,
     payload: firebase.firestore().collection('stores').where('hot', '==', true).limit(4).get(),
+  };
+}
+
+export const fetchFavList = () => {
+  return {
+    type: FETCH_FAV_LIST,
+    payload: favListJSON,
   };
 }
 

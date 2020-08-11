@@ -5,6 +5,7 @@ import FilteredStoresReducer from './reducer_filtered_stores';
 import SlidesReducer from './reducer_slideshows';
 import StoreReducer from './reducer_store';
 import StoreComments from './reducer_store_comments';
+import FavList from './favlist';
 
 const rootReducer = combineReducers({
   stores: StoresReducer,
@@ -13,6 +14,7 @@ const rootReducer = combineReducers({
   form: FormReducer,
   store: StoreReducer,
   storeComments: StoreComments,
+  favList: FavList,
 });
 
 export default rootReducer;

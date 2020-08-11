@@ -29,13 +29,15 @@ class Index extends Component {
   }
 
   renderCards(stores) {
-    return _.map(stores, (store) => {
-      return <Card key={store.id} store={store} />;
-    });
+    return _.map(stores, (store) => <Card key={store.id} store={store} />);
   };
 
   render() {
-    const { nearbyStoresData, recommendStoresData, hotStoresData } = this.props.filteredStores;
+    const {
+      hotStoresData,
+      nearbyStoresData,
+      recommendStoresData,
+    } = this.props.filteredStores;
 
     return (
       <Page title="首頁" id="index">
@@ -101,15 +103,15 @@ class Index extends Component {
 }
 
 Index.propTypes = {
+  hotStoresData: PropTypes.array,
   nearbyStoresData: PropTypes.array,
   recommendStoresData: PropTypes.array,
-  hotStoresData: PropTypes.array,
 };
 
 Index.defaultProps = {
+  hotStoresData: [],
   nearbyStoresData: [],
   recommendStoresData: [],
-  hotStoresData: [],
 };
 
 export default connect(state => state)(Index);
