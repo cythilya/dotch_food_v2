@@ -1,10 +1,19 @@
+/* font-size */
 $heading-main-font-size: 24px;
 $heading-font-size: 20px;
+$label-big-font-size: 14px;
 $label-font-size: 10px;
 
+/* rwd layout */
 $containter-large-desktop-width: 1170px;
 $containter-medium-desktop-width: 970px;
 $containter-wide-tablets-width: 750px;
 $containter-tablet-width: auto;
 
+/* z-index */
 $modal-zindex: 5;
+
+/* border-radius */
+$whole-round: 10px;
+$half-round: 5px;
+$little-round: 3px;

@@ -617,6 +617,8 @@ export const icon = {
   price: '價格',
   website: '網站',
   hot: '熱門',
+  addFav: '加入我的最愛',
+  removeFav: '移除我的最愛'
 };
 
 export const features = {

@@ -5,7 +5,7 @@
   align-items: center;
   margin: 15px 0;
   background: $faux-white;
-  border-radius: 5px;
+  border-radius: $half-round;
 }
 
 .alert--danger {

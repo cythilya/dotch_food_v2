@@ -67,7 +67,7 @@
   padding: 3px;
   word-break: keep-all;
   background: $light-gray;
-  border-radius: 5px;
+  border-radius: $half-round;
 
   .store-item__tag-link {
     color: $gray;

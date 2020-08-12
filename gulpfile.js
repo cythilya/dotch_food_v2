@@ -15,6 +15,7 @@ gulp.task('watch', () => {
   gulp.watch(['assets/images/svg/*.svg'], ['icons']);
 });
 
+// svg sprites
 gulp.task('icons', () => {
   gulp.src('assets/images/svg/*.svg', { cwd: '' })
     .pipe(plumber())

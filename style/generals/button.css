@@ -1,8 +1,10 @@
+@import '../variables/_variable.css';
+
 .button {
   display: block;
   margin: 5px 3px;
   padding: 5px;
-  border-radius: 10px;
+  border-radius: $whole-round;
   color: $white;
   transition: all .1s;
   background: $main;
@@ -17,6 +19,10 @@
     color: $white;
     transform: translate(0, 5px);
   }
+
+  &.clicked {
+    transform: translate(0, 0);
+  }
 }
 
 .button--default {
@@ -25,9 +31,17 @@
   border-bottom: 3px solid $font-hint-color;
 }
 
+.button--transparent {
+  @extend .button;
+  margin: 0;
+  min-width: auto;
+  background: transparent;
+  border-bottom: transparent;
+}
+
 .button-with-line-breaks-text {
   display: block;
-  font-size: 10px;
+  font-size: $label-font-size;
 }
 
 @media $breakpoint-big-mobile {
@@ -36,7 +50,7 @@
     padding: 10px;
   }
   .button-with-line-breaks-text {
-    font-size: 14px;
+    font-size: $label-big-font-size;
   }
   .short-word {
     padding: 0 14px;

@@ -7,7 +7,7 @@
 
 .form-store-info {
   border: 1px solid $border-color;
-  border-radius: 5px;
+  border-radius: $half-round;
 }
 
 .form__main-heading {
@@ -45,7 +45,7 @@
   height: 35px;
   padding: 5px;
   color: $font-content-color;
-  border-radius: 5px;
+  border-radius: $half-round;
   border-width: 1px;
   border-style: solid;
   border-color: $border-color;

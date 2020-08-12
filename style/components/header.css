@@ -56,7 +56,7 @@
 
 .header__search-input {
   padding: 8px 6px;
-  border-radius: 3px;
+  border-radius: $little-round;
   border-style: none;
   outline: none;
 }

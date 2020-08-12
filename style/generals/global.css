@@ -63,7 +63,7 @@ select {
   margin: 15px 0;
   padding: 15px;
   border-bottom: 1px dashed $border-color;
-  border-radius: 5px;
+  border-radius: $half-round;
 
   &:first-child {
     margin-top: 0;
