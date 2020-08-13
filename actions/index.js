@@ -1,5 +1,6 @@
 import _ from 'lodash';
 import {
+  ADD_FAV_LIST,
   FETCH_FAV_LIST,
   FETCH_HOT_STORE_LIST,
   FETCH_NEARBY_STORE_LIST,
@@ -9,6 +10,7 @@ import {
   FETCH_STORE_INFO,
   FETCH_STORE_LIST_BY_TAG,
   FETCH_STORE_LIST,
+  INSERT_FAV_LIST,
   INSERT_STORE_COMMENT,
   SAVE_STORE_COMMENT,
   SAVE_STORE_DATA,
@@ -73,6 +75,24 @@ export const fetchFavList = () => {
   return {
     type: FETCH_FAV_LIST,
     payload: favListJSON,
+  };
+}
+
+export const insertFavList = (userID = 'test', storeID = 'test') => {
+  return {
+    type: INSERT_FAV_LIST,
+    payload: firebase.firestore().collection('favlist').doc(userID).update({
+      list: firebase.firestore.FieldValue.arrayUnion(storeID),
+    }),
+  };
+}
+
+export const addFavList = (userID = 'test', storeID = 'test') => {
+  return {
+    type: ADD_FAV_LIST,
+    payload: firebase.firestore().collection('favlist').doc(userID).set({
+      list: [storeID],
+    }),
   };
 }
 

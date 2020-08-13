@@ -6,7 +6,11 @@ import Link from 'next/link';
 import Page from '../components/page';
 import Card from '../components/card';
 import favListJSON from '../data/favlist.json';
-import { fetchFavList, fetchHotStoreList } from '../actions/index';
+import {
+  addFavList,
+  fetchFavList,
+  fetchHotStoreList,
+} from '../actions/index';
 
 class FavList extends Component {
   constructor(props) {
@@ -23,7 +27,15 @@ class FavList extends Component {
   }
 
   renderCards(stores) {
-    return _.map(stores, (store) => <Card key={store.id} store={store} />);
+    const { dispatch } = this.props;
+
+    return _.map(stores, (store) => (
+      <Card
+        addFavList={() => {dispatch(addFavList())}}
+        key={store.id}
+        store={store}
+      />
+    ));
   };
 
   render() {
