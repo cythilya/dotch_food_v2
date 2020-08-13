@@ -16,7 +16,9 @@ class FavList extends Component {
   constructor(props) {
     super(props);
 
+    this.renderCardList = this.renderCardList.bind(this);
     this.renderCards = this.renderCards.bind(this);
+    this.renderNoDataHint = this.renderNoDataHint.bind(this);
   }
 
   componentDidMount() {
@@ -38,17 +40,31 @@ class FavList extends Component {
     ));
   };
 
+  renderCardList() {
+    const { favList } = this.props;
+
+    return (
+      <div className="card-list">
+        {this.renderCards(favList)}
+      </div>
+    );
+  }
+
+  renderNoDataHint() {
+    return (<div>這裡是空的 XDDD</div>);
+  }
+
   render() {
     const { favList, filteredStores } = this.props;
     const { hotStoresData } = filteredStores;
+    const isEmptyFavList = !_.size(favList);
 
     return (
       <Page title="首頁" id="index">
         <div className="panel">
           <h1 className="panel__main-heading">我的最愛</h1>
-            <div className="card-list">
-              {this.renderCards(favList)}
-            </div>
+            {isEmptyFavList && this.renderNoDataHint()}
+            {!isEmptyFavList && this.renderCardList(favList)}
         </div>
         <div className="panel">
           <h1 className="panel__main-heading">
@@ -73,12 +89,12 @@ class FavList extends Component {
 }
 
 FavList.propTypes = {
-  favList: PropTypes.array,
+  favList: PropTypes.object,
   hotStoresData: PropTypes.array,
 };
 
 FavList.defaultProps = {
-  favList: [],
+  favList: null,
   hotStoresData: [],
 };
 
