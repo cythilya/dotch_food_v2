@@ -32,10 +32,10 @@ class Card extends Component {
   }
 
   handleAddFavList() {
-    const { addFavList } = this.props;
+    const { addFavList, store } = this.props;
     const { isFavorite: isFavoriteState } = this.state;
 
-    addFavList();
+    addFavList({store});
     this.setState({isFavorite: !isFavoriteState});
   }
 

@@ -71,27 +71,27 @@ export const fetchHotStoreList = () => {
   };
 }
 
-export const fetchFavList = () => {
+export const fetchFavList = (userID = 'test') => {
   return {
     type: FETCH_FAV_LIST,
-    payload: favListJSON,
+    payload: firebase.firestore().collection('favlist').where('id', '==', userID).limit(20).get(),
   };
 }
 
-export const insertFavList = (userID = 'test', storeID = 'test') => {
+export const insertFavList = ({ userID = 'test', store }) => {
   return {
     type: INSERT_FAV_LIST,
-    payload: firebase.firestore().collection('favlist').doc(userID).update({
-      list: firebase.firestore.FieldValue.arrayUnion(storeID),
+    payload: firebase.firestore().collection('favlist').doc(userID).set({
+      list: [store],
     }),
   };
 }
 
-export const addFavList = (userID = 'test', storeID = 'test') => {
+export const addFavList = ({ userID = 'test', store }) => {
   return {
     type: ADD_FAV_LIST,
-    payload: firebase.firestore().collection('favlist').doc(userID).set({
-      list: [storeID],
+    payload: firebase.firestore().collection('favlist').doc(userID).update({
+      list: firebase.firestore.FieldValue.arrayUnion(store),
     }),
   };
 }

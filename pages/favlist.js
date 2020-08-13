@@ -31,7 +31,7 @@ class FavList extends Component {
 
     return _.map(stores, (store) => (
       <Card
-        addFavList={() => {dispatch(addFavList())}}
+        addFavList={(args) => {dispatch(addFavList(args))}}
         key={store.id}
         store={store}
       />
