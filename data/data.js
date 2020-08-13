@@ -635,3 +635,11 @@ export const features = {
   pet: '寵物友善',
   pokemon: '有寶可夢補給站',
 };
+
+export const menu = [
+  {
+    title: '我的最愛',
+    icon: 'star',
+    link: '/favlist'
+  }
+];

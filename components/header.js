@@ -1,8 +1,9 @@
+import _ from 'lodash';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Link from 'next/link';
 import Router from 'next/router';
-import { common } from '../data/data';
+import { common, menu } from '../data/data';
 import '../style/components/header.css';
 
 class Header extends Component {
@@ -13,6 +14,7 @@ class Header extends Component {
 
     this.onInputChange = this.onInputChange.bind(this);
     this.onSeachHandler = this.onSeachHandler.bind(this);
+    this.renderMenuList = this.renderMenuList.bind(this);
   }
 
   onInputChange(keyword) {
@@ -24,6 +26,32 @@ class Header extends Component {
       const keyword = e.target.value;
       Router.push(`/tag?keyword=${keyword}`);
     }
+  }
+
+  renderMenuList() {
+    return _.map(menu, (item) => {
+        return (
+          <div
+            key={item.title}
+            className="header__menu__item"
+          >
+            <Link href={item.link}>
+              <a
+                title={item.title}
+                className="header__menu__item__link"
+              >
+                <span
+                  title={item.title}
+                  className={`header__menu__item__icon icon-${item.icon}`}
+                />
+                <span className="header__menu__item__title">
+                {item.title}
+                </span>
+              </a>
+            </Link>
+          </div>
+        );
+      })
   }
 
   render() {
@@ -48,6 +76,9 @@ class Header extends Component {
               { common.title }
             </a>
           </Link>
+        </div>
+        <div className="header__menu-list">
+          {this.renderMenuList()}
         </div>
         <div className="header__searchbox">
           <input

@@ -23,7 +23,7 @@
 
 .tag-list__item__link {
   display: block;
-  font-size: 10px;
+  font-size: $label-font-size;
   color: $font-content-color;
 }
 
