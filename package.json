@@ -10,8 +10,12 @@
     "lighthouse": "./node_modules/lighthouse/lighthouse-cli/index.js $url"
   },
   "dependencies": {
+    "@chakra-ui/core": "^0.8.0",
+    "@emotion/core": "^10.0.34",
+    "@emotion/styled": "^10.0.27",
     "@zeit/next-css": "^0.2.0",
     "compression": "^1.7.3",
+    "emotion-theming": "^10.0.27",
     "es6-promise": "4.1.1",
     "express": "4.16.2",
     "firebase": "^5.4.1",
@@ -23,8 +27,8 @@
     "next-redux-saga": "3.0.0-beta.1",
     "next-redux-wrapper": "2.0.0-beta.6",
     "prop-types": "^15.6.2",
-    "react": "^16.4.2",
-    "react-dom": "^16.4.2",
+    "react": "16.8.6",
+    "react-dom": "16.8.6",
     "react-lazyload": "^2.3.0",
     "react-newsticker": "^1.0.3",
     "react-no-ssr": "^1.1.0",
