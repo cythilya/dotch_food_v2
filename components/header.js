@@ -14,7 +14,9 @@ class Header extends Component {
 
     this.onInputChange = this.onInputChange.bind(this);
     this.onSeachHandler = this.onSeachHandler.bind(this);
+    this.renderMenuItems = this.renderMenuItems.bind(this);
     this.renderMenuList = this.renderMenuList.bind(this);
+    this.renderSearchBox = this.renderSearchBox.bind(this);
   }
 
   onInputChange(keyword) {
@@ -29,34 +31,64 @@ class Header extends Component {
   }
 
   renderMenuList() {
+    return (
+      <div className="header__menu-list">
+        {this.renderMenuItems()}
+      </div>
+    )
+  }
+
+  renderMenuItems() {
     return _.map(menu, (item) => {
-        return (
-          <div
-            key={item.title}
-            className="header__menu__item"
-          >
-            <Link href={item.link}>
-              <a
+      return (
+        <div
+          key={item.title}
+          className="header__menu__item"
+        >
+          <Link href={item.link}>
+            <a
+              title={item.title}
+              className="header__menu__item__link"
+            >
+              <span
                 title={item.title}
-                className="header__menu__item__link"
-              >
-                <span
-                  title={item.title}
-                  className={`header__menu__item__icon icon-${item.icon}`}
-                />
-                <span className="header__menu__item__title">
+                className={`header__menu__item__icon icon-${item.icon}`}
+              />
+              <span className="header__menu__item__title">
                 {item.title}
-                </span>
-              </a>
-            </Link>
-          </div>
-        );
-      })
+              </span>
+            </a>
+          </Link>
+        </div>
+      );
+    })
+  }
+
+  renderSearchBox() {
+    const { keyword } = this.state;
+
+    return (
+      <div className="header__searchbox">
+        <input
+          className="header__search-input"
+          placeholder="有什麼好吃的？"
+          aria-label="有什麼好吃的？"
+          value={keyword}
+          onChange={e => this.onInputChange(e.target.value)}
+          onKeyPress={e => this.onSeachHandler(e)}
+        />
+        <button
+          type="button"
+          className="header__searchbox__cancel"
+          onClick={() => this.onInputChange('')}
+        >
+          x
+        </button>
+      </div>
+    )
   }
 
   render() {
-    const { keyword } = this.state;
-
     return (
       <div className="header">
         <div className="header__nav">
@@ -77,26 +109,8 @@ class Header extends Component {
             </a>
           </Link>
         </div>
-        <div className="header__menu-list">
+          {this.renderSearchBox()}
           {this.renderMenuList()}
-        </div>
-        <div className="header__searchbox">
-          <input
-            className="header__search-input"
-            placeholder="有什麼好吃的？"
-            aria-label="有什麼好吃的？"
-            value={keyword}
-            onChange={e => this.onInputChange(e.target.value)}
-            onKeyPress={e => this.onSeachHandler(e)}
-          />
-          <button
-            type="button"
-            className="header__searchbox__cancel"
-            onClick={() => this.onInputChange('')}
-          >
-            x
-          </button>
-        </div>
       </div>
     );
   }

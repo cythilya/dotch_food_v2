@@ -639,7 +639,17 @@ export const features = {
 export const menu = [
   {
     title: '我的最愛',
-    icon: 'star',
+    icon: 'heart',
     link: '/favlist'
-  }
+  },
+  {
+    title: '註冊',
+    icon: 'star',
+    link: '#'
+  },
+  {
+    title: '登入',
+    icon: 'star',
+    link: '#'
+  },
 ];
