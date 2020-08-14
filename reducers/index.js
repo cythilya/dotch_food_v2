@@ -6,6 +6,7 @@ import SlidesReducer from './reducer_slideshows';
 import StoreReducer from './reducer_store';
 import StoreComments from './reducer_store_comments';
 import FavList from './favlist';
+import User from './user';
 
 const rootReducer = combineReducers({
   stores: StoresReducer,
@@ -15,6 +16,7 @@ const rootReducer = combineReducers({
   store: StoreReducer,
   storeComments: StoreComments,
   favList: FavList,
+  user: User,
 });
 
 export default rootReducer;

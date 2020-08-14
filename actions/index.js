@@ -1,6 +1,7 @@
 import _ from 'lodash';
 import {
   ADD_FAV_LIST,
+  DOTCH_FOOD_COOKIE_KEY,
   FETCH_FAV_LIST,
   FETCH_HOT_STORE_LIST,
   FETCH_NEARBY_STORE_LIST,
@@ -12,6 +13,9 @@ import {
   FETCH_STORE_LIST,
   INSERT_FAV_LIST,
   INSERT_STORE_COMMENT,
+  LOGIN,
+  LOGOUT,
+  RESTORE_USER_INFO,
   SAVE_STORE_COMMENT,
   SAVE_STORE_DATA,
 } from '../constants';
@@ -21,7 +25,6 @@ import {
   AUTH_DOMAIN,
   PROJECT_ID,
 } from '../constants/config';
-import favListJSON from '../data/favlist.json';
 
 const uuidv1 = require('uuid/v1');
 
@@ -71,14 +74,14 @@ export const fetchHotStoreList = () => {
   };
 }
 
-export const fetchFavList = (userID = 'test') => {
+export const fetchFavList = (userID) => {
   return {
     type: FETCH_FAV_LIST,
     payload: firebase.firestore().collection('favlist').where('id', '==', userID).limit(20).get(),
   };
 }
 
-export const insertFavList = ({ userID = 'test', store }) => {
+export const insertFavList = ({ userID, store }) => {
   return {
     type: INSERT_FAV_LIST,
     payload: firebase.firestore().collection('favlist').doc(userID).set({
@@ -87,7 +90,7 @@ export const insertFavList = ({ userID = 'test', store }) => {
   };
 }
 
-export const addFavList = ({ userID = 'test', store }) => {
+export const addFavList = ({ userID, store }) => {
   return {
     type: ADD_FAV_LIST,
     payload: firebase.firestore().collection('favlist').doc(userID).update({
@@ -689,4 +692,41 @@ export const insertCommentData = (formData) => {
       ],
     }),
   };
+}
+
+export const login = (account, password, loginCallback) => {
+  return {
+    type: LOGIN,
+    payload: firebase.firestore().collection('users').where('id', '==', account).get()
+    .then(function(res) {
+      let userInfo = [];
+
+      _.forEach(res.docs, (doc) => {
+        userInfo.push(doc.data());
+      });
+
+      if (userInfo[0].password === password) {
+        loginCallback();
+        return { isLogin: true, userInfo: userInfo[0]};
+      } else {
+        return { isLogin: false, userInfo: null };
+      }
+    })
+    .catch(function(error) {
+      console.error('Error occurred: ', error);
+    })
+  };
+}
+
+export const logout = () => {
+  return {
+    type: LOGOUT,
+  }
+}
+
+export const restoreUserInfo = (userInfo) => {
+  return {
+    type: RESTORE_USER_INFO,
+    payload: userInfo,
+  }
 }

@@ -3,18 +3,26 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import withReduxStore from '../lib/with-redux-store';
 import { ThemeProvider, CSSReset } from "@chakra-ui/core";
+import { CookiesProvider } from 'react-cookie';
 
 class MyApp extends App {
   render() {
-    const { Component, pageProps, reduxStore } = this.props;
+    const {
+      Component,
+      pageProps,
+      reduxStore,
+    } = this.props;
+
     return (
       <ThemeProvider>
         <CSSReset />
-        <Container>
-          <Provider store={reduxStore}>
-            <Component {...pageProps} />
-          </Provider>
-        </Container>
+        <CookiesProvider>
+          <Container>
+            <Provider store={reduxStore}>
+              <Component {...pageProps} />
+            </Provider>
+          </Container>
+        </CookiesProvider>
       </ThemeProvider>
     );
   }

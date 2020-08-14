@@ -1,3 +1,4 @@
+// actions
 export const FETCH_STORE_LIST = 'FETCH_STORE_LIST';
 export const FETCH_STORE_LIST_BY_TAG = 'FETCH_STORE_LIST_BY_TAG';
 
@@ -18,3 +19,10 @@ export const FETCH_STORE_COMMENTS = 'FETCH_STORE_COMMENTS';
 
 export const ADD_FAV_LIST = 'ADD_FAV_LIST';
 export const INSERT_FAV_LIST = 'INSERT_FAV_LIST';
+
+export const LOGIN = 'LOGIN';
+export const LOGOUT = 'LOGOUT';
+export const RESTORE_USER_INFO = 'RESTORE_USER_INFO';
+
+// storage keys
+export const DOTCH_FOOD_COOKIE_KEY = 'dotchfooduser';
